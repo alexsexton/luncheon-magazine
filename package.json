@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/alexsexton/luncheon.git"
+    "url": "git://github.com/alexsexton/luncheon-magazine.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
