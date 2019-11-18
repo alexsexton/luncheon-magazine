@@ -9,46 +9,13 @@
   top: 0;
 }
 
-// Header
-
-.header {
-  display: flex;
-  flex-direction: row;
-  padding-top: $spacer;
-  padding-bottom: $spacer;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-
-  .logo svg {
-    transition: all color ease-in-out;
-    fill: $black;
-  }
-
-  .logo {
-    flex: 0 0 183px;
-    @media screen and (max-width: $small-screen) {
-      padding: $spacer 0;
-      clear: both;
-      flex: 0 0 120px;
-    }
-  }
-
-  .logo img {
-    width: 100%;
-    display: block;
-  }
-}
-
-
-// Header with top bar
+// Header with icon bar
 .header-with-icon-bar {
   padding: $spacer $site-gutters;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: ". logo shop-nav" "site-nav site-nav site-nav";
-  grid-column-gap: $grid-gap;
   grid-auto-flow: column;
   align-items: center;
 

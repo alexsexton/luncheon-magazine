@@ -27,13 +27,16 @@
     margin: 0 0 $margin 0;
   }
 
-  a {
-    display: block;
-    background: $light-grey;
+  .hero-item {
     img {
       display: block;
       width: 100%;
     }
+  }
+
+  a {
+    display: block;
+    background: $light-grey;
   }
 
   .overlay {

@@ -38,8 +38,7 @@
       <h5>Contact</h5>
       {% if section.settings.footer_contact_link %}<p><a href="{{ section.settings.footer_contact_link }}">{{ section.settings.footer_contact_text }}</a></p>{% endif %}
       <ul>
-        <li>{{ shop.address.summary }}</li>
-        <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        <li>{{ shop.address.street }}<br> {{ shop.address.city }} {{shop.address.zip}}<br> {{ shop.address.country }}</li> <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
         <li class="tel"><a href="tel:{{ shop.phone | handleize | prepend: "+" }}">
           {{ shop.phone | prepend: "+" | slice: 0, 3 }}
           {{ shop.phone | slice: 2, 4 }}
@@ -125,7 +124,7 @@
     "type": "text",
     "id": "footer_strapline",
     "label": "Footer strapline",
-    "default": "Handmade in England"
+    "default": "A Cultural Serving"
   },
   {
     "type": "checkbox",
