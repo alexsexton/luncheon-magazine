@@ -1,0 +1,60 @@
+{% paginate collection.products by 48 %}
+
+<section class="product-list">
+  <header class="collection-header{% if collection.image %} with-image{% endif %}">
+    {%- if collection.image -%}
+      <div class="collection-image">
+        <img src="{{ collection.image | img_url: '1400x' }}" alt="{{ collection.title }}">
+      </div>
+    {%- endif -%}
+
+    <h1>{{ collection.title }}</h1>
+
+    {%- if collection.description != "" -%}
+    <div class="rich-text">
+      {{ collection.description }}
+    </div>
+    {%- endif -%}
+
+  </header>
+
+  {% comment %}
+
+  {% include 'collection-sorting' %}
+  {% include 'collection-views' %}
+  {% endcomment %}
+
+  {% comment %}
+  Loop through our products in the current collection.
+  See the snippet 'product-grid-item' for the layout.
+  {% endcomment %}
+  {% if settings.enable_infinite_scroll == true %}
+  <div class="collection-items" id="product-{{ forloop.index | plus:paginate.current_offset }}">
+  {% else %}
+  <div class="collection-items">
+  {% endif %}
+  {% for product in collection.products %}
+
+  {% include 'collection-items' %}
+
+  {% else %}
+
+  <p class="no-matches">{{ 'collections.general.no_matches' | t }}</p>
+
+  {% endfor %}
+  </div>
+
+  <div id="collection-items-footer"></div>
+
+  {% if settings.enable_infinite_scroll == true %}
+    {% if paginate.next %}
+      <div id="more"><p>&darr; <a href="{{ paginate.next.url }}">More</a></p></div>
+    {% endif %}
+  {% else %}
+    {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+    {% endif %}
+  {% endif %}
+
+</section>
+{% endpaginate %}

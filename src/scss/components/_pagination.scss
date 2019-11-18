@@ -1,0 +1,21 @@
+/* Pagination */
+
+.pagination {
+  clear: both;
+  margin: 0 auto $spacer * 2;
+  text-align: center;
+
+  .page-link {
+    position: relative;
+    top: -6px;
+
+    a {
+      color: $black;
+    }
+  }
+
+  li {
+    display: inline-flex;
+    padding: $spacer / 4;
+  }
+}

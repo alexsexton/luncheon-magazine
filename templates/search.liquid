@@ -1,0 +1,99 @@
+{% comment %}
+
+The {{ content_for_header }} in theme.liquid will output the following stylesheet just for this page:
+- <link rel="stylesheet" href="/global/search.css" type="text/css">
+
+It has a few helpers in there, but this theme writes its own styles so there
+are no dependencies or conflicts. You can ignore that file.
+
+Return only products or pages in results:
+- http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
+- Or manually add type=product or type=page to the search URL as a parameter
+
+{% endcomment %}
+
+<section class="product-list group">
+
+{% if search.performed %}
+
+  {% comment %}
+  Avoid accessing search.results before the opening paginate tag.
+  If you do, the pagination of results will be broken.
+  {% endcomment %}
+  {% paginate search.results by 48 %}
+
+  {% comment %}
+  We don't have any results to show. Feel free to show off featured products
+  or suggested searches here.
+  {% endcomment %}
+  {% if search.results_count == 0 %}
+    <header class="collection-header">
+      <h1>{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+      {% include 'search-bar' %}
+    </header>
+  {% else %}
+    <header class="collection-header">
+      <h1>{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+      {% include 'search-bar' %}
+    </header>
+
+  {% comment %}
+  Check if the product is on sale and set a variable to be used below.
+  {% endcomment %}
+  {% assign on_sale = false %}
+  {% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+  {% endif %}
+
+  {% comment %}
+  Check if the product is sold out and set a variable to be used below.
+  {% endcomment %}
+  {% assign sold_out = true %}
+  {% if product.available  %}
+  {% assign sold_out = false %}
+  {% endif %}
+
+  <div class="collection-items row">
+  {% for item in search.results %}
+    <article class="product{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}" itemscope itemtype="http://schema.org/Product">
+      <div class="product-photo">
+      <a href="{{ item.url }}">
+        <img src="{{ item.featured_image.src | product_img_url: '640x' }}" alt="{{ product.featured_image.alt | escape }}"  itemprop="image">
+      </a>
+    </div>
+      <h2 itemprop="name"><a href="{{ item.url }}">{{ item.title }}</a></h2>
+      <p class="price-details" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        {% if item.price_varies %}From{% endif %}
+        {{ item.price | money }}
+        {% if on_sale %}
+        <span class="compare-at-price">{{ item.compare_at_price | money }}</span>
+        {% endif %}
+      </p>
+    </article>
+  {% endfor %}
+  </div>
+
+  {% endif %}
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+
+  {% endpaginate %}
+
+{% else %}
+
+  {% comment %}
+  If search.performed is false, someone either accessed the page without
+  the q parameter, or it was blank.
+  Be sure to show a search form here, along with anything else you want to showcase.
+  {% endcomment %}
+
+  <header class="collection-header">
+    <h1>{{ 'general.search.title' | t }}</h1>
+    {% include 'search-bar' %}
+  </header>
+
+{% endif %}
+
+</section>

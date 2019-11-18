@@ -1,0 +1,168 @@
+/* Header */
+
+.section-site-header {
+  position: sticky;
+  width: 100%;
+  background: $header-white;
+  z-index: 10;
+  box-shadow: 0 0 3px rgba($black, 0.3);
+  top: 0;
+}
+
+// Header
+
+.header {
+  display: flex;
+  flex-direction: row;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo svg {
+    transition: all color ease-in-out;
+    fill: $black;
+  }
+
+  .logo {
+    flex: 0 0 183px;
+    @media screen and (max-width: $small-screen) {
+      padding: $spacer 0;
+      clear: both;
+      flex: 0 0 120px;
+    }
+  }
+
+  .logo img {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+// Header with top bar
+.header-with-icon-bar {
+  padding: $spacer $site-gutters;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". logo shop-nav" "site-nav site-nav site-nav";
+  grid-column-gap: $grid-gap;
+  grid-auto-flow: column;
+  align-items: center;
+
+  @media screen and (max-width: $small-screen) {
+    display: flex;
+    align-items: center;
+    padding: $spacer $small-site-gutters;
+  }
+
+  .logo {
+    justify-self: center;
+    grid-area: logo;
+    @media screen and (max-width: $small-screen) {
+      flex: 1;
+    }
+    svg {
+      width: 300px;
+      @media screen and (max-width: $small-screen) {
+        width: 120px;
+      }
+    }
+  }
+
+  // Shop Nav
+  .shop-nav {
+    @media screen and (min-width: $small-screen-min) {
+      justify-self: right;
+      grid-area: shop-nav;
+      position: relative;
+      top: 18px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      li {
+        padding: 0 0 0 $spacer;
+        @media screen and (max-width: $small-screen) {
+          padding: 0 0 0 $halfspacer;
+        }
+
+        a {
+          display: block;
+        }
+
+        svg {
+          height: 18px;
+          width: 18px;
+        }
+      }
+    }
+
+    .site-nav-trigger {
+      @include hide;
+      @media screen and (max-width: $small-screen) {
+        @include show;
+      }
+    }
+  }
+
+  // Main Nav
+  .main-nav {
+    justify-self: center;
+    padding: 1rem 0 0;
+    grid-area: site-nav;
+    text-transform: uppercase;
+
+
+    @media screen and (max-width: $small-screen) {
+      @include overlay;
+    }
+
+    .cancel {
+      @include hide;
+      @media screen and (max-width: $small-screen) {
+        left: auto;
+        top: $spacer2;
+        right: $small-site-gutters;
+      }
+
+      svg {
+        stroke: $black;
+        fill: $black;
+      }
+    }
+
+    ul {
+      display: flex;
+      font-weight: $bold;
+      @media screen and (max-width: $small-screen) {
+        display: block;
+      }
+
+      li {
+        padding: 0 $spacer;
+        @media screen and (max-width: $small-screen) {
+          padding: 0;
+        }
+      }
+    }
+
+    .has-sub-nav {
+      .icon {
+        @include hide;
+      }
+    }
+  }
+
+}
+
+.site-nav-is-open .header-with-top-bar .main-nav {
+  @media screen and (max-width: $small-screen) {
+    @include overlay-open;
+  }
+}

@@ -1,0 +1,15 @@
+development:
+  password: 7b95b83fe641775ccf19632757f848e7
+  store: luncheon-magazine.myshopify.com
+  ignore_files:
+    - src/*/**
+    - node_modules/
+    - config/*
+    - "*.png"
+    - "*.jpg"
+    - gulpfile.js
+    - package.json
+    - package-lock.json
+    - .gitignore
+    - .DS_Store
+  theme_id: 79660548199

@@ -1,0 +1,40 @@
+/* Dilys Theme for Mimi Berry by linea.digital */
+
+@import "settings/global";
+@import "settings/grid";
+@import "settings/mixins";
+
+@import "base/reset";
+@import "base/typography";
+@import "base/site";
+@import "base/forms";
+
+@import "vendor/tinyslider";
+
+@import "components/icons";
+@import "components/pagination";
+@import "components/blog-sidebar";
+@import "components/mailchimp-embed";
+@import "components/tables";
+@import "components/cookie-eu-banner";
+@import "components/tabs";
+
+@import "sections/footer";
+@import "sections/header";
+@import "sections/slideshow";
+@import "sections/features";
+@import "sections/instagram";
+
+@import "templates/page";
+@import "templates/cart";
+@import "templates/collection";
+@import "templates/product";
+@import "templates/blog";
+@import "templates/article";
+@import "templates/search";
+@import "templates/customers";
+@import "templates/giftcard";
+@import "templates/password";
+@import "templates/customers";
+
+// @import "old";

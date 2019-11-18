@@ -1,0 +1,9 @@
+/* Icons */
+
+[class^="icon-"], [class*=" icon-"] {
+  fill: $dark-sea-green;
+  stroke: $dark-sea-green;
+  width: auto;
+  height: 24px;
+  @include transition(all);
+}

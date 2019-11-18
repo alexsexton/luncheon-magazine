@@ -1,0 +1,35 @@
+.blog-sidebar {
+  grid-column-start: sidebar;
+  grid-row-start: 1;
+
+  a:hover {
+    color: $dark-sea-green;
+  }
+
+  .inner {
+    background: lighten($sea-green, 25%);
+    padding: $spacer;
+  }
+
+  .entry-archives {
+    margin-bottom: $spacer;
+  }
+
+  .tagged {
+
+    li {
+      display: inline-flex;
+
+      &:after {
+        content: "/";
+        padding: 0 0 0 3px;
+      }
+
+      &:last-of-type:after {
+        content: "";
+      }
+
+    }
+  }
+
+}

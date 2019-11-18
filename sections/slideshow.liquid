@@ -1,0 +1,122 @@
+<div class="hero" id="hero">
+  {% for block in section.blocks limit: section.blocks.size %}
+    {% if block.settings.image != blank %}
+    <div class="hero-item">
+      {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+        {% assign img_url = block.settings.image | img_url: '1x1' %}
+        <img src="{{ block.settings.image | img_url: '2044x' }}" alt="{{ block.settings.image.alt | escape }}">
+        {% if block.settings.caption != blank %}
+        <div class="overlay {{ block.settings.caption_position }}">
+          <h1 style="font-size:{{ block.settings.caption_font_size }}rem;color:{{ block.settings.text_colour }}">{{ block.settings.caption }}</h1>
+          {%- if block.settings.description != blank -%}
+          <div class="rich-text" style="color:{{ block.settings.text_colour }}">
+            {{ block.settings.description }}
+          </div>
+          {%- endif -%}
+        </div>
+        {% endif %}
+      {% if block.settings.link != blank %}</a>{% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% javascript %}
+var slider = tns({
+  arrowKeys: true,
+  container: '#hero',
+  controls: false,
+  items: 1,
+  mode: 'gallery',
+  nav: true,
+  navPosition: 'bottom',
+  speed: 1000
+})
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Slideshow",
+  "max_blocks" : 9,
+  "blocks": [
+  {
+    "type": "image",
+    "name": "Image",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "range",
+      "id": "caption_font_size",
+      "label": "Caption font size",
+      "unit": "rem",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "text_colour",
+      "label": "Text colour",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Image link"
+    },
+    {
+      "type": "select",
+      "id": "caption_position",
+      "label": "Caption Position",
+      "options": [{
+        "value": "slide-centered",
+        "label": "Centered"
+      }, {
+        "value": "slide-top-left",
+        "label": "Top Left"
+      }, {
+        "value": "slide-top-right",
+        "label": "Top Right"
+      }, {
+        "value": "slide-bottom-right",
+        "label": "Bottom Right"
+      }, {
+        "value": "slide-bottom-left",
+        "label": "Bottom Left"
+      }],
+      "default": "slide-centered"
+    }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "Slideshow",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

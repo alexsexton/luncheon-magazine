@@ -1,0 +1,37 @@
+// Site - use for global site styles and/or ultility classes
+// For templates create a new partial based upon the template name same for sections
+
+body {
+  color: $base-font-colour;
+  background: $body-background;
+}
+
+.hide, .visually-hidden {
+  @include hide;
+}
+
+.conceal {
+  @include conceal;
+}
+
+.section-site-header .header,
+.section-site-footer .footer {
+  padding-left: $site-gutters;
+  padding-right: $site-gutters;
+  @media screen and (max-width: $small-screen) {
+    padding-left: $small-site-gutters;
+    padding-right: $small-site-gutters;
+  }
+}
+
+.main {
+  padding: 0 $site-gutters;
+  @media screen and (max-width: $small-screen) {
+    padding-left: $small-site-gutters;
+    padding-right: $small-site-gutters;
+  }
+}
+
+.template-index .main {
+  padding: 0;
+}

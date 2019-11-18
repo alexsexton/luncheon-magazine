@@ -1,0 +1,73 @@
+{% comment %}
+
+This snippet is used to showcase each product during the loop,
+'for product in collection.products' in collection.liquid.
+
+{% endcomment %}
+
+{% comment %}
+Set the default within collection filter if not set
+{% endcomment %}
+{% unless current_collection == blank %}
+{% assign current_collection = collection %}
+{% endunless %}
+
+{% comment %}
+Check if the product is on sale and set a variable to be used below.
+{% endcomment %}
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+{% assign on_sale = true %}
+{% endif %}
+
+{% comment %}
+Check if the product is sold out and set a variable to be used below.
+{% endcomment %}
+{% assign sold_out = true %}
+{% if product.available  %}
+{% assign sold_out = false %}
+{% endif %}
+
+{% comment %}
+Set a class for sold-out and on-sale items
+{% endcomment %}
+<article class="collection-item product{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}" itemscope itemtype="http://schema.org/Product">
+
+  {% comment %}
+  Link to your product with the 'within: collection' filter for the link to be aware of the collection.
+  This allows you to create collection-based navigation on the product page.
+
+  Results of using 'within: collection':
+  - Instead of a URL with /products/product-handle
+  you would get /collections/collection-handle/products/product-handle
+
+  For more info on navigation within a collection
+  - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
+
+  {% endcomment %}
+  <div class="product-photo">
+    <a href="{{ product.url | within: collection }}">
+      <img src="{{ product.featured_image.src | img_url: '640x' }}" alt="{{ product.featured_image.alt | escape }}" itemprop="image">
+    </a>
+  </div>
+
+  <h2 itemprop="name"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h2>
+
+  {% comment %}
+  You can show a leading 'from' or 'up to' by checking 'product.price_varies'
+  if your variants have different prices.
+  {% endcomment %}
+
+  <p class="product-price">
+    {% if sold_out %}
+      <span class="sold-out">Sold Out</span>
+    {% else %}
+      {% if product.compare_at_price > product.price %}
+      <span class="product-price on-sale" itemprop="price">{{ product.price | money }}</span>&nbsp;<span class="product-compare-price">{{ product.compare_at_price_max | money }}</span>
+      {% else %}
+      <span class="product-price" itemprop="price">{{ product.price | money }}</span>
+      {% endif %}
+    {% endif %}
+  </p>
+
+</article>

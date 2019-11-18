@@ -1,0 +1,17 @@
+.tags {
+  display: block;
+  padding: 0 0 $padding 0;
+  font-size: $small-font-size;
+
+  li {
+    display: inline;
+  }
+
+  li::after {
+    content: " / ";
+  }
+
+  li:last-of-type::after {
+    content: "";
+  }
+}

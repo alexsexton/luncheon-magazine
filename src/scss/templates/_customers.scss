@@ -1,0 +1,63 @@
+.customer-accounts {
+  padding: $spacer2 0;
+}
+
+.template-customers-login .customer-accounts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-success, {
+  flex: 0 0 100%;
+}
+
+.customer-login-form, .customer-recover-password-form {
+  flex: 0 0 50%;
+  padding: $spacer2;
+  background-color: rgba($sea-green, 0.25);
+}
+
+.customer-guest-login-form {
+  flex: 0 0 50%;
+  padding: $spacer2;
+}
+
+.customer-register-form, .customer-activate-form {
+  width: 50%;
+  margin: auto;
+  background-color: rgba($sea-green, 0.25);
+  padding: $spacer2;
+}
+
+.customer-addresses {
+  background-color: rgba($sea-green, 0.25);
+  padding: $spacer2;
+}
+
+.customer-new-address {
+  width: 50%;
+}
+
+.form-links {
+  padding: $spacer 0;
+  li {
+    display: inline-flex;
+    margin-right: $spacer;
+  }
+}
+
+.customer-account-order-table {
+  margin-bottom: $spacer4;
+
+  th, td {
+    border-bottom: 1px solid $table-borders;
+    border-left: 1px solid $table-borders;
+    padding: $spacer;
+
+    &:first-of-type {
+      border-left: none;
+    }
+  }
+
+}

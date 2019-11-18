@@ -1,0 +1,27 @@
+{% comment %}
+  For mimiberry only, need to create a navigation list with the handle help-and-information
+{% endcomment %}
+
+<h2>{{ linklists.help-and-information.title | escape }}</h2>
+
+<ul class="page-nav">
+  {% for link in linklists.help-and-information.links %}
+    {% assign child_list_handle = link.title | handleize %}
+    {% if linklists[child_list_handle].links != blank %}
+      <li class="sidebar-nav-has-dropdown{% if link.active %} sidebar-nav-active{% endif %}" aria-haspopup="true">
+        <a href="{{ link.url }}" class="sidebar-nav-link">{{ link.title }}</a>
+        <ul class="sidebar-nav-dropdown">
+          {% for childlink in linklists[child_list_handle].links %}
+            <li{% if childlink.active %} class="sidebar-nav-active"{% endif %}>
+              <a href="{{ childlink.url }}" class="sidebar-nav-link">{{ childlink.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li {% if link.active %}class="sidebar-nav-active"{% endif %}>
+        <a href="{{ link.url }}" class="sidebar-nav-link">{{ link.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

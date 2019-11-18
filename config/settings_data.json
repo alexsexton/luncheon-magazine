@@ -1,0 +1,278 @@
+{
+  "current": {
+    "nav_background_colour": "#336666",
+    "footer_background_colour": "#336666",
+    "newsletter_background_colour": "#ffffff",
+    "button_colour": "#3c3c3c",
+    "button_text_colour": "#f4f4f4",
+    "button_hover_colour": "#336666",
+    "button_hover_text_colour": "#f4f4f4",
+    "social_twitter_link": "https:\/\/twitter.com\/mimiberryshop",
+    "social_facebook_link": "https:\/\/www.facebook.com\/mimiberryshop",
+    "social_instagram_link": "https:\/\/instagram.com\/mimiberrylondon",
+    "cart_notes_enable": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#2a9dcc",
+    "checkout_button_color": "#2a9dcc",
+    "checkout_error_color": "#ff6d6d",
+    "twittercard_handle": "@mimiberryshop",
+    "facebookcard_handle": "@mimiberryshop",
+    "instagramcard_handle": "@mimiberrylondon",
+    "checkout_use_storefront_logo": false,
+    "checkout_use_header_image": false,
+    "checkout_logo": "",
+    "checkout_use_body_background_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "checkout_banner_background_color": "#ffffff",
+    "checkout_headline": "",
+    "checkout_call_to_action_color": "#8fc243",
+    "customer_layout": "theme",
+    "sections": {
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "1554212304957": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Francis_black_2_model_00268.jpg",
+              "caption": "",
+              "caption_font_size": 4,
+              "description": "",
+              "text_colour": "#f4f4f4",
+              "link": "",
+              "caption_position": "slide-centered"
+            }
+          },
+          "1554213532050": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/MIMIBERRY00424.jpg",
+              "caption": "",
+              "caption_font_size": 4,
+              "description": "",
+              "text_colour": "#f4f4f4",
+              "link": "",
+              "caption_position": "slide-centered"
+            }
+          },
+          "1555328969146": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "caption": "",
+              "caption_font_size": 4,
+              "description": "",
+              "text_colour": "#f4f4f4",
+              "link": "",
+              "caption_position": "slide-centered"
+            }
+          },
+          "1555322630390": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "caption": "",
+              "caption_font_size": 4,
+              "description": "",
+              "text_colour": "#f4f4f4",
+              "link": "",
+              "caption_position": "slide-centered"
+            }
+          },
+          "1555329027726": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "caption": "",
+              "caption_font_size": 4,
+              "description": "",
+              "text_colour": "#f4f4f4",
+              "link": "",
+              "caption_position": "slide-centered"
+            }
+          },
+          "1555328899683": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "caption": "",
+              "caption_font_size": 4,
+              "description": "",
+              "text_colour": "#f4f4f4",
+              "link": "",
+              "caption_position": "slide-centered"
+            }
+          }
+        },
+        "block_order": [
+          "1554212304957",
+          "1554213532050",
+          "1555328969146",
+          "1555322630390",
+          "1555329027726",
+          "1555328899683"
+        ],
+        "settings": {
+          "no_of_items": 1
+        }
+      },
+      "features": {
+        "type": "features",
+        "blocks": {
+          "1556119274806": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Mini_felix_black_model_00299.jpg",
+              "heading": "GRAINY LEATHER",
+              "content": "Shop our soft Italian grainy leather.",
+              "call_to_action_text": "Read more",
+              "link": "",
+              "background_color": "#676767"
+            }
+          },
+          "1556119696428": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/MIMIBERRY00897.jpg",
+              "heading": "NEW IN",
+              "content": "Shop our new shapes for the season.",
+              "call_to_action_text": "Read more",
+              "link": "",
+              "background_color": "#676767"
+            }
+          },
+          "1556119744950": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Francis_nickle_SS19_model_00773.jpg",
+              "heading": "Turnlock collection",
+              "content": "Our classic timeless turnlock collection,",
+              "call_to_action_text": "Read more",
+              "link": "",
+              "background_color": "#676767"
+            }
+          }
+        },
+        "block_order": [
+          "1556119696428",
+          "1556119274806",
+          "1556119744950"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "site_strapline": "Handmade in England",
+          "main_linklist": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "newsletter_sign_enable": true,
+          "newsletter_sign_up_heading": "Stay in touch",
+          "newsletter_sign_up_text": "Get 10% off your first order.",
+          "footer_shop_linklist": "",
+          "footer_info_linklist": "footer",
+          "footer_contact_link": "shopify:\/\/pages\/contact",
+          "footer_contact_text": "Get in touch",
+          "footer_strapline": "Handmade in England",
+          "footer_social_enable": true,
+          "social_twitter_link": "https:\/\/twitter.com\/mimiberryshop",
+          "social_facebook_link": "https:\/\/www.facebook.com\/mimiberryshop",
+          "social_instagram_link": "https:\/\/instagram.com\/mimiberrylondon"
+        }
+      },
+      "instagram": {
+        "type": "instagram",
+        "blocks": {
+          "1553854994755": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2019-03-29_at_10.22.51.png",
+              "link": ""
+            }
+          },
+          "1553855043221": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2019-03-29_at_10.21.15.png",
+              "link": ""
+            }
+          },
+          "1553855053459": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2019-03-29_at_10.22.21.png",
+              "link": ""
+            }
+          },
+          "1554216107324": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2019-04-02_at_15.41.44.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1553854994755",
+          "1553855043221",
+          "1553855053459",
+          "1554216107324"
+        ],
+        "settings": {
+          "follow_us_heading": "Follow us on Instagram"
+        }
+      },
+      "product-tabs": {
+        "type": "product-tabs",
+        "blocks": {
+          "1555240285015": {
+            "type": "tab",
+            "settings": {
+              "tab_heading": "Delivery",
+              "tab_content": "<p>Some text about delivery<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1555240285015"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+      "slideshow",
+      "features",
+      "instagram"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "cart_notes_enable": true,
+      "customer_layout": "theme",
+      "footer_strapline": "Handmade in England",
+      "footer_linklist": "footer",
+      "footer_social_enable": true,
+      "logo_use_image": false,
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_instagram_link": "https:\/\/instagram.com\/shopify",
+      "display_slideshow": true
+    }
+  }
+}

@@ -1,0 +1,66 @@
+// Template Collection & list collections
+
+.list-collections {
+
+}
+
+.collection-items {
+  display: grid;
+  grid-gap: $spacer4;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3,1fr);
+  @media screen and (max-width: $small-screen) {
+    grid-gap: $spacer2;
+    grid-template-columns: repeat(2, calc(50% - 1rem));
+  }
+}
+
+.collection-header {
+
+  .collection-image {
+    margin-left: -$site-gutters;
+    margin-right: -$site-gutters;
+    @media screen and (max-width: $small-screen) {
+      margin-left: -$small-site-gutters;
+      margin-right: -$small-site-gutters;
+    }
+
+    img {
+      @include image;
+    }
+  }
+
+  .rich-text {
+    max-width: 61.8%;
+    margin: auto;
+    padding-bottom: $spacer4;
+    @media screen and (max-width: $small-screen) {
+      max-width: 100%;
+    }
+  }
+}
+
+.product {
+  padding-bottom: $spacer3;
+  text-align: center;
+  @media screen and (max-width: $small-screen) {
+    padding-bottom: $spacer;
+  }
+
+  .product-photo {
+    margin: 0 0 $spacer 0;
+  }
+
+  .product-photo img {
+    @include image;
+  }
+}
+
+.product-list h2, .search-results h2 {
+  font-size: $base-font-size * 1.25
+}
+
+.product-compare-price {
+  color: $medium-grey;
+  text-decoration: line-through;
+}

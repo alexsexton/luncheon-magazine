@@ -1,0 +1,24 @@
+<header class="page-header">
+	<h1>{{ page.title }}</h1>
+</header>
+
+<div class="page contact-page">
+
+	<article class="content">
+
+		<div class="rich-text">
+			{{ page.content }}
+		</div>
+
+		{%- if settings.location_map_enable -%}
+			
+		<div class="map">
+			<h2>Find Us</h2>
+			<div id="location-map" class="location-map"></div>
+		</div>
+
+		{%- endif -%}
+
+	</article>
+
+</div>

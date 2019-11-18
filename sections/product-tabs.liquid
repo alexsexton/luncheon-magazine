@@ -1,0 +1,52 @@
+{%- if section.blocks.size >= 1 -%}
+  <div class="tabs">
+    <ul>
+      <li><a href="#tab-{{ product.id }}" aria-controls="tab-{{ product.id }}" aria-expanded="true">Description</a></li>
+      {% for block in section.blocks limit: section.blocks.size %}
+        {% if block.settings.tab_heading!= blank %}
+          <li><a href="#tab-{{ block.id }}" aria-controls="tab-{{ block.id }}" aria-expanded="false">{{ block.settings.tab_heading }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+      <div class="tab rich-text" id="tab-{{ product.id }}" aria-hidden="false" itemprop="description">
+        {{ product.description }}
+      </div>
+    {% for block in section.blocks limit: section.blocks.size %}
+      {% if block.settings.tab_content!= blank %}
+      <div class="tab rich-text" id="tab-{{ block.id }}" aria-hidden="true" itemprop="description">
+        {{ block.settings.tab_content }}
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{%- else -%}
+  <div class="rich-text" itemprop="description">
+    {{ product.description }}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Tabs",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_heading",
+          "label": "Tab Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "tab_content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

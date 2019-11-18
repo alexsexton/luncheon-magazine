@@ -1,0 +1,82 @@
+<header class="page-header">
+  <h1>{{ page.title }}</h1>
+</header>
+
+<div class="page stockists-page">
+
+  <div class="rich-text">
+    {{ page.content }}
+  </div>
+
+  <section class="stockists-list group">
+
+    <h2>UK</h2>
+    {% assign ukstockists = blogs.stockists %}
+    {% for article in ukstockists.articles %}
+
+    {% for tag in article.tags %}
+    {% if tag == "UK" %}
+    <article class="stockists-address stockists-uk">
+      <h3>{{ article.title }}</h3>
+      <div class="rich-text">
+        {{ article.content }}
+      </div>
+    </article>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    <h2>Europe</h2>
+    {% assign eustockists = blogs.stockists %}
+    {% for article in eustockists.articles %}
+
+    {% for tag in article.tags %}
+    {% if tag == "EU" %}
+    <article class="stockists-address stockists-eu">
+      <h3>{{ article.title }}</h3>
+      <div class="rich-text">
+        {{ article.content }}
+      </div>
+    </article>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    <h2>Japan</h2>
+    {% assign japanstockists = blogs.stockists %}
+    {% for article in japanstockists.articles %}
+
+    {% for tag in article.tags %}
+    {% if tag == "Japan" %}
+    <article class="stockists-address stockists-japan">
+      <h3>{{ article.title }}</h3>
+      <div class="rich-text">
+        {{ article.content }}
+      </div>
+    </article>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    <h2>Rest of the World</h2>
+    {% assign rowstockists = blogs.stockists %}
+    {% for article in rowstockists.articles %}
+
+    {% for tag in article.tags %}
+    {% if tag == "ROW" %}
+    <article class="stockists-address stockists-row">
+      <h3>{{ article.title }}</h3>
+      <div class="rich-text">
+        {{ article.content }}
+      </div>
+    </article>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </section>
+
+</div>

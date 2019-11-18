@@ -1,0 +1,76 @@
+/*================ Typography Variables ================*/
+{% assign base_family = settings.type_font_family %}
+
+{{ base_family | font_face }}
+
+{%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
+{%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
+{%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
+
+{{ base_family_bold | font_face }}
+{{ base_family_italic | font_face }}
+{{ base_family_bold_italic | font_face }}
+
+// Body text
+$font-stack-body: {{ base_family.family }}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-style-body: {{ base_family.style }};
+$font-weight-body: {{ base_family.weight | default: 400 }};
+$font-weight-body-bold: {{ base_family_bold.weight | default: 700 }};
+
+body {
+  font-family: $font-stack-body;
+  background-color: {{ settings.body_background_colour }};
+  color: {{ settings.body_text_colour }};
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-stack-body;
+}
+
+.header .main-nav,
+.search-form {
+  background: {{ settings.nav_background_colour }};
+  color: {{ settings.nav_text_colour }};
+}
+
+.header .main-nav a {
+  color: {{ settings.nav_text_colour }};
+}
+
+.trigger-nav a:hover,
+.main-nav a:hover {
+  color: {{ settings.nav_text_hover_colour }};
+}
+
+.newsletter {
+  background: {{ settings.newsletter_background_colour }};
+}
+
+.footer {
+  background: {{ settings.footer_background_colour }};
+}
+
+input[type=submit], button, .button  {
+  background: {{ settings.button_colour }};
+  color: {{ settings.button_text_colour }};
+}
+
+input[type=submit]:hover,  button:hover, .button:hover  {
+  background: {{ settings.button_hover_colour }};
+  color: {{ settings.button_hover_text_colour }};
+}
+
+.features .call-to-action {
+  border-color: {{ settings.button_hover_colour }};
+  color: {{ settings.button_hover_colour }} ;
+}
+
+.features .call-to-action:hover {
+  border-color: {{ settings.button_hover_colour }};
+  background: {{ settings.button_hover_colour }};
+}
+
+#cookies-eu-banner {
+  background: {{ settings.cookies_background_colour }};
+  color: {{ settings.cookies_text_colour }};
+}

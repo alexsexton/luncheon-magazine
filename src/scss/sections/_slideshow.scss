@@ -1,0 +1,145 @@
+/* Slideshow - tinyslider */
+
+.tns-outer {
+  position: relative;
+}
+
+.tns-nav {
+  position: absolute;
+  bottom: $spacer;
+  left: 50%;
+  z-index: 5;
+  margin-left: -48px;
+}
+
+.tns-nav button {
+  height: $spacer2;
+  width: $spacer2;
+  border-radius: $spacer2;
+  margin: 0 $halfspacer;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+
+  @media screen and (max-width: $small-screen) {
+    margin: 0 0 $margin 0;
+  }
+
+  a {
+    display: block;
+    background: $light-grey;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .overlay {
+    z-index: 5;
+    color: $white;
+    position: absolute;
+  }
+
+  .overlay h1 {
+    font-size: 4rem;
+    margin: 0;
+
+    @media screen and (max-width: $small-screen) {
+      font-size: 1rem;
+    }
+  }
+
+  .overlay h1 a,
+  .overlay .rich-text {
+    color: $white;
+  }
+
+  .slide-centered {
+    top: $spacer8;
+    text-align: center;
+    width: 100%;
+    @media screen and (max-width: $small-screen) {
+      top: $spacer * 2;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      text-align: center;
+
+      h1 {
+        font-size: $base-font-size * 1.5 !important;
+      }
+    }
+  }
+
+  .slide-top-left {
+    top: $spacer3;
+    left: $spacer3;
+    text-align: left;
+    @media screen and (max-width: $small-screen) {
+      top: $spacer * 2;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      text-align: center;
+      width: 100%;
+      h1 {
+        font-size: $base-font-size * 1.5 !important;
+      }
+    }
+  }
+
+  .slide-top-right {
+    top: $spacer3;
+    right: $spacer3;
+    text-align: right;
+    @media screen and (max-width: $small-screen) {
+      top: $spacer * 2;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      text-align: center;
+      width: 100%;
+      h1 {
+        font-size: $base-font-size * 1.5 !important;
+      }
+    }
+  }
+
+  .slide-bottom-left {
+    bottom: $spacer3;
+    left: $spacer3;
+    top: auto;
+    text-align: left;
+    @media screen and (max-width: $small-screen) {
+      top: $spacer * 2;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      text-align: center;
+      width: 100%;
+      h1 {
+        font-size: $base-font-size * 1.5 !important;
+      }
+    }
+  }
+
+  .slide-bottom-right {
+    bottom: $spacer3;
+    right: $spacer3;
+    top: auto;
+    text-align: right;
+    @media screen and (max-width: $small-screen) {
+      top: $spacer * 2;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      text-align: center;
+      width: 100%;
+      h1 {
+        font-size: $base-font-size * 1.5 !important;
+      }
+    }
+  }
+}

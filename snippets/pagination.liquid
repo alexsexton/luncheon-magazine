@@ -1,0 +1,56 @@
+{% comment %}
+
+  This snippet renders a custom widget based on the current 'paginate' context,
+  defined in { % paginate XXXX by 5 % } tags wrapping the content.
+  The example below breaks the pagination down so you can setup your own styles and behavior if you wish.
+
+  Basic Pagination Usage:
+    <div class="pagination">
+      {{ paginate | default_pagination }}
+    </div>
+
+  Replace Text:
+    <div class="pagination">
+      {{ paginate | default_pagination | replace: 'Previous', 'Newer articles' | replace: 'Next', 'Older articles' }}
+    </div>
+
+  More information:
+   - index#pagination
+   - http://docs.shopify.com/themes/liquid-variables/paginate
+
+{% endcomment %}
+<div class="pagination">
+<ul class="pagination-links">
+  {% if paginate.previous %}
+    <li class="carat"><a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 5l-8 7 8 7" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
+
+    </a></li>
+  {% else %}
+    <li class="carat disabled"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 5l-8 7 8 7" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg></span></li>
+  {% endif %}
+
+  {% for part in paginate.parts %}
+    {% if part.is_link %}
+      <li class="page-link">
+        <a href="{{ part.url }}" title="">{{ part.title }}</a>
+      </li>
+    {% else %}
+      {% if part.title == paginate.current_page %}
+        <li class="page-link active"><span>{{ part.title }}</span></li>
+      {% else %}
+        <li class="page-link"><span>{{ part.title }}</span></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if paginate.next %}
+    <li class="carat"><a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M9 19l8-7-8-7" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
+      </a></li>
+  {% else %}
+    <li class="carat disabled"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M9 19l8-7-8-7" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg></span></li>
+  {% endif %}
+</ul>
+</div>

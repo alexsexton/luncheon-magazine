@@ -1,0 +1,117 @@
+// Search form
+.search-form {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $header-white;
+  transform: translateY(-100%);
+  transition: transform $trans-time;
+  overflow-x: scroll;
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+
+  form {
+    position: relative;
+    top: $spacer5;
+    width: 50%;
+    margin: auto;
+
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+      padding: 0 $spacer * 2;
+      flex-direction: column;
+    }
+
+    label {
+      display: block;
+      color: $black;
+      font-size: $heading;
+      padding-bottom: $spacer;
+      text-align: center;
+    }
+
+    .form-search-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .search-input {
+      background: $purewhite;
+      font-family: $font-family-sans;
+      font-size: $base-font-size;
+      color: $base-font-colour;
+      border: 1px solid $border-colour;
+      @include transition(all);
+      padding: $spacer;
+      margin: 0;
+      position: relative;
+    }
+
+    .search-input::-webkit-input-placeholder,
+    .search-input::-moz-placeholder,
+    .search-input::placeholder {
+      color: $black;
+    }
+
+  }
+}
+
+.search-form-is-open .search-form {
+  transform: translateY(0);
+  transition: transform $trans-time;
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+.search-form-is-open {
+  overflow: hidden;
+  .cancel {
+    z-index: 2;
+  }
+}
+
+.search-form {
+  .cancel {
+    z-index: 2;
+    position: fixed;
+    top: 28px;
+    right: 59px;
+    cursor: pointer;
+
+    svg {
+      stroke: $black;
+    }
+  }
+}
+
+// Search Template
+.template-search {
+
+  .search-bar {
+    width: 50%;
+    margin: auto;
+
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+      padding: 0 $spacer * 2;
+      flex-direction: column;
+    }
+
+    .form-group {
+      padding: 0 0 $spacer4;
+    }
+
+    .form-search-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    label {
+      @include hide;
+    }
+
+  }
+}

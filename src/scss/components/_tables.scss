@@ -1,0 +1,29 @@
+// General tablular stuff
+
+table {
+  width: 100%;
+
+  th {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: $small-screen) {
+  table, thead, tbody, tfoot, th, td, tr {
+  		display: block;
+      border: none;
+      width: 100%;
+  	}
+
+    th, td {
+      border-bottom: 1px solid $table-borders;
+    }
+
+    tfoot td:last-of-type {
+      border-bottom: none;
+    }
+
+    .responsive-table {}
+
+    .responsive-table-row {}
+}

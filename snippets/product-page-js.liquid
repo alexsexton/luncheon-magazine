@@ -1,0 +1,119 @@
+<script>
+Shopify.AjaxifyCart = (function($) {
+  var _config = {
+    addToCartBtnLabel: 'Add to bag',
+    addedToCartBtnLabel: 'Thank you',
+    addingToCartBtnLabel: 'Adding...',
+    soldOutBtnLabel: 'Sold Out',
+    howLongTillBtnReturnsToNormal: 1000,
+    cartCountSelector: '',
+    cartTotalSelector: '#basket-total',
+    feedbackPosition: 'aboveForm',
+    addToCartBtnSelector: '[type="submit"]',
+    addToCartFormSelector: 'form[action="/cart/add"]',
+    shopifyAjaxAddURL: '/cart/add.js',
+    shopifyAjaxCartURL: '/cart.js'
+  };
+  var _showFeedback = function(success, html, $addToCartForm) {
+    $('.ajaxified-cart-feedback').remove();
+    var feedback = '<div class="ajaxified-cart-feedback ' + success + '">' + html + '</div>';
+    switch (_config.feedbackPosition) {
+      case 'aboveForm':
+      $addToCartForm.before(feedback);
+      break;
+      case 'belowForm':
+      $addToCartForm.after(feedback);
+      break;
+      case 'nextButton':
+      default:
+      $addToCartForm.find(_config.addToCartBtnSelector).after(feedback);
+      break;
+    }
+    $('.ajaxified-cart-feedback').slideDown();
+  };
+  var _setText = function($button, label) {
+    if ($button.children().length) {
+      $button.children().each(function() {
+        if ($.trim($(this).text()) !== '') {
+          $(this).text(label);
+        }
+      });
+    }
+    else {
+      $button.val(label).text(label);
+    }
+  };
+  var _init = function() {
+    $(document).ready(function() {
+      $(_config.addToCartFormSelector).submit(function(e) {
+        e.preventDefault();
+        var $addToCartForm = $(this);
+        var $addToCartBtn = $addToCartForm.find(_config.addToCartBtnSelector);
+        _setText($addToCartBtn, _config.addingToCartBtnLabel);
+        $addToCartBtn.addClass('disabled').prop('disabled', true);
+        $.ajax({
+          url: _config.shopifyAjaxAddURL,
+          dataType: 'json',
+          type: 'post',
+          data: $addToCartForm.serialize(),
+          success: function(itemData) {
+            $addToCartBtn.addClass('inverted');
+            _setText($addToCartBtn, _config.addedToCartBtnLabel);
+            _showFeedback('success','<p> Added to bag <a href="/cart">view bag</a> or <a href="/collections/all">continue shopping</a>.</p>',$addToCartForm);
+            window.setTimeout(function(){
+              $addToCartBtn.prop('disabled', false).removeClass('disabled').removeClass('inverted');
+              _setText($addToCartBtn,_config.addToCartBtnLabel);
+            }, _config.howLongTillBtnReturnsToNormal);
+            $.getJSON(_config.shopifyAjaxCartURL, function(cart) {
+              if (_config.cartCountSelector && $(_config.cartCountSelector).length) {
+                var value = $(_config.cartCountSelector).html() || '0';
+                $(_config.cartCountSelector).html(value.replace(/[0-9]+/,cart.item_count)).removeClass('hidden-count');
+              }
+              if (_config.cartTotalSelector && $(_config.cartTotalSelector).length) {
+                if (typeof Currency !== 'undefined' && typeof Currency.moneyFormats !== 'undefined') {
+                  var newCurrency = '';
+                  if ($('[name="currencies"]').length) {
+                    newCurrency = $('[name="currencies"]').val();
+                  }
+                  else if ($('#currencies span.selected').size()) {
+                    newCurrency = $('#currencies span.selected').attr('data-currency');
+                  }
+                  if (newCurrency) {
+                    $(_config.cartTotalSelector).html('<span class=money>' + Shopify.formatMoney(Currency.convert(cart.total_price, "{{ shop.currency }}", newCurrency), Currency.money_format[newCurrency]) + '</span>');
+                  }
+                  else {
+                    $(_config.cartTotalSelector).html(Shopify.formatMoney(cart.total_price, "{{ shop.money_format | remove: "'" | remove: '"' }}"));
+                  }
+                }
+                else {
+                  $(_config.cartTotalSelector).html(Shopify.formatMoney(cart.total_price, "{{ shop.money_format | remove: "'" | remove: '"' }}"));
+                }
+              };
+            });
+          },
+          error: function(XMLHttpRequest) {
+            var response = eval('(' + XMLHttpRequest.responseText + ')');
+            response = response.description;
+            if (response.slice(0,4) === 'All ') {
+              _showFeedback('error', response.replace('All 1 ', 'All '), $addToCartForm);
+              $addToCartBtn.prop('disabled', false);
+              _setText($addToCartBtn, _config.soldOutBtnLabel);
+              $addToCartBtn.prop('disabled',true);
+            }
+            else {
+              _showFeedback('error', + response, $addToCartForm);
+              $addToCartBtn.prop('disabled', false).removeClass('disabled');
+              _setText($addToCartBtn, _config.addToCartBtnLabel);
+            }
+          }
+        });
+        return false;
+      });
+    });
+  };
+  return {
+    init: function(params) { params = params || {}; $.extend(_config, params); $(function() { _init(); }); }, getConfig: function() { return _config; }
+  }
+})(jQuery);
+Shopify.AjaxifyCart.init();
+</script>

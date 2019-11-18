@@ -1,0 +1,144 @@
+// Footer
+$footer-background: $sea-green;
+$footer-text: $white;
+$footer-link: $white;
+$footer-hover: rgba($white, 0.5);
+
+.footer {
+  padding-top: $spacer2;
+  padding-bottom: $spacer2;
+  background: $footer-background;
+  color: $footer-text;
+
+  a {
+    color: $footer-link;
+
+    &:hover {
+      color: $footer-hover;
+    }
+  }
+
+  @media screen and (max-width: $small-screen) {
+    ul {
+      margin-bottom: $margin;
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
+}
+
+
+.footer-navigation, .footer-social, .footer-contacts {
+  flex: 0 1 33%;
+  @media screen and (max-width: $small-screen) {
+    flex: 0 1 100%;
+  }
+}
+
+.footer-contacts {
+  padding-right: $spacer4;
+}
+
+.made-in {
+  padding: $spacer3 0 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  @media screen and (max-width: $small-screen) {
+    text-align: left;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.footer .tel {
+  white-space: nowrap;
+}
+
+.newsletter {
+  background: rgba($sea-green, 0.25);
+  padding: $spacer * 2 $site-gutters;
+
+  h5 {
+    text-align: center;
+  }
+
+  p {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto $spacer;
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+    }
+  }
+
+  .mailchimp-embed {
+    width: 50%;
+    margin: auto;
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+      padding: $spacer * 2 $small-site-gutters;
+    }
+
+    .form-group {
+      padding-top: 0;
+
+      label {
+        @include hide;
+      }
+
+      input[type=email] {
+        width: 75%;
+        @media screen and (max-width: $small-screen) {
+          width: 100%;
+        }
+      }
+
+      input[type=submit] {
+        display: block;
+        @media screen and (max-width: $small-screen) {
+          width: 100%;
+          padding-top: $spacer;
+        }
+      }
+    }
+  }
+}
+
+// Remove this?
+.footer-social {
+  [class^="icon-"], [class*=" icon-"] {
+    svg {
+      fill: #fff;
+      width: 32px;
+      height: 32px;
+    }
+    @include transition(all);
+  }
+
+  .icon-twitter:hover {
+    svg {
+      fill: $twitter;
+    }
+  }
+
+  .icon-facebook:hover {
+    svg {
+      fill: $facebook;
+    }
+  }
+
+  .icon-instagram:hover {
+    svg {
+      fill: $instagram;
+    }
+  }
+}

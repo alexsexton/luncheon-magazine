@@ -1,0 +1,106 @@
+// Resets / Global form styles
+
+input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea, select {
+  appearance: none;
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  padding: $form-input-padding;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: $base-font-size;
+  color: $base-font-colour;
+  outline: none;
+  box-sizing: border-box;
+  vertical-align: middle;
+  line-height: 1;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=button], input[type=submit], button, .button {
+  @include button($pureblack, $white);
+}
+
+.form-buttons {
+  padding: $spacer2 0;
+}
+
+.form-group {
+  padding: $spacer2 0;
+}
+
+.form-group + .form-buttons {
+  padding: 0;
+}
+
+.form-group label {
+  display: block;
+  clear: both;
+  padding: 0 0 $spacer;
+}
+
+.form-group {
+
+  input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea, select {
+    padding: $form-input-padding;
+    width: 100%;
+    border: 1px solid $form-border-colour;
+    transition: border-color 0.2s ease-in-out;
+
+    &:focus {
+      border: 1px solid $form-border-colour-focus;
+    }
+  }
+
+}
+
+// Form  input[type=search]/input[type=search] then button combos
+.form-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
+
+  input[type=email], input[type=search] {
+    width: 75%;
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+    }
+  }
+
+  input[type=submit], .button {
+    width: auto;
+    display: block;
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+      padding-top: $spacer;
+    }
+  }
+}
+
+label.radio-group, label.checkbox-group {
+  position: relative;
+  background: transparent;
+  border: 1px solid $form-border-colour;
+  padding: $spacer $spacer3 $spacer $spacer3;
+  margin: 0 $spacer $spacer 0;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+label.radio-group:hover, label.radio-group.selected,
+label.checkbox-group:hover, label.checkbox-group.selected {
+  border: 1px solid $form-border-colour-focus;
+}
+
+label.radio-group input[type=radio],
+label.checkbox-group input[type=checkbox] {
+  position: absolute;
+  top: $spacer * 1.2;
+  left: $spacer;
+}

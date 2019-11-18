@@ -1,0 +1,62 @@
+#cookies-eu-banner {
+  background: $black;
+  color: $white;
+  padding: $spacer;
+  font-size: $base-font-size;
+  z-index: 4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#cookies-eu-more,
+#cookies-eu-accept,
+#cookies-eu-reject {
+  text-decoration: none;
+  background: $medium-grey;
+  color: $white;
+  cursor: pointer;
+  padding: $spacer;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+  width: 100%;
+}
+
+#cookies-eu-more:hover,
+#cookies-eu-more:focus,
+#cookies-eu-accept:hover,
+#cookies-eu-accept:focus {
+  background: lighten($medium-grey, 25%);
+  color: $black;
+}
+
+#cookies-eu-more {
+  margin-left: $spacer / 2;
+}
+
+.cookies-eu-banner--content {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
+
+  p {
+    flex: 1 75%;
+    margin: 0;
+    @media screen and (max-width: $small-screen) {
+      flex: 1;
+      margin-bottom: $spacer;
+    }
+  }
+
+  .cookies-eu-banner--buttons {
+    flex: 1 25%;
+    margin-left: $spacer2;
+    @media screen and (max-width: $small-screen) {
+      flex: 1;
+      margin: 0;
+    }
+  }
+}

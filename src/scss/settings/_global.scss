@@ -1,0 +1,117 @@
+// Paths
+$imagePath: "/assets";
+
+// Spacers
+$spacer: 1rem;
+$halfspacer: $spacer / 2;
+$spacer2: $spacer * 2;
+$spacer3: $spacer * 3;
+$spacer4: $spacer * 4;
+$spacer5: $spacer * 5;
+$spacer6: $spacer * 6;
+$spacer7: $spacer * 7;
+$spacer8: $spacer * 8;
+$spacer9: $spacer * 9;
+$spacer10: $spacer * 10;
+$spacer15: $spacer * 15;
+
+// Site Width
+$site-max-width: 1925px; // 1795px (12 col grid  (90px cols 65px gutters) + site gutters * 2 (130px))
+$site-gutters: $spacer3;
+$small-site-gutters: $spacer;
+
+// Breakpoints
+// Breakpoints
+$huge-screen: 1440px; // Large desktop screens
+$big-screen: 1024px;
+$medium-screen-min: 961px;
+$medium-screen: 960px;
+$small-screen-min: 795px;
+$small-screen: 794px;
+$tiny-screen: 360px;
+
+// @media screen and (max-width: $huge-screen) {}
+// @media screen and (max-width: $big-screen) {}
+// @media screen and (max-width: $medium-screen) {}
+// @media screen and (max-width: $small-screen) {}
+// @media screen and (max-width: $tiny-screen) {}
+
+// Margins & Padding
+$margin: $spacer2;
+$padding: $spacer2;
+$small-padding: $spacer;
+
+// Colours
+
+// Social network colours
+$facebook: #365397;
+$twitter: #00a9f1;
+$youtube: #ff3333;
+$vimeo: #48b6ed;
+$pinterest: #ce1a19;
+$instagram: #cc2366;
+
+// Brand
+$sea-green: #336666; // buttons
+$dark-sea-green: #224545; // darker version of the above
+
+// Grey scale based on brand background luninosity
+$purewhite: #ffffff;
+$header-white: #f9f9f9;
+$white: #f4f4f4;
+$light-grey: #e7e7e7;
+$medium-grey: #a7a7a7;
+$dark-grey: #676767;
+$black: #373737;
+$pureblack: #000000;
+
+// Errors
+$highlight: #F8C830;
+$error: #F1594A;
+
+// Brand defaults
+$brand-primary: $dark-grey;
+$brand-secondary: $medium-grey;
+
+// Base Site
+$base-font-colour: $black;
+$body-background: $purewhite;
+$link-colour: $black;
+$link-hover-colour: $brand-secondary;
+$password-page-background: $light-grey;
+$password-page-text: $black;
+$overlay-background: $light-grey;
+
+// Timings
+$trans-time: 0.3s;
+
+// Tables
+$table-borders: $medium-grey;
+
+// Borders
+$border-width-fat: 5px;
+$border-colour: $medium-grey;
+$light-border-colour: $light-grey;
+$border-radius: 0;
+$input-border: $medium-grey;
+$input-border-focus: $dark-grey;
+
+// Buttons
+$button: $brand-primary;
+$button-inactive: scale-color($button, $lightness: 50%);
+$button-hover: $brand-secondary;
+$button-text: $white;
+$button-text-hover: $white;
+
+$form-input-padding: $spacer / 2;
+$form-button: $button;
+$form-button-hover: $button-hover;
+$form-button-text: $white;
+$form-button-text-hover: $white;
+$form-border-colour: $input-border;
+$form-border-colour-focus: $input-border-focus;
+$form-button-border-radius: 0px;
+
+// Type
+$normal: 400;
+$bold: 700;

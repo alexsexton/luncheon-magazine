@@ -1,0 +1,196 @@
+{% comment %}
+
+This is your /cart template. If you are using the Ajaxify Cart plugin,
+your form (with action="/cart") layout will be used in the drawer/modal.
+
+For info on test orders:
+- General http://docs.shopify.com/manual/your-store/orders/test-orders
+- Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
+
+{% endcomment %}
+
+<div class="cart group">
+
+  {% if cart.item_count > 0 %}
+
+  <form action="/cart" method="post" novalidate>
+
+    <header class="section-header">
+      <h1>{{ 'cart.general.title' | t }}</h1>
+    </header>
+
+    <table class="cart-table responsive-table">
+      <thead class="cart-headings">
+        <tr class="responsive-table-row">
+          <th class="cart-headings-product">
+            {{ 'cart.label.product' | t }}
+          </th>
+          <th class="cart-headings-quantity">
+            {{ 'cart.label.quantity' | t }}
+          </th>
+        </tr>
+      </thead>
+
+      {% comment %}
+      Loop through products in the cart
+      {% endcomment %}
+
+      <tbody>
+        {% for item in cart.items %}
+        <tr class="cart-item-row responsive-table-row" data-id="{{ item.id }}">
+
+          <td class="cart-item-product">
+            <div class="cart-item">
+              <div class="cart-item-image">
+                <a href="{{ item.url | within: collections.all }}" class="cart-image">
+
+                  {% comment %}
+                  More image size options at:
+                  - http://docs.shopify.com/themes/filters/product-img-url
+                  {% endcomment %}
+                  <img src="{{ item | img_url: '600x' }}" alt="{{ item.title | escape }}">
+                </a>
+              </div>
+              <div class="cart-item-title">
+                <h3>
+                  <a href="{{ item.url }}">
+                    {{ item.product.title }}
+                  </a>
+                </h3>
+
+                {% unless item.variant.title contains 'Default' %}
+                <p class="cart-item-variant">Size : {{ item.variant.title }}</p>
+                {% endunless %}
+
+                <p class="cart-item-line-total">{{ item.price | money }}</p>
+
+                {% comment %}
+                Optional, loop through custom product line items if available
+                For more info on line item properties, visit:
+                - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+                {% endcomment %}
+              </div>
+
+              <div class="cart-item-remove"><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6M6 6l12 12M6 18L18 6" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
+                <span class="hide">{{ 'cart.general.remove' | t }}</span>
+              </a>
+              </div>
+
+            </div>
+
+          </td>
+
+          <td class="cart-item-quantity">
+
+            <div class="form-group">
+              <label for="updates[]">Quanity</label>
+              <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}">
+            </div>
+            <input type="submit" name="update" class="button--secondary update-cart" value="Update">
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot class="cart-footer">
+        <tr class="responsive-table-row">
+          <td class="cart-totals">
+            <p>
+              <span class="cart-subtotal-heading">{{ 'cart.general.subtotal' | t }} <em>({{ 'cart.general.shipping_at_checkout' | t }})</em></span>
+              <span class="cart-subtotal-money">{{ cart.total_price | money }}</span>
+            </p>
+          </td>
+          <td class="cart-checkout-button">
+            <div class="form-buttons{% if additional_checkout_buttons %} form-buttons-additional{% endif %}">
+              <input type="submit" name="checkout" class="button button--checkout" value="Checkout">
+              {% if additional_checkout_buttons %}
+              {{ content_for_additional_checkout_buttons }}
+              {% endif %}
+            </div>
+            {% comment %}
+            {% include 'add-on' %}
+            {% endcomment %}
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="cart-secure-shopping"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><style>.st0{fill:none;stroke:#26342d;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style><path class="st0" d="M19 23H5c-1.1 0-2-.9-2-2V11c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2zM7 9V6c0-2.8 2.2-5 5-5s5 2.2 5 5v3"/><circle class="st0" cx="12" cy="16" r="3"/></svg><span>{{ 'cart.general.secure_shopping' | t }}</span></td>
+        </tr>
+        {% if settings.cart_notes_enable %}
+        <tr class="responsive-table-row">
+          <td colspan="2" class="cart-order-notes">
+            {% comment %}
+            Optional, add a textarea for special notes
+            - Your theme settings can turn this on or off. Default is on.
+            - Make sure you have name="note" for the message to be submitted properly
+            {% endcomment %}
+            <div class="form-group">
+              <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+              <textarea name="note" class="input-full" rows="7" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+      </tfoot>
+    </table>
+
+  </form>
+
+  <div class="cart-notes">
+  {% for block in section.blocks limit: section.blocks.size %}
+
+    <div class="cart-note">
+      {% if block.settings.note_heading!= blank %}
+        <h3>{{ block.settings.note_heading }}</h3>
+      {% endif %}
+
+      {% if block.settings.note_content!= blank %}
+      <div class="note-content richtext">
+        {{ block.settings.note_content }}
+      </div>
+      {% endif %}
+
+    </div>
+  {% endfor %}
+  </div>
+
+  {% else %}
+
+  <div class="cart-empty">
+    {% comment %}
+    The cart is empty
+    {% endcomment %}
+    <header class="section-header">
+      <h1>{{ 'cart.general.title' | t }}</h1>
+      <p>{{ 'cart.general.empty' | t }}</p>
+      <a class="button" href="/collections/all">{{ 'cart.general.continue_browsing_html' | t }}</a>
+    </header>
+
+  </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Cart notes",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "note",
+      "name": "Note",
+      "settings": [
+        {
+          "type": "text",
+          "id": "note_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "note_content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
