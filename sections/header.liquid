@@ -1,95 +1,10 @@
 {% comment %}
-  Header with slide down style navigation
-{% endcomment %}
-
-{% comment %}
-<header role="banner" class="header group" id="top">
-<div class="logo">
-<a href="{{ shop.secure_url }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197 67"><path d="M8.1 66.1H0V0h8.1v66.1zM15 0h8v8.9l-4.1 14.4-3.9-1.1L17.8 11H15V0zM52 65.9c-1.2.5-2.5.7-3.8.7-2.9 0-5.6-1.4-6.1-4.8-1.1 2.8-3.9 5.3-8.6 5.3-8.3 0-10.7-6.3-10.7-12.4 0-10.4 6.7-13.9 18.1-15.4v-5.5c0-6-1.7-8.5-5.1-8.5-3.7 0-4.7 2.8-4.7 6 0 1.4.2 2.9.5 4.3l-7.4.9c-.4-1.7-.5-3.4-.5-5 0-7.8 4.1-13.5 12.8-13.5C49 18.1 49 27.9 49 37.3v20c0 1.8.4 2.8 1.7 2.8.3 0 .6-.1 1.1-.2l.2 6zM40.9 54.4v-8.5c-7.7.6-10.2 2.8-10.2 8.1 0 3 1.2 6.4 4.9 6.4 3.5-.1 5.3-2.8 5.3-6zM52.5 19.2h4.6v-8.6l8-2.4v11.1h7.7v6.8h-7.7V53c0 5.3 1.2 7.1 4.8 7.1 1.3 0 3.1-.4 4.2-.8L75 66c-.9.4-4.1 1.2-7.5 1.2-6.6 0-10.4-3.8-10.4-12.9V25.9h-4.6v-6.7zM103.1 49.6c0 14-6 17.5-12.6 17.5-12.6 0-14.3-10.2-14.3-24.2 0-15.6 4.4-24.8 15-24.8 8.4 0 12.1 5.2 12.1 17.7 0 2.5-.2 5.3-.4 8.4H84.8c0 9.9.5 15.4 5.7 15.4 4.1 0 5-3.2 5.1-10.4l7.5.4zm-7.7-11.3c.1-1.3.1-2.4.1-3.5 0-5.9-1-9.2-4.8-9.2-4.9 0-5.8 5.8-5.9 12.7h10.6zM117.2 66.1h-8.1V0h8.1v66.1zM124.9 0h7.9v10.9h-7.9V0zm0 19.2h7.9v46.9h-7.9V19.2zM165.8 49.6c0 14-6 17.5-12.6 17.5-12.6 0-14.3-10.2-14.3-24.2 0-15.6 4.4-24.8 15-24.8 8.4 0 12.1 5.2 12.1 17.7 0 2.5-.2 5.3-.4 8.4h-18.1c0 9.9.5 15.4 5.7 15.4 4.1 0 5-3.2 5.1-10.4l7.5.4zM158 38.3c.1-1.3.1-2.4.1-3.5 0-5.9-1-9.2-4.8-9.2-4.9 0-5.8 5.8-5.9 12.7H158zM189.1 35.2c.6-8.1-.6-9.4-3.1-9.4-4.4 0-6.1 4.9-6.1 13.8v26.5h-8.1V19.2h7.2l.4 6.4h.2c.7-2.9 3.2-7.5 9.5-7.5 6.4 0 9 5.1 8 16.5l-8 .6z"/></svg>
-<span class="hide">{{ shop.name }}</span></a>
-</div>
-
-<nav class="main-nav" id="main-nav" role="navigation">
-<div class="site-nav-inner">
-<ul class="site-nav">
-{%- for link in linklists.main-menu.links -%}
-{%- assign parent_list_handle = link.title | handleize -%}
-{%- if linklists[parent_list_handle].links != blank -%}
-<li class="nav-item has-sub-nav{% if link.active %} nav-is-active{% endif %}" aria-haspopup="true">
-<a href="{{ link.url }}" class="sub-nav--trigger">{{ link.title }}
-<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M5 9l7 8 7-8" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg></span>
-</a>
-<ul class="sub-nav">
-{%- for childlink in linklists[parent_list_handle].links -%}
-{%- assign child_list_handle = childlink.title | handleize -%}
-<li{% if childlink.active %} class="nav-is-active"{% endif %}>
-<a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-</li>
-{%- endfor -%}
-</ul>
-</li>
-{%- else -%}
-<li class="nav-item{% if link.active %} nav-is-active{% endif %}">
-<a href="{{ link.url }}">{{ link.title }}</a>
-</li>
-{%- endif -%}
-{%- endfor -%}
-{% if settings.currencies_enable %}
-<li>
-{%- include 'form-currency' -%}
-</li>
-{%- endif -%}
-</ul>
-<a class="cancel site-nav-trigger" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" ><path d="M6 6l12 12M6 18L18 6M6 6l12 12M6 18L18 6" fill="none" stroke="$white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg></a>
-</div>
-</nav>
-
-<nav class="trigger-nav">
-<ul>
-<li><a href="#main-nav" id="site-nav-trigger" class="site-nav-trigger"> <span>{{ 'general.navigation.shop' | t }}</span> </a></li>
-
-<li>
-<a href="#search-form" class="search-form-trigger">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"  class="icon-search"><circle cx="14" cy="10" r="8" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/><path d="M2 22l6-6" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
-</a>
-</li>
-
-<li><a href="{{ routes.cart_url }}">
-{% if cart.item_count > 0 %}
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M6 21h12s2-4 2-5-3-10-3-10-2 1-5 1-5-1-5-1-3 9-3 10 2 5 2 5z" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/><path d="M9 8s0-6 3-6 3 6 3 6" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
-<span class="basket-total" id="basket-total">{{ cart.total_price | money }}</span>
-{% else %}
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="st0" d="M6 21h12s2-4 2-5-3-10-3-10-2 1-5 1-5-1-5-1-3 9-3 10 2 5 2 5z" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/><path d="M9 8s0-6 3-6 3 6 3 6" fill="none" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
-{% endif %}
-</a>
-
-</li>
-</ul>
-</nav>
-
-<div id="search-form" class="search-form">
-<form action="/search" method="get" role="search">
-<div class="form-group">
-<label for="q">{{ 'general.search.placeholder' | t }}</label>
-<div class="form-search-bar">
-<input name="q" type="text" placeholder="Search" class="search-input" />
-<button type="submit" class="button">{{ 'general.search.submit' | t }} </button>
-</div>
-</div>
-</form>
-<a class="cancel search-form-trigger" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" ><path d="M6 6l12 12M6 18L18 6M6 6l12 12M6 18L18 6" fill="none" stroke="$white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg></a>
-</div>
-
-</header>
-{% endcomment %}
-
-{% comment %}
   Header with shop navigation
 {% endcomment %}
 
 <header role="banner" class="header-with-icon-bar group" id="top">
   <div class="logo">
-    <a href="{{ shop.secure_url }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197 67"><path d="M8.1 66.1H0V0h8.1v66.1zM15 0h8v8.9l-4.1 14.4-3.9-1.1L17.8 11H15V0zM52 65.9c-1.2.5-2.5.7-3.8.7-2.9 0-5.6-1.4-6.1-4.8-1.1 2.8-3.9 5.3-8.6 5.3-8.3 0-10.7-6.3-10.7-12.4 0-10.4 6.7-13.9 18.1-15.4v-5.5c0-6-1.7-8.5-5.1-8.5-3.7 0-4.7 2.8-4.7 6 0 1.4.2 2.9.5 4.3l-7.4.9c-.4-1.7-.5-3.4-.5-5 0-7.8 4.1-13.5 12.8-13.5C49 18.1 49 27.9 49 37.3v20c0 1.8.4 2.8 1.7 2.8.3 0 .6-.1 1.1-.2l.2 6zM40.9 54.4v-8.5c-7.7.6-10.2 2.8-10.2 8.1 0 3 1.2 6.4 4.9 6.4 3.5-.1 5.3-2.8 5.3-6zM52.5 19.2h4.6v-8.6l8-2.4v11.1h7.7v6.8h-7.7V53c0 5.3 1.2 7.1 4.8 7.1 1.3 0 3.1-.4 4.2-.8L75 66c-.9.4-4.1 1.2-7.5 1.2-6.6 0-10.4-3.8-10.4-12.9V25.9h-4.6v-6.7zM103.1 49.6c0 14-6 17.5-12.6 17.5-12.6 0-14.3-10.2-14.3-24.2 0-15.6 4.4-24.8 15-24.8 8.4 0 12.1 5.2 12.1 17.7 0 2.5-.2 5.3-.4 8.4H84.8c0 9.9.5 15.4 5.7 15.4 4.1 0 5-3.2 5.1-10.4l7.5.4zm-7.7-11.3c.1-1.3.1-2.4.1-3.5 0-5.9-1-9.2-4.8-9.2-4.9 0-5.8 5.8-5.9 12.7h10.6zM117.2 66.1h-8.1V0h8.1v66.1zM124.9 0h7.9v10.9h-7.9V0zm0 19.2h7.9v46.9h-7.9V19.2zM165.8 49.6c0 14-6 17.5-12.6 17.5-12.6 0-14.3-10.2-14.3-24.2 0-15.6 4.4-24.8 15-24.8 8.4 0 12.1 5.2 12.1 17.7 0 2.5-.2 5.3-.4 8.4h-18.1c0 9.9.5 15.4 5.7 15.4 4.1 0 5-3.2 5.1-10.4l7.5.4zM158 38.3c.1-1.3.1-2.4.1-3.5 0-5.9-1-9.2-4.8-9.2-4.9 0-5.8 5.8-5.9 12.7H158zM189.1 35.2c.6-8.1-.6-9.4-3.1-9.4-4.4 0-6.1 4.9-6.1 13.8v26.5h-8.1V19.2h7.2l.4 6.4h.2c.7-2.9 3.2-7.5 9.5-7.5 6.4 0 9 5.1 8 16.5l-8 .6z"/></svg>
+    <a href="{{ shop.secure_url }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 34"><path d="M23.3 27.5h-17V.7H0v32.6h23.3v-5.8zm17.5-8V.7h-6.2v20.1c0 8.8 5.2 13.2 12.9 13.2s12.9-4.4 12.9-13.2V.7h-6.2v18.8c0 6.6-2.6 8.7-6.7 8.7s-6.7-2.1-6.7-8.7zM102.2.7h-6v22.6L82.2.7h-8.3v32.6h6V8.6l15.3 24.7h7V.7zM114.1 17c0 10 7 17 16.5 17 4.4 0 8.5-1.3 11.7-5.2l-4.1-3.8c-2.3 2.5-5 3.2-7.6 3.2-5.7 0-9.9-4.6-9.9-11.2 0-7 4.5-11.2 9.9-11.2 3.8 0 6 1.5 7.6 3.2l4.1-3.8C139.8 2 135.8 0 130.6 0c-9.8 0-16.5 7.4-16.5 17zm59.6 16.3h6.2V.7h-6.2v12.9h-14V.7h-6.2v32.6h6.2V19.6h14v13.7zm19.8 0h22.8v-5.8h-16.6v-7.7h11.2V14h-11.2V6.5h15.4V.7h-21.7v32.6h.1zM226 17c0 10.1 7.6 17 16.9 17 9.3 0 16.9-6.9 16.9-17s-7.6-17-16.9-17C233.6 0 226 6.9 226 17zm27.2 0c0 6.3-4.6 11.2-10.3 11.2-5.8 0-10.3-4.9-10.3-11.2 0-6.3 4.6-11.2 10.3-11.2 5.8 0 10.3 4.9 10.3 11.2zM300 .7h-6v22.6L280 .7h-8.3v32.6h6V8.6L293 33.3h7V.7z" fill="#1d1d1b"/></svg>
       <span class="hide">{{ shop.name }}</span></a>
     </div>
 
