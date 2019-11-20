@@ -39,7 +39,10 @@ Check if the product is sold out and set a variable to be used below.
           </p>
         </div>
 
+      <div class="add-to-basket-actions">
+
       {%- comment -%} hidden because this site doesn't use variants {%- endcomment -%}
+      {% if product.available %}
       <div id="product-variants" class="product-variants conceal">
         <select id="product-select" name="id">
           {% for variant in product.variants %}
@@ -47,19 +50,25 @@ Check if the product is sold out and set a variable to be used below.
           {% endfor %}
         </select>
       </div>
+      {% endif %}
 
-      <div id="product-add" class="add-to-bag{% if product.available %} in-stock{% else %} out-of-stock{% endif %}">
+      {% if product.available %}
+      <div class="product-quantity">
+        <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+      </div>
+      {% endif %}
+
+      <div id="product-add" class="add-to-basket{% if product.available %} in-stock{% else %} out-of-stock{% endif %}">
         {% if product.available %}
-        <input type="submit" name="add" id="add" class="add" value="Add to Bag">
+        <input type="submit" name="add" id="add" class="add" value="Add to Basket">
         {% else %}
         <input type="submit" name="add" id="add" class="add" value="Sold Out" disabled>
         {% endif %}
       </div>
-    </form>
 
-    {% if sold_out %}
-      <p class="sold-out-msg">We are sorry that this item is out of stock - please email <a href="mailto:{{ shop.email }}">{{ shop.email }}</a> for more information.</p>
-    {% endif %}
+      </div>
+    </form>
 
     <div class="product-description-tabs">
       {% section 'product-tabs' %}

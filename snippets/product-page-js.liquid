@@ -1,7 +1,7 @@
 <script>
 Shopify.AjaxifyCart = (function($) {
   var _config = {
-    addToCartBtnLabel: 'Add to bag',
+    addToCartBtnLabel: 'Add to basket',
     addedToCartBtnLabel: 'Thank you',
     addingToCartBtnLabel: 'Adding...',
     soldOutBtnLabel: 'Sold Out',
@@ -59,7 +59,7 @@ Shopify.AjaxifyCart = (function($) {
           success: function(itemData) {
             $addToCartBtn.addClass('inverted');
             _setText($addToCartBtn, _config.addedToCartBtnLabel);
-            _showFeedback('success','<p> Added to bag <a href="/cart">view bag</a> or <a href="/collections/all">continue shopping</a>.</p>',$addToCartForm);
+            _showFeedback('success','<p> Added to bag <a href="/cart">view basket</a> or <a href="/collections/all">continue shopping</a>.</p>',$addToCartForm);
             window.setTimeout(function(){
               $addToCartBtn.prop('disabled', false).removeClass('disabled').removeClass('inverted');
               _setText($addToCartBtn,_config.addToCartBtnLabel);
