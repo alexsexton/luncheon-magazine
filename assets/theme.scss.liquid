@@ -1,30 +1,53 @@
-/*================ Typography Variables ================*/
-{% assign base_family = settings.type_font_family %}
+// Type Vars
 
-{{ base_family | font_face }}
+{% assign sans_family = settings.sans_font_family %}
 
-{%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
-{%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
-{%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
+{{ sans_family | font_face }}
 
-{{ base_family_bold | font_face }}
-{{ base_family_italic | font_face }}
-{{ base_family_bold_italic | font_face }}
+{%- assign sans_family_bold = sans_family | font_modify: 'weight', 'bolder' -%}
+{%- assign sans_family_italic = sans_family | font_modify: 'style', 'italic' -%}
+{%- assign sans_family_bold_italic = sans_family_bold | font_modify: 'style', 'italic' -%}
 
-// Body text
-$font-stack-body: {{ base_family.family }}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-style-body: {{ base_family.style }};
-$font-weight-body: {{ base_family.weight | default: 400 }};
-$font-weight-body-bold: {{ base_family_bold.weight | default: 700 }};
+{{ sans_family_bold | font_face }}
+{{ sans_family_italic | font_face }}
+{{ sans_family_bold_italic | font_face }}
+
+// Sans
+$font-stack-sans: {{ sans_family.family }}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-style-sans: {{ sans_family.style }};
+$font-weight-sans: {{ sans_family.weight | default: 400 }};
+$font-weight-sans-bold: {{ sans_family_bold.weight | default: 700 }};
+
+{% assign serif_family = settings.serif_font_family %}
+
+{{ serif_family | font_face }}
+
+{%- assign serif_family_bold = serif_family | font_modify: 'weight', 'bolder' -%}
+{%- assign serif_family_italic = serif_family | font_modify: 'style', 'italic' -%}
+{%- assign serif_family_bold_italic = serif_family_bold | font_modify: 'style', 'italic' -%}
+
+{{ serif_family_bold | font_face }}
+{{ serif_family_italic | font_face }}
+{{ serif_family_bold_italic | font_face }}
+
+// Serif
+$font-stack-serif: {{ serif_family.family }}, "Georgia", Times, Serif;
+$font-style-serif: {{ serif_family.style }};
+$font-weight-serif: {{ serif_family.weight | default: 400 }};
+$font-weight-serif-bold: {{ serif_family_bold.weight | default: 700 }};
 
 body {
-  font-family: $font-stack-body;
+  font-family: $font-stack-sans;
   background-color: {{ settings.body_background_colour }};
   color: {{ settings.body_text_colour }};
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-stack-body;
+  font-family: $font-stack-sans;
+}
+
+.rich-text {
+  font-family: $font-stack-serif;
 }
 
 .header .main-nav,
