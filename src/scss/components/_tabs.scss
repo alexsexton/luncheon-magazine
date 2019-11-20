@@ -4,16 +4,20 @@
 }
 .tabs ul {
   margin: 0 0 $spacer 0;
+
   li {
     display: inline-block;
+
     a {
       margin: 0 0 0 $spacer;
     }
+
     a.selected {
       color: $black;
       padding-bottom: 5px;
-      border-bottom: 1px solid $light-grey;
+      border-bottom: 2px solid $medium-grey;
     }
+    
     &:first-child a {
       margin: 0 $spacer 0 0;
     }

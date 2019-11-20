@@ -3,7 +3,7 @@
 input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea, select {
   appearance: none;
   border-radius: 0;
-  border: 0;
+  border: $border-width solid $border-colour;
   margin: 0;
   padding: $form-input-padding;
   font-family: inherit;
@@ -47,11 +47,11 @@ input[type=button], input[type=submit], button, .button {
   input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea, select {
     padding: $form-input-padding;
     width: 100%;
-    border: 1px solid $form-border-colour;
+    border: $border-width solid $border-colour;
     transition: border-color 0.2s ease-in-out;
 
     &:focus {
-      border: 1px solid $form-border-colour-focus;
+      border: $border-width solid $form-border-colour-focus;
     }
   }
 

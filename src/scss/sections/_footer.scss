@@ -1,5 +1,5 @@
 // Footer
-$footer-background: $sea-green;
+$footer-background: $black;
 $footer-text: $white;
 $footer-link: $white;
 $footer-hover: rgba($white, 0.5);
@@ -64,7 +64,7 @@ $footer-hover: rgba($white, 0.5);
 }
 
 .newsletter {
-  background: rgba($sea-green, 0.25);
+  background: $dark-grey;
   padding: $spacer * 2 $site-gutters;
 
   h5 {

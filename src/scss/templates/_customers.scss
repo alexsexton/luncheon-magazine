@@ -15,7 +15,7 @@
 .customer-login-form, .customer-recover-password-form {
   flex: 0 0 50%;
   padding: $spacer2;
-  background-color: rgba($sea-green, 0.25);
+  background-color: rgba($black, 0.25);
 }
 
 .customer-guest-login-form {
@@ -26,12 +26,12 @@
 .customer-register-form, .customer-activate-form {
   width: 50%;
   margin: auto;
-  background-color: rgba($sea-green, 0.25);
+  background-color: rgba($black, 0.25);
   padding: $spacer2;
 }
 
 .customer-addresses {
-  background-color: rgba($sea-green, 0.25);
+  background-color: rgba($black, 0.25);
   padding: $spacer2;
 }
 

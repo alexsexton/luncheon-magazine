@@ -51,10 +51,6 @@ $vimeo: #48b6ed;
 $pinterest: #ce1a19;
 $instagram: #cc2366;
 
-// Brand
-$sea-green: #336666; // buttons
-$dark-sea-green: #224545; // darker version of the above
-
 // Grey scale based on brand background luninosity
 $purewhite: #ffffff;
 $header-white: #f9f9f9;
@@ -70,7 +66,7 @@ $highlight: #F8C830;
 $error: #F1594A;
 
 // Brand defaults
-$brand-primary: $dark-grey;
+$brand-primary: $black;
 $brand-secondary: $medium-grey;
 
 // Base Site
@@ -89,6 +85,7 @@ $trans-time: 0.3s;
 $table-borders: $medium-grey;
 
 // Borders
+$border-width: 2px;
 $border-width-fat: 5px;
 $border-colour: $medium-grey;
 $light-border-colour: $light-grey;
@@ -98,12 +95,12 @@ $input-border-focus: $dark-grey;
 
 // Buttons
 $button: $brand-primary;
+$button-text: $white;
 $button-inactive: scale-color($button, $lightness: 50%);
 $button-hover: $brand-secondary;
-$button-text: $white;
 $button-text-hover: $white;
 
-$form-input-padding: $spacer / 2;
+$form-input-padding: $spacer;
 $form-button: $button;
 $form-button-hover: $button-hover;
 $form-button-text: $white;

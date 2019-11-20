@@ -216,6 +216,28 @@
   }
 }
 
+@mixin reverse-ghost-button ($border-colour, $text-colour, $text-colour-hover) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $border-colour;
+  border: 0;
+  border: 2px solid $border-colour;
+  color: $text-colour-hover;
+  display: inline-block;
+  font-size: $font-family-sans;
+  font-weight: normal;
+  padding: $spacer $spacer * 2;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover, &:focus {
+    background: transparent;
+    border: 2px solid $border-colour;
+    color: $text-colour;
+  }
+}
+
 @mixin overlay {
   background-color: $overlay-background;
   height: 100vh;

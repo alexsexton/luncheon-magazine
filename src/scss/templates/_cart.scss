@@ -80,10 +80,16 @@
 
 .cart-item-remove {
 	flex: 0 0 10%;
+	display: flex;
+	flex-flow: column;
+
 	@media screen and (max-width: $small-screen) {
 		flex: 0 0 100%;
 	}
-	float: right;
+
+	a {
+		align-self: flex-end;
+	}
 }
 
 .cart-item-quantity {
@@ -104,16 +110,22 @@
 	}
 
 	input[type=number] {
-		width: 75%;
+		width: 100%;
 	}
 }
 
 .cart-totals {
 	padding-left: $spacer;
 	border-bottom: 1px solid $table-borders;
+	vertical-align: middle;
+
 	@media screen and (max-width: $small-screen) {
 		border: none;
 		padding: $spacer 0;
+	}
+
+	p {
+		margin-bottom: 0;
 	}
 
 	.cart-subtotal-heading {
@@ -170,7 +182,7 @@
 	span {
 		position: relative;
 		top: -4px;
-		color: $dark-sea-green;
+		color: $black;
 	}
 }
 

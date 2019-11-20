@@ -3,12 +3,7 @@
   grid-row-start: 1;
 
   a:hover {
-    color: $dark-sea-green;
-  }
-
-  .inner {
-    background: lighten($sea-green, 25%);
-    padding: $spacer;
+    color: $black;
   }
 
   .entry-archives {
