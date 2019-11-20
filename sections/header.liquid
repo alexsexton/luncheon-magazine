@@ -19,7 +19,7 @@
            <span class="hide">{{ 'general.navigation.shop' | t }}</span> </a></li>
         <li class="search-trigger">
           <a href="#search-form" class="search-form-trigger">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><g fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="10" cy="10" r="8"/><path d="M22 22l-6-6"/></g></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="10" cy="10" r="8"/><path d="M22 22l-6-6"/></g></svg>
             <span class="hide">Search</span>
           </a>
         </li>
@@ -37,7 +37,7 @@
             </a></li>
           {% endif %}
         {% endif %}
-        {% if settings.currencies_enable %}
+        {% if section.settings.currencies_enable %}
         <li>
           {%- include 'form-currency' -%}
         </li>
