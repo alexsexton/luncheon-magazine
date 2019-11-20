@@ -1,8 +1,8 @@
 [{
     "name": "theme_info",
-    "theme_name": "Atelier",
+    "theme_name": "Luncheon",
     "theme_author": "Linea Digital",
-    "theme_version": "0.0.1",
+    "theme_version": "0.0.2",
     "theme_documentation_url": "https:\/\/docs.shopify.com\/",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
@@ -42,9 +42,15 @@
     "name": "Theme Typography",
     "settings": [{
       "type": "font_picker",
-      "label": "Font Family",
-      "id": "type_font_family",
-      "default": "helvetica_n4"
+      "label": "Sans Serif Font Family",
+      "id": "sans_font_family",
+      "default": "avenir_next_n5"
+    },
+    {
+      "type": "font_picker",
+      "label": "Serif Font Family",
+      "id": "serif_font_family",
+      "default": "bembo_book_n4"
     }]
   },
   {
