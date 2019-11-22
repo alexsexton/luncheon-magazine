@@ -1,6 +1,7 @@
 {% paginate collection.products by 48 %}
 
 <section class="product-list">
+
   <header class="collection-header{% if collection.image %} with-image{% endif %}">
     {%- if collection.image -%}
       <div class="collection-image">
@@ -10,11 +11,11 @@
 
     <h1>{{ collection.title }}</h1>
 
-    {%- if collection.description != "" -%}
+    {%- unless collection.description == blank -%}
     <div class="rich-text">
       {{ collection.description }}
     </div>
-    {%- endif -%}
+    {%- endunless -%}
 
   </header>
 

@@ -18,7 +18,7 @@ More info:
   {% unless collection.handle == 'frontpage' or collection.handle contains 'related' %}
   <article class="collection">
 
-    <header class="collection-header">
+    <header class="collection-header{% if collection.image %} with-image{% endif %}">
       <div class="collection-image">
         {%- if collection.image -%}
           <img src="{{ collection.image | img_url: '1400x' }}" alt="{{ collection.title }}">
@@ -27,11 +27,11 @@ More info:
 
       <h2><a href="{{ collection.handle }}">{{ collection.title }}</a></h2>
 
-      {%- if collection.description -%}
+      {%- unless collection.description == blank -%}
       <div class="rich-text">
         {{ collection.description }}
       </div>
-      {%- endif -%}
+      {%- endunless -%}
     </header>
 
     <div class="collection-items">
