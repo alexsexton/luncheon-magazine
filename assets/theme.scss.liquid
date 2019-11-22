@@ -1,5 +1,6 @@
 // Type Vars
 
+// Sans Family Vars
 {% assign sans_family = settings.sans_font_family %}
 
 {{ sans_family | font_face }}
@@ -12,12 +13,13 @@
 {{ sans_family_italic | font_face }}
 {{ sans_family_bold_italic | font_face }}
 
-// Sans
+// Sans Stack
 $font-stack-sans: {{ sans_family.family }}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-style-sans: {{ sans_family.style }};
 $font-weight-sans: {{ sans_family.weight | default: 400 }};
 $font-weight-sans-bold: {{ sans_family_bold.weight | default: 700 }};
 
+// Serif Family Vars
 {% assign serif_family = settings.serif_font_family %}
 
 {{ serif_family | font_face }}
@@ -30,12 +32,13 @@ $font-weight-sans-bold: {{ sans_family_bold.weight | default: 700 }};
 {{ serif_family_italic | font_face }}
 {{ serif_family_bold_italic | font_face }}
 
-// Serif
+// Serif Stack
 $font-stack-serif: {{ serif_family.family }}, "Georgia", Times, Serif;
 $font-style-serif: {{ serif_family.style }};
 $font-weight-serif: {{ serif_family.weight | default: 400 }};
 $font-weight-serif-bold: {{ serif_family_bold.weight | default: 700 }};
 
+// Template Overrides via customise options
 body {
   font-family: $font-stack-sans;
   background-color: {{ settings.body_background_colour }};
@@ -96,4 +99,11 @@ input[type=submit]:hover,  button:hover, .button:hover  {
 #cookies-eu-banner {
   background: {{ settings.cookies_background_colour }};
   color: {{ settings.cookies_text_colour }};
+}
+
+// Stockists Page
+.stockists-page .rich-text .upper {
+  text-transform: uppercase;
+  font-family: $font-stack-sans;
+  font-weight: $font-weight-sans-bold;
 }
