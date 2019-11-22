@@ -85,72 +85,28 @@
 
 // Stockists styles
 .stockists-page {
-  flex-direction: column;
 
-  .stockists-list {
-    margin: $margin*2 0 0;
+  .rich-text {
+    max-width: 100%;
+    display: flex;
 
-    h3 {
-      margin: 0;
+    .small {
+      flex: 1 0 33%;
     }
 
-    a:hover {
-      color: $black;
-    }
-  }
-
-  .stockists-list {
-
-    @supports (display: grid) {
-      .section-group {
-        clear: both;
-        margin: 0 0 $margin * 2 0;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-gap: $margin;
-      }
+    li {
+      list-style: none;
     }
 
-    .section-group[hidden] {
-      display: none;
-    }
-
-    h2 {
-      clear: both;
-      display: block;
-      font-size: $base-font-size;
-    }
-
-    h2 button {
-      margin: 0 0 $margin 0;
+    .upper {
       text-transform: uppercase;
-      color: $black;
-      padding: 0;
-      background: transparent;
     }
 
-    h2 button:focus svg {
-      outline: 2px solid;
+    em {
+      font-weight: $bold;
     }
-
-    h2 button svg {
-      fill: $black;
-      width: 24px;
-      height: 24px;
-      margin-left: $spacer;
-      position: relative;
-      top: 0;
-    }
-
-    [aria-expanded="true"] .vert {
-      display: none;
-    }
-
-    [aria-expanded] rect {
-      fill: currentColor;
-    }
-
   }
+
 }
 
 // Contact page

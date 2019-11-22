@@ -61,54 +61,6 @@
     font-size: $base-font-size * 2;
   }
 
-  .add-to-basket {
-    flex: 1;
-
-    input {
-      @include reverse-ghost-button($button, $button, $button-text);
-      @media screen and (max-width: $small-screen) {
-        width: 100%;
-      }
-    }
-    
-  }
-
-  .add-to-basket-actions {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    margin: $spacer2 0;
-    @media screen and (max-width: $small-screen) {
-      flex-flow: column nowrap;
-      width: 100%;
-    }
-  }
-
-  .product-quantity {
-    display: flex;
-    align-items: stretch;
-    @media screen and (max-width: $small-screen) {
-      flex-flow: column nowrap;
-      margin-bottom: $spacer;
-      align-items: flex-start;
-    }
-
-    label {
-      align-self: center;
-      margin-right: $spacer;
-      @media screen and (max-width: $small-screen) {
-        align-self: flex-start;
-      }
-    }
-
-    input {
-      margin-right: $spacer2;
-      @media screen and (max-width: $small-screen) {
-        width: 100%;
-      }
-    }
-  }
-
   .add-to-cart-form {
     display: flex;
     flex-direction: column;
@@ -139,9 +91,57 @@
   .ajaxified-cart-feedback {
     display: block;
     clear: both;
-
+    margin-bottom: $spacer2;
     a {
       font-weight: $bold;
+    }
+  }
+
+  .add-to-basket-actions {
+    flex: 1;
+    display: flex;
+    margin: $spacer2 0;
+    width: 100%;
+    @media screen and (max-width: $small-screen) {
+      flex-flow: column nowrap;
+      width: 100%;
+    }
+  }
+
+  .product-quantity {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    @media screen and (max-width: $small-screen) {
+      flex-flow: column nowrap;
+      margin-bottom: $spacer;
+      align-items: flex-start;
+    }
+
+    label {
+      align-self: center;
+      margin-right: $spacer;
+      @media screen and (max-width: $small-screen) {
+        align-self: flex-start;
+      }
+    }
+
+    input {
+      max-width: $spacer6;
+      margin-right: $spacer2;
+      @media screen and (max-width: $small-screen) {
+        width: 100%;
+      }
+    }
+  }
+
+  .add-to-basket {
+    input {
+      @include reverse-ghost-button($button, $button, $button-text);
+      padding: $spacer $spacer4;
+      @media screen and (max-width: $small-screen) {
+        width: 100%;
+      }
     }
   }
 
@@ -151,7 +151,6 @@
 
   .rich-text {
     padding: $padding 0 0;
-    font-size: $base-font-size * 1.2;
   }
 
 }

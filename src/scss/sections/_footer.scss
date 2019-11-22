@@ -23,6 +23,17 @@ $footer-hover: rgba($white, 0.5);
       margin-bottom: $margin;
     }
   }
+
+  .strapline {
+    padding: $spacer3 0 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    text-align: center;
+    @media screen and (max-width: $small-screen) {
+      text-align: left;
+    }
+  }
 }
 
 .footer-content {
@@ -43,20 +54,6 @@ $footer-hover: rgba($white, 0.5);
 
 .footer-contacts {
   padding-right: $spacer4;
-}
-
-.made-in {
-  padding: $spacer3 0 0;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-  @media screen and (max-width: $small-screen) {
-    text-align: left;
-  }
-
-  p {
-    margin: 0;
-  }
 }
 
 .footer .tel {

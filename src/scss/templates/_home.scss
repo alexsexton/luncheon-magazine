@@ -1,0 +1,14 @@
+.featured-products {
+  padding: $spacer3 $site-gutters 0 $site-gutters;
+
+  @media screen and (max-width: $small-screen) {
+    padding: $spacer $small-site-gutters 0 $small-site-gutters;
+  }
+
+  &.with-header {
+    padding-top: 0;
+    @media screen and (max-width: $small-screen) {
+      padding-top: 0;
+    }
+  }
+}

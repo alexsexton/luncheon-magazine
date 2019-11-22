@@ -10,7 +10,7 @@ $heading-line-height: 1.4;
 $small-font-size: 0.8rem;
 $small-screen-font-size: 0.8rem;
 $print-font-size: $small-screen-font-size;
-$measure: 36rem;
+$measure: 44rem;
 $heading: $base-font-size * 1.5;
 
 html {
@@ -64,6 +64,7 @@ a:hover {
 // Rich Text - Everything spat out by shopify
 .rich-text {
   max-width: $measure;
+  font-size: $base-font-size * 1.2;
 
   ul {
     margin: 0 0 $spacer $spacer;

@@ -115,11 +115,13 @@
   border: 0;
   border-radius: $border-radius;
   color: $colour;
+  cursor: pointer;
   display: inline-block;
   font-family: inherit;
   font-size: $base-font-size;
   font-weight: normal;
   padding: $spacer $spacer * 2;
+  transition: all 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
 
@@ -134,11 +136,13 @@
   background: $background;
   border: 0;
   color: $colour;
+  cursor: pointer;
   display: inline-block;
   font-family: inherit;
   font-size: $small-font-size;
   font-weight: normal;
   padding: $spacer / 2 $spacer;
+  transition: all 0.2s ease-in-out;
   text-decoration: none;
   text-align: center;
 
@@ -153,14 +157,15 @@
   border-radius: $border-radius;
   border: 0;
   color: $colour;
+  cursor: pointer;
   display: inline-block;
   font-family: inherit;
   font-size: $base-font-size;
   font-weight: $bold;
   padding: $spacer;
   text-decoration: none;
-  cursor: pointer;
   line-height: 0;
+  transition: all 0.2s ease-in-out;
   text-align: center;
 
   svg {
@@ -174,16 +179,16 @@
 }
 
 @mixin button-small-footer($background, $colour) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background: $background;
   border: 2px solid $background;
   color: $colour;
+  cursor: pointer;
   display: inline-block;
   font-size: $font-family-sans;
   font-weight: normal;
   padding: #{ ($spacer / 2) + 0.4 } $spacer;
+  transition: all 0.2s ease-in-out;
   text-decoration: none;
   text-align: center;
 
@@ -195,17 +200,16 @@
 }
 
 @mixin ghost-button ($border-colour, $text-colour, $text-colour-hover) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background: transparent;
-  border: 0;
   border: 2px solid $border-colour;
   color: $text-colour;
+  cursor: pointer;
   display: inline-block;
   font-size: $font-family-sans;
   font-weight: normal;
   padding: $spacer $spacer * 2;
+  transition: all 0.2s ease-in-out;
   text-decoration: none;
   text-align: center;
 
@@ -217,17 +221,16 @@
 }
 
 @mixin reverse-ghost-button ($border-colour, $text-colour, $text-colour-hover) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background: $border-colour;
-  border: 0;
   border: 2px solid $border-colour;
   color: $text-colour-hover;
+  cursor: pointer;
   display: inline-block;
   font-size: $font-family-sans;
   font-weight: normal;
   padding: $spacer $spacer * 2;
+  transition: all 0.2s ease-in-out;
   text-decoration: none;
   text-align: center;
 

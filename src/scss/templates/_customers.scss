@@ -9,29 +9,29 @@
 }
 
 .form-success, {
-  flex: 0 0 100%;
+  flex: 0 100%;
 }
 
 .customer-login-form, .customer-recover-password-form {
-  flex: 0 0 50%;
+  flex: 0 50%;
   padding: $spacer2;
-  background-color: rgba($black, 0.25);
+  background: $white;
 }
 
 .customer-guest-login-form {
-  flex: 0 0 50%;
+  flex: 0 50%;
   padding: $spacer2;
 }
 
 .customer-register-form, .customer-activate-form {
   width: 50%;
   margin: auto;
-  background-color: rgba($black, 0.25);
+  background: $white;
   padding: $spacer2;
 }
 
 .customer-addresses {
-  background-color: rgba($black, 0.25);
+  background: $white;
   padding: $spacer2;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .form-links {
-  padding: $spacer 0;
+  padding: $spacer3 0;
   li {
     display: inline-flex;
     margin-right: $spacer;

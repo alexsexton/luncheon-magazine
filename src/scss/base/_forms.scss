@@ -1,6 +1,43 @@
 // Resets / Global form styles
 
-input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea, select {
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input::placeholder,
+textarea::-webkit-input-placeholder,
+textarea:-moz-placeholder,
+textarea::-moz-placeholder,
+textarea:-ms-input-placeholder,
+textarea::placeholder {
+  color: $white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background: $white;
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: $base-font-colour;
+    background: $white;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea {
   appearance: none;
   border-radius: 0;
   border: $border-width solid $border-colour;
@@ -22,6 +59,23 @@ input[type=text], input[type=email], input[type=password], input[type=email], in
 
 input[type=button], input[type=submit], button, .button {
   @include button($pureblack, $white);
+}
+
+select {
+  appearance: none;
+  background-image: transparent url("select-caret-down.svg") no-repeat 100% 50%;
+  background-size: 18px;
+  border: none;
+  font-family: inherit;
+  font-size: $base-font-size;
+  font-weight: $normal;
+  outline: 0;
+  padding: $form-input-padding;
+  padding-right: 20px;
+
+  &:focus {
+    font-size: $base-font-size;
+  }
 }
 
 .form-buttons {
