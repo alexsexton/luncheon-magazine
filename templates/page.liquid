@@ -14,12 +14,14 @@
     Regular page content goes here.
     {% endcomment %}
     <div class="rich-text">
-      {{ page.content | strip_html | newline_to_br }}
+      {{ page.content }}
     </div>
 
+    {% if page.content contains "<img" %}
     <div class="image">
       <img src="{{ src }}" alt="{{ page.title }}">
     </div>
+    {% endif %}
 
   </article>
 
