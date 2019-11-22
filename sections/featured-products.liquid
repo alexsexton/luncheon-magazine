@@ -1,9 +1,11 @@
-<section class="featured-products">
+<section class="featured-products {%- if section.settings.show_collection_header -%}with-header{%- endif -%}">
 
   <div class="section-block">
     {% assign collection = collections[section.settings.collection] %}
 
     {% if collection != blank %}
+
+    {%- if section.settings.show_collection_header -%}
     <header class="collection-header">
       <div class="collection-image">
         {%- if collection.image -%}
@@ -19,12 +21,13 @@
       </div>
       {%- endif -%}
     </header>
+    {%- endif -%}
 
-      <div class="collection-items">
-      {% for product in collection.products limit: product_limit %}
-        {%- include 'collection-items' -%}
-      {% endfor %}
-      </div>
+    <div class="collection-items">
+    {% for product in collection.products limit: product_limit %}
+      {%- include 'collection-items' -%}
+    {% endfor %}
+    </div>
 
     {% endif %}
 
@@ -36,17 +39,23 @@
   "name": "Featured collection",
   "class": "section-featured-products",
   "settings": [
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    }
+  {
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_collection_header",
+    "label": "Show collection header?",
+    "default": false
+  }
   ],
   "presets": [
-    {
-      "name": "Featured collection",
-      "category": "Collection"
-    }
+  {
+    "name": "Featured collection",
+    "category": "Collection"
+  }
   ]
 }
 {% endschema %}
