@@ -53,7 +53,7 @@ Return only products or pages in results:
   {% assign sold_out = false %}
   {% endif %}
 
-  <div class="collection-items row">
+  <div class="collection-items">
   {% for item in search.results %}
     <article class="product{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}" itemscope itemtype="http://schema.org/Product">
       <div class="product-photo">
