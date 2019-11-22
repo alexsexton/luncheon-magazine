@@ -1,38 +1,38 @@
 {%- unless template contains 'customers' or template contains 'cart' -%}
-  {%- if section.settings.newsletter_sign_enable -%}
-    <div class="newsletter group">
-    {%- include 'mailchimp-signup' -%}
-  </div>
-  {%- endif -%}
+{%- if section.settings.newsletter_sign_enable -%}
+<div class="newsletter group">
+  {%- include 'mailchimp-signup' -%}
+</div>
+{%- endif -%}
 {%- endunless -%}
 
 <footer class="footer group">
 
   <div class="footer-content">
 
+    {%- assign footer_shop_linklist = section.settings.footer_shop_linklist -%}
+    {% if linklists[footer_shop_linklist].links.size > 0 %}
     <div class="footer-navigation">
       <h5>Shop</h5>
-      {%- assign footer_shop_linklist = section.settings.footer_shop_linklist -%}
-      {% if linklists[footer_shop_linklist].links.size > 0 %}
-        <ul>
-          {% for link in linklists[footer_shop_linklist].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+      <ul>
+        {% for link in linklists[footer_shop_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
+    {% endif %}
 
+    {%- assign footer_info_linklist = section.settings.footer_info_linklist -%}
+    {% if linklists[footer_info_linklist].links.size > 0 %}
     <div class="footer-navigation">
       <h5>Information</h5>
-      {%- assign footer_info_linklist = section.settings.footer_info_linklist -%}
-      {% if linklists[footer_info_linklist].links.size > 0 %}
-        <ul>
-          {% for link in linklists[footer_info_linklist].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+      <ul>
+        {% for link in linklists[footer_info_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
+    {% endif %}
 
     <div class="footer-contacts">
       <h5>Contact</h5>
@@ -45,32 +45,32 @@
           {{ shop.phone | slice: 6, 3 }}
           {{ shop.phone | slice: 9, 4 }}
         </a></li>
-        </a>
-      </ul>
-    </div>
-
-    {% if section.settings.footer_social_enable %}
-    <div class="footer-social">
-      <h5>Follow</h5>
-      <ul>
-        {% if section.settings.social_facebook_link != blank %}
-        <li><a href="{{ section.settings.social_facebook_link }}">Facebook</a></li>
-        {% endif %}
-        {% if section.settings.social_twitter_link != blank%}
-        <li><a href="{{ section.settings.social_twitter_link }}">Twitter</a></li>
-        {% endif %}
-        {% if section.settings.social_instagram_link != blank %}
-        <li><a href="{{ section.settings.social_instagram_link }}">Instagram</a></li>
-        {% endif %}
-      </ul>
-    </div>
-    {% endif %}
-
+      </a>
+    </ul>
   </div>
 
-  {% if section.settings.footer_strapline %}
-  <div class="made-in"><p>{{ section.settings.footer_strapline }}</p></div>
+  {% if section.settings.footer_social_enable %}
+  <div class="footer-social">
+    <h5>Follow</h5>
+    <ul>
+      {% if section.settings.social_facebook_link != blank %}
+      <li><a href="{{ section.settings.social_facebook_link }}">Facebook</a></li>
+      {% endif %}
+      {% if section.settings.social_twitter_link != blank%}
+      <li><a href="{{ section.settings.social_twitter_link }}">Twitter</a></li>
+      {% endif %}
+      {% if section.settings.social_instagram_link != blank %}
+      <li><a href="{{ section.settings.social_instagram_link }}">Instagram</a></li>
+      {% endif %}
+    </ul>
+  </div>
   {% endif %}
+
+</div>
+
+{% if section.settings.footer_strapline %}
+<div class="strapline">{{ section.settings.footer_strapline }}</div>
+{% endif %}
 </footer>
 
 {% schema %}
