@@ -2,7 +2,7 @@
     "name": "theme_info",
     "theme_name": "Luncheon",
     "theme_author": "Linea Digital",
-    "theme_version": "0.0.2",
+    "theme_version": "0.0.4",
     "theme_documentation_url": "https:\/\/docs.shopify.com\/",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
@@ -69,7 +69,7 @@
         "type": "color",
         "id": "body_text_colour",
         "label": "Body text colour",
-        "default": "#373737"
+        "default": "#1d1d1d"
       },
       {
         "type": "header",
@@ -85,13 +85,13 @@
         "type": "color",
         "id": "nav_text_colour",
         "label": "Navigation text colour",
-        "default": "#373737"
+        "default": "#1d1d1d"
       },
       {
         "type": "color",
         "id": "nav_text_hover_colour",
         "label": "Navigation text hover colour",
-        "default": "#000"
+        "default": "#1d1d1d"
       },
       {
         "type": "header",
@@ -101,7 +101,7 @@
         "type": "color",
         "id": "footer_background_colour",
         "label": "Footer background colour",
-        "default": "#8cbea3"
+        "default": "#1d1d1d"
       },
       {
         "type": "header",
@@ -111,7 +111,7 @@
         "type": "color",
         "id": "cookies_background_colour",
         "label": "Cookie message background colour",
-        "default": "#373737"
+        "default": "#1d1d1d"
       },
       {
         "type": "color",
@@ -127,7 +127,7 @@
         "type": "color",
         "id": "newsletter_background_colour",
         "label": "Newsletter background colour",
-        "default": "#dae7e0"
+        "default": "#cdcdcd"
       },
       {
         "type": "header",
@@ -137,7 +137,7 @@
         "type": "color",
         "id": "button_colour",
         "label": "Button colour",
-        "default": "#26342d"
+        "default": "#1d1d1d"
       },
       {
         "type": "color",
@@ -149,7 +149,7 @@
         "type": "color",
         "id": "button_hover_colour",
         "label": "Button hover colour",
-        "default": "#8cbea3"
+        "default": "#676767"
       },
       {
         "type": "color",

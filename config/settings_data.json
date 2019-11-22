@@ -4,7 +4,8 @@
     "location_map_lat": "51.5073095",
     "location_map_lng": "-0.1287813",
     "location_map_zoom": "12",
-    "type_font_family": "basic_commercial_n4",
+    "sans_font_family": "avenir_next_n5",
+    "serif_font_family": "bembo_book_n4",
     "body_background_colour": "#f4f4f4",
     "body_text_colour": "#1d1d1d",
     "nav_background_colour": "#f4f4f4",
@@ -13,10 +14,10 @@
     "footer_background_colour": "#1d1d1d",
     "cookies_background_colour": "#1d1d1d",
     "cookies_text_colour": "#f4f4f4",
-    "newsletter_background_colour": "#cccdcd",
+    "newsletter_background_colour": "#cdcdcd",
     "button_colour": "#1d1d1d",
     "button_text_colour": "#f4f4f4",
-    "button_hover_colour": "#1d1d1d",
+    "button_hover_colour": "#676767",
     "button_hover_text_colour": "#f4f4f4",
     "social_twitter_link": "https:\/\/twitter.com\/",
     "social_facebook_link": "https:\/\/www.facebook.com\/",
@@ -27,22 +28,20 @@
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
-    "checkout_body_background_color": "#fff",
+    "checkout_body_background_color": "#f4f4f4",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_sidebar_background_color": "#ffffff",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#2a9dcc",
-    "checkout_button_color": "#2a9dcc",
+    "checkout_accent_color": "#1d1d1d",
+    "checkout_button_color": "#1d1d1d",
     "checkout_error_color": "#ff6d6d",
+    "type_font_family": "avenir_next_n4",
     "enable_product_image_zoom": true,
     "enable_tabs": true,
     "tab_content_01": "about-us",
     "tab_content_02": "",
-    "twittercard_handle": "@mimiberryshop",
-    "facebookcard_handle": "@mimiberryshop",
-    "instagramcard_handle": "@mimiberrylondon",
     "checkout_use_storefront_logo": false,
     "checkout_use_header_image": false,
     "checkout_logo": "",
@@ -50,15 +49,14 @@
     "checkout_use_sidebar_background_image": false,
     "checkout_banner_background_color": "#ffffff",
     "checkout_headline": "",
-    "checkout_call_to_action_color": "#8fc243",
+    "checkout_call_to_action_color": "#1d1d1d",
     "customer_layout": "theme",
     "sections": {
       "header": {
         "type": "header",
         "settings": {
           "site_strapline": "A Cultural Serving",
-          "main_linklist": "main-menu",
-          "currencies_enable": false
+          "main_linklist": "main-menu"
         }
       },
       "footer": {
@@ -69,8 +67,8 @@
           "newsletter_sign_up_text": "Get 10% off your first order.",
           "footer_shop_linklist": "",
           "footer_info_linklist": "footer",
-          "footer_contact_link": "shopify:\/\/collections\/all",
-          "footer_contact_text": "Get in touch",
+          "footer_contact_link": "",
+          "footer_contact_text": "",
           "footer_strapline": "A Cultural Serving",
           "footer_social_enable": true,
           "social_twitter_link": "https:\/\/twitter.com\/",
@@ -105,65 +103,16 @@
           "newsletter_placeholder": "Email address"
         }
       },
-      "1574098460253": {
-        "type": "features",
-        "blocks": {
-          "1574098460253-0": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/luncheon-7-1-feature.jpg",
-              "heading": "Issue No. 7.1",
-              "content": "Anything you want to do you can do here. Trees grow in all kinds of ways. They're not all perfectly straight. Not every limb is perfect.",
-              "call_to_action_text": "Buy Now",
-              "link": "shopify:\/\/collections",
-              "background_color": "#676767"
-            }
-          },
-          "1574098460253-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "heading": "",
-              "content": "",
-              "call_to_action_text": "Read more",
-              "link": "",
-              "background_color": "#676767"
-            }
-          }
-        },
-        "block_order": [
-          "1574098460253-0",
-          "1574098460253-1"
-        ],
+      "1574421140631": {
+        "type": "featured-products",
         "settings": {
-        }
-      },
-      "1574098833237": {
-        "type": "slideshow",
-        "blocks": {
-          "1574098833237-0": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/slide.jpg",
-              "caption": "",
-              "caption_font_size": 4,
-              "description": "",
-              "text_colour": "#f4f4f4",
-              "link": "",
-              "caption_position": "slide-centered"
-            }
-          }
-        },
-        "block_order": [
-          "1574098833237-0"
-        ],
-        "settings": {
+          "collection": "shop",
+          "show_collection_header": false
         }
       }
     },
     "content_for_index": [
-      "1574098833237",
-      "1574098460253"
+      "1574421140631"
     ]
   },
   "presets": {
