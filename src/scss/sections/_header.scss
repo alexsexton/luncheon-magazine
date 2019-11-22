@@ -25,6 +25,14 @@
     padding: $spacer $small-site-gutters;
   }
 
+  .strapline {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    text-align: center;
+  }
+
   .logo {
     justify-self: center;
     grid-area: logo;
