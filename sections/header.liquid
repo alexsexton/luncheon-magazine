@@ -81,10 +81,10 @@
 
 <div id="search-form" class="search-form">
   <form action="/search" method="get" role="search">
+    <input type="hidden" name="type" value="product">
     <div class="form-group">
       <label for="q">{{ 'general.search.placeholder' | t }}</label>
       <div class="form-search-bar">
-        <input type="hidden" name="type" value="product" />
         <input name="q" type="text" placeholder="Search" class="search-input" />
         <button type="submit" class="button">{{ 'general.search.submit' | t }}</button>
       </div>
