@@ -4,6 +4,7 @@
 }
 .tabs ul {
   margin: 0 0 $spacer 0;
+  @include transition(all);
 
   li {
     display: inline-block;
@@ -17,7 +18,7 @@
       padding-bottom: 5px;
       border-bottom: 2px solid $medium-grey;
     }
-    
+
     &:first-child a {
       margin: 0 $spacer 0 0;
     }
