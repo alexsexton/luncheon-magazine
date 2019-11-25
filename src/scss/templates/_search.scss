@@ -1,16 +1,6 @@
 // Search form
 .search-form {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: $header-white;
-  transform: translateY(-100%);
-  transition: transform $trans-time;
-  overflow-x: scroll;
-  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+  @include overlay;
 
   form {
     position: relative;
@@ -20,7 +10,6 @@
 
     @media screen and (max-width: $small-screen) {
       width: 100%;
-      padding: 0 $spacer * 2;
       flex-direction: column;
     }
 
@@ -36,33 +25,37 @@
       display: flex;
       flex-direction: row;
       align-items: stretch;
+      @media screen and (max-width: $small-screen) {
+        flex-direction: column;
+      }
     }
 
     .search-input {
+      @include transition(all);
       background: $purewhite;
+      border: 1px solid $border-colour;
+      color: $base-font-colour;
       font-family: $font-family-sans;
       font-size: $base-font-size;
-      color: $base-font-colour;
-      border: 1px solid $border-colour;
-      @include transition(all);
-      padding: $spacer;
       margin: 0;
+      padding: $spacer;
       position: relative;
+      @media screen and (max-width: $small-screen) {
+        text-align: center;
+      }
     }
 
-    .search-input::-webkit-input-placeholder,
-    .search-input::-moz-placeholder,
-    .search-input::placeholder {
-      color: $black;
+    .button {
+      @media screen and (max-width: $small-screen) {
+        margin-top: $spacer;
+      }
     }
 
   }
 }
 
 .search-form-is-open .search-form {
-  transform: translateY(0);
-  transition: transform $trans-time;
-  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+  @include overlay-open;
 }
 
 .search-form-is-open {
@@ -76,8 +69,8 @@
   .cancel {
     z-index: 2;
     position: fixed;
-    top: 28px;
-    right: 59px;
+    top: $spacer;
+    right: $small-site-gutters;
     cursor: pointer;
 
     svg {
