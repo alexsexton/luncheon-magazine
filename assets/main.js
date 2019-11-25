@@ -3835,7 +3835,8 @@ var tns = function () {
 'use strict';
 
 jQuery(function ($) {
-  var querySmallScreens = Modernizr.mq('(max-width: 768px)'); // Nav Trigger
+  var mqSmall = Modernizr.mq('(max-width: 768px)');
+  console.log(mqSmall); // Nav Trigger
 
   $('.site-nav-trigger').on('click', function (e) {
     e.preventDefault();
@@ -3899,11 +3900,10 @@ jQuery(function ($) {
 
   function movePhotos() {
     var viewPort = $(document).outerWidth();
-    var smallScreen = querySmallScreens;
 
-    if (viewPort <= smallScreen) {
+    if (viewPort <= mqSmall) {
       $('.product-photos').insertAfter('.product-title');
-    } else if (viewPort >= smallScreen) {
+    } else if (viewPort >= mqSmall) {
       $('.product-photos').insertAfter('.product-description');
     }
   } // Currency Form
