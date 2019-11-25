@@ -37,24 +37,15 @@ input:-webkit-autofill {
   -webkit-animation-fill-mode: both;
 }
 
-input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea {
-  appearance: none;
-  border-radius: 0;
-  border: $border-width solid $border-colour;
-  margin: 0;
-  padding: $form-input-padding;
-  font-family: inherit;
-  font-weight: normal;
-  font-size: $base-font-size;
-  color: $base-font-colour;
-  outline: none;
-  box-sizing: border-box;
-  vertical-align: middle;
-  line-height: 1;
-
-  &:focus {
-    outline: none;
-  }
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=email],
+input[type=search],
+input[type=number],
+input[type=tel],
+textarea {
+  @include input;
 }
 
 input[type=button], input[type=submit], button, .button {
@@ -97,21 +88,19 @@ select {
 }
 
 .form-group {
-
-  input[type=text], input[type=email], input[type=password], input[type=email], input[type=search], input[type=number], input[type=tel], textarea, select {
-    padding: $form-input-padding;
-    width: 100%;
-    border: $border-width solid $border-colour;
-    transition: border-color 0.2s ease-in-out;
-
-    &:focus {
-      border: $border-width solid $form-border-colour-focus;
-    }
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=email],
+  input[type=search],
+  input[type=number],
+  input[type=tel],
+  textarea {
+    @include input;
   }
-
 }
 
-// Form  input[type=search]/input[type=search] then button combos
+// Form input[type=search]/input[type=search] then button combos
 .form-bar {
   display: flex;
   flex-direction: row;
@@ -140,7 +129,7 @@ select {
 label.radio-group, label.checkbox-group {
   position: relative;
   background: transparent;
-  border: 1px solid $form-border-colour;
+  border: 1px solid $form-input-border-colour;
   padding: $spacer $spacer3 $spacer $spacer3;
   margin: 0 $spacer $spacer 0;
   display: inline-block;
@@ -149,7 +138,7 @@ label.radio-group, label.checkbox-group {
 
 label.radio-group:hover, label.radio-group.selected,
 label.checkbox-group:hover, label.checkbox-group.selected {
-  border: 1px solid $form-border-colour-focus;
+  border: 1px solid $form-input-border-colour-focus;
 }
 
 label.radio-group input[type=radio],
