@@ -69,7 +69,7 @@ For info on test orders:
 
               <div class="cart-item-remove"><a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}">
                 <svg viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><path d="M6 6l12 12M6 18L18 6M6 6l12 12M6 18L18 6"/></g></svg>
-                <span class="hide">{{ 'cart.general.remove' | t }}</span>
+                <span>{{ 'cart.general.remove' | t }}</span>
               </a>
               </div>
 
@@ -81,9 +81,8 @@ For info on test orders:
 
             <div class="form-group">
               <label for="updates[]">Quanity</label>
-              <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}">
+              <input onchange="this.form.submit()" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}">
             </div>
-            <input type="submit" name="update" class="button--secondary update-cart" value="Update">
           </td>
         </tr>
         {% endfor %}
