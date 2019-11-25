@@ -2,19 +2,21 @@
 
 {% if template contains 'product' %}
   {% include 'product-page-js' %}
-  <script>
-  var slider = tns({
-    arrowKeys: true,
-    arrows: true,
-    container: '#product-images',
-    controlsContainer: '#product-images-controls',
-    items: 1,
-    mode: 'gallery',
-    navAsThumbnails: true,
-    navContainer: '#product-images-thumbnails',
-    speed: 1000
-  })
-  </script>
+  {%- if product.images.size > 1 -%}
+    <script>
+    var slider = tns({
+      arrowKeys: true,
+      arrows: true,
+      container: '#product-images',
+      controlsContainer: '#product-images-controls',
+      items: 1,
+      mode: 'gallery',
+      navAsThumbnails: true,
+      navContainer: '#product-images-thumbnails',
+      speed: 1000
+    })
+    </script>
+  {%- endif -%}
 {% endif %}
 
 {% if template contains 'contact' and settings.location_map_enable %}
