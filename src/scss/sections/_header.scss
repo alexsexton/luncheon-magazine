@@ -9,8 +9,14 @@
   top: 0;
 }
 
+.site-nav-is-open .header .main-nav {
+  @media screen and (max-width: $small-screen) {
+    @include overlay-open;
+  }
+}
+
 // Header with icon bar
-.header-with-icon-bar {
+.header {
   padding: $spacer $site-gutters;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -31,6 +37,9 @@
     font-weight: bold;
     letter-spacing: 0.75px;
     text-align: center;
+    @media screen and (max-width: $small-screen) {
+      @include hide;
+    }
   }
 
   .logo {
@@ -41,8 +50,14 @@
     }
     svg {
       width: 300px;
+      display: block;
       @media screen and (max-width: $small-screen) {
-        width: 120px;
+        width: 50%;
+        padding-right: $spacer3;
+      }
+      @media screen and (max-width: $tiny-screen) {
+        width: 100%;
+        padding-right: $spacer;
       }
     }
   }
@@ -74,6 +89,7 @@
 
         a {
           display: block;
+          line-height: 0;
         }
 
         svg {
@@ -97,8 +113,6 @@
     padding: 1rem 0 0;
     grid-area: site-nav;
     text-transform: uppercase;
-
-
     @media screen and (max-width: $small-screen) {
       @include overlay;
     }
@@ -107,7 +121,7 @@
       @include hide;
       @media screen and (max-width: $small-screen) {
         left: auto;
-        top: $spacer2;
+        top: $spacer;
         right: $small-site-gutters;
       }
 
@@ -133,16 +147,10 @@
     }
 
     .has-sub-nav {
-      .icon {
+      svg {
         @include hide;
       }
     }
   }
 
-}
-
-.site-nav-is-open .header-with-top-bar .main-nav {
-  @media screen and (max-width: $small-screen) {
-    @include overlay-open;
-  }
 }
