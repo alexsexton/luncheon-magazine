@@ -8,7 +8,7 @@
   grid-template-areas: "product-photos product-description";
   @media screen and (max-width: $small-screen) {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column-reverse nowrap;
   }
 }
 
@@ -53,7 +53,7 @@
   @media screen and (max-width: $small-screen) {
     flex: 1 100%;
     width: 100%;
-    padding: $spacer3 0;
+    padding: 0;
   }
 
   h1 {
@@ -123,6 +123,7 @@
       margin-right: $spacer;
       @media screen and (max-width: $small-screen) {
         align-self: flex-start;
+        margin-bottom: $halfspacer;
       }
     }
 
@@ -137,7 +138,7 @@
 
   .add-to-basket {
     input {
-      @include reverse-ghost-button($button, $button, $button-text);
+      @include reverse-ghost-button($form-button, $form-button, $form-button-text);
       padding: $spacer $spacer4;
       @media screen and (max-width: $small-screen) {
         width: 100%;
