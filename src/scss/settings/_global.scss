@@ -26,9 +26,9 @@ $huge-screen: 1440px; // Large desktop screens
 $big-screen: 1024px;
 $medium-screen-min: 961px;
 $medium-screen: 960px;
-$small-screen-min: 795px;
-$small-screen: 794px;
-$tiny-screen: 360px;
+$small-screen-min: 769px;
+$small-screen: 768px;
+$tiny-screen: 440px;
 
 // @media screen and (max-width: $huge-screen) {}
 // @media screen and (max-width: $big-screen) {}
@@ -90,24 +90,21 @@ $border-width-fat: 5px;
 $border-colour: $medium-grey;
 $light-border-colour: $light-grey;
 $border-radius: 0;
-$input-border: $medium-grey;
-$input-border-focus: $dark-grey;
+
+// Inputs
+$form-input-padding: $spacer;
+$form-input-border-width: 1px;
+$form-input-border-colour: $medium-grey;
+$form-input-border-colour-focus: $medium-grey;
 
 // Buttons
-$button: $brand-primary;
-$button-text: $white;
-$button-inactive: scale-color($button, $lightness: 50%);
-$button-hover: $brand-secondary;
-$button-text-hover: $white;
-
-$form-input-padding: $spacer;
-$form-button: $button;
-$form-button-hover: $button-hover;
+$form-button: $brand-primary;
+$form-button-hover: $brand-secondary;
+$form-button-inactive: scale-color($form-button, $lightness: 50%);
 $form-button-text: $white;
 $form-button-text-hover: $white;
-$form-border-colour: $input-border;
-$form-border-colour-focus: $input-border-focus;
 $form-button-border-radius: 0px;
+
 
 // Type
 $normal: 400;

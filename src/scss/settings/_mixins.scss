@@ -109,6 +109,28 @@
   filter: $type($value);
 }
 
+@mixin input {
+  appearance: none;
+  border-radius: 0;
+  border: $form-input-border-width solid $form-input-border-colour;
+  box-sizing: border-box;
+  color: $base-font-colour;
+  font-family: inherit;
+  font-size: $base-font-size;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: $form-input-padding;
+  transition: all $trans-time ease-in-out;
+  vertical-align: middle;
+
+  &:focus {
+    border-color: $form-input-border-colour-focus;
+    outline: none;
+  }
+}
+
 @mixin button($background, $colour) {
   appearance: none;
   background: $background;
@@ -247,7 +269,7 @@
   left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: $spacer4 $small-site-gutters;
+  padding: $spacer2 $small-site-gutters;
   position: absolute;
   top: 0;
   transform: translateY(-100%);
