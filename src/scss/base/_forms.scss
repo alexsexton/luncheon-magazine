@@ -54,7 +54,7 @@ input[type=button], input[type=submit], button, .button {
 
 select {
   appearance: none;
-  background-image: transparent url("select-caret-down.svg") no-repeat 100% 50%;
+  background: transparent url("select-caret-down.svg") no-repeat 100% 50%;
   background-size: 18px;
   border: none;
   font-family: inherit;
@@ -97,6 +97,7 @@ select {
   input[type=tel],
   textarea {
     @include input;
+    width: 100%;
   }
 }
 
@@ -109,11 +110,9 @@ select {
     flex-direction: column;
   }
 
-  input[type=email], input[type=search] {
-    width: 75%;
-    @media screen and (max-width: $small-screen) {
-      width: 100%;
-    }
+  input[type=email],
+  input[type=search] {
+    width: 100%;
   }
 
   input[type=submit], .button {

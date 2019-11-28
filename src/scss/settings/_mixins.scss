@@ -207,7 +207,8 @@
   color: $colour;
   cursor: pointer;
   display: inline-block;
-  font-size: $font-family-sans;
+  font-family: inherit;
+  font-size: $small-font-size;
   font-weight: normal;
   padding: #{ ($spacer / 2) + 0.4 } $spacer;
   transition: all 0.2s ease-in-out;
@@ -228,7 +229,8 @@
   color: $text-colour;
   cursor: pointer;
   display: inline-block;
-  font-size: $font-family-sans;
+  font-family: inherit;
+  font-size: $base-font-size;
   font-weight: normal;
   padding: $spacer $spacer * 2;
   transition: all 0.2s ease-in-out;
@@ -249,7 +251,8 @@
   color: $text-colour-hover;
   cursor: pointer;
   display: inline-block;
-  font-size: $font-family-sans;
+  font-family: inherit;
+  font-size: $base-font-size;
   font-weight: normal;
   padding: $spacer $spacer * 2;
   transition: all 0.2s ease-in-out;

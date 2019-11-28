@@ -25,10 +25,9 @@ body {
 }
 
 .main {
-  padding: 0 $site-gutters;
+  padding: 0 $site-gutters $spacer6;
   @media screen and (max-width: $small-screen) {
-    padding-left: $small-site-gutters;
-    padding-right: $small-site-gutters;
+    padding: 0 $small-site-gutters $spacer3;
   }
 }
 

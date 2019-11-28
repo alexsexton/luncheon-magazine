@@ -21,8 +21,7 @@ $site-gutters: $spacer3;
 $small-site-gutters: $spacer;
 
 // Breakpoints
-// Breakpoints
-$huge-screen: 1440px; // Large desktop screens
+$huge-screen: 1680px; // Large desktop screens
 $big-screen: 1024px;
 $medium-screen-min: 961px;
 $medium-screen: 960px;
@@ -104,7 +103,6 @@ $form-button-inactive: scale-color($form-button, $lightness: 50%);
 $form-button-text: $white;
 $form-button-text-hover: $white;
 $form-button-border-radius: 0px;
-
 
 // Type
 $normal: 400;
