@@ -38,6 +38,8 @@ $font-style-serif: {{ serif_family.style }};
 $font-weight-serif: {{ serif_family.weight | default: 400 }};
 $font-weight-serif-bold: {{ serif_family_bold.weight | default: 700 }};
 
+$base-font-size: 1rem;
+
 // Template Overrides via customise options
 body {
   font-family: $font-stack-sans;
@@ -53,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-stack-serif;
 }
 
-.header .main-nav,
+.site-nav-is-open .header .main-nav,
 .search-form {
   background: {{ settings.nav_background_colour }};
   color: {{ settings.nav_text_colour }};
@@ -74,6 +76,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
   background: {{ settings.footer_background_colour }};
+
+  ul {
+    font-family: $font-stack-serif;
+    font-size: $base-font-size * 1.2;
+  }
 }
 
 input[type=submit], button, .button  {
