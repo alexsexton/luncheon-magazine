@@ -2,41 +2,9 @@
     "name": "theme_info",
     "theme_name": "Luncheon",
     "theme_author": "Linea Digital",
-    "theme_version": "0.0.4",
+    "theme_version": "0.0.5",
     "theme_documentation_url": "https:\/\/docs.shopify.com\/",
     "theme_support_url": "https:\/\/support.shopify.com\/"
-  },
-  {
-    "name": "General Settings",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Location Map"
-      },
-      {
-        "type": "checkbox",
-        "id": "location_map_enable",
-        "label": "Enable location map?"
-      },
-      {
-        "type": "text",
-        "label": "Location Map Latitude",
-        "id": "location_map_lat",
-        "default": "51.5073095"
-      },
-      {
-        "type": "text",
-        "label": "Location Map Longitude",
-        "id": "location_map_lng",
-        "default": "-0.1287813"
-      },
-      {
-        "type": "text",
-        "label": "Location Map Zoom",
-        "id": "location_map_zoom",
-        "default": "12"
-      }
-    ]
   },
   {
     "name": "Theme Typography",
