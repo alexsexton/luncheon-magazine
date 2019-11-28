@@ -137,6 +137,7 @@
   }
 
   .add-to-basket {
+    flex: 2;
     input {
       @include reverse-ghost-button($form-button, $form-button, $form-button-text);
       padding: $spacer $spacer4;
