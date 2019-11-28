@@ -25,7 +25,8 @@
     },
     "navigation": {
       "shop": "Shop",
-      "shop_link_title": "Open navigation"
+      "shop_link_title": "Open navigation",
+      "close": "Close"
     },
     "newsletter_form": {
       "newsletter_email": "your-email@example.com",
@@ -267,11 +268,14 @@
   },
   "products": {
     "general": {
-      "previous_product_html": "&larr; Previous Product",
-      "next_product_html": "Next Product &rarr;",
-      "from": "From"
+      "previous_product_html": "Previous Product",
+      "next_product_html": "Next Product",
+      "from": "From",
+      "slide_next": "Next",
+      "slide_previous": "Previous"
     },
     "product": {
+      "select" : "Select",
       "sold_out": "Sold Out",
       "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
       "unavailable": "Unavailable",

@@ -25,7 +25,8 @@
     },
     "navigation": {
       "shop": "Compras",
-      "shop_link_title": "Navegação aberta"
+      "shop_link_title": "Navegação aberta",
+      "close": "Fechar"
     },
     "newsletter_form": {
       "newsletter_email": "seu_e-mail@exemplo.com",
@@ -270,9 +271,12 @@
     "general": {
       "previous_product_html": "&larr; Produto anterior",
       "next_product_html": "Próximo produto &rarr;",
-      "from": "A partir de"
+      "from": "A partir de",
+      "slide_next": "Próximo",
+      "slide_previous": "Anterior"
     },
     "product": {
+      "select" : "Selecionar ",
       "sold_out": "Esgotado",
       "on_sale_from_html": "<strong>Em promoção<\/strong>, a partir de {{ price }}",
       "unavailable": "Indisponível",
