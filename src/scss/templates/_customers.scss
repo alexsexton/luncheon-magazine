@@ -12,31 +12,21 @@
   flex: 0 100%;
 }
 
-.customer-login-form, .customer-recover-password-form {
+.customer-activate-form
+.customer-addresses,
+.customer-guest-login-form,
+.customer-login-form,
+.customer-new-address,
+.customer-recover-password-form,
+.customer-register-form {
   flex: 0 50%;
   padding: $spacer2;
-  background: $white;
-}
-
-.customer-guest-login-form {
-  flex: 0 50%;
-  padding: $spacer2;
-}
-
-.customer-register-form, .customer-activate-form {
   width: 50%;
-  margin: auto;
-  background: $white;
-  padding: $spacer2;
-}
-
-.customer-addresses {
-  background: $white;
-  padding: $spacer2;
-}
-
-.customer-new-address {
-  width: 50%;
+  @media screen and (max-width: $small-screen) {
+    flex: 0 100%;
+    padding: $spacer;
+    width: 100%;
+  }
 }
 
 .form-links {
