@@ -114,14 +114,12 @@
 
 .tns-fadeIn {
   opacity: 1;
-  filter:alpha(opacity=100);
   z-index: 0;
 }
 
 .tns-fadeOut,
 .tns-normal {
   opacity: 0;
-  filter:alpha(opacity=0);
   z-index: -1;
 }
 
