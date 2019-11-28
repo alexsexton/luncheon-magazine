@@ -31,7 +31,6 @@
     }
 
     .search-input {
-      @include transition(all);
       background: $purewhite;
       border: 1px solid $border-colour;
       color: $base-font-colour;
@@ -40,6 +39,7 @@
       margin: 0;
       padding: $spacer;
       position: relative;
+      width: 100%;
       @media screen and (max-width: $small-screen) {
         text-align: center;
       }
@@ -81,6 +81,13 @@
 
 // Search Template
 .template-search {
+
+  .collection-header.no-results {
+    margin-bottom: $spacer15;
+    @media screen and (max-width: $small-screen) {
+      margin-bottom: $spacer5;
+    }
+  }
 
   .search-bar {
     width: 50%;

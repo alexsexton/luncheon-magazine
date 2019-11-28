@@ -27,7 +27,7 @@ Return only products or pages in results:
   or suggested searches here.
   {% endcomment %}
   {% if search.results_count == 0 %}
-    <header class="collection-header">
+    <header class="collection-header no-results">
       <h1>{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
       {% include 'search-bar' %}
     </header>
@@ -89,7 +89,7 @@ Return only products or pages in results:
   Be sure to show a search form here, along with anything else you want to showcase.
   {% endcomment %}
 
-  <header class="collection-header">
+  <header class="collection-header no-results">
     <h1>{{ 'general.search.title' | t }}</h1>
     {% include 'search-bar' %}
   </header>
