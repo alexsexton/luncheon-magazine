@@ -1,7 +1,7 @@
 {{ 'main.min.js' | asset_url | script_tag }}
 
 {% if template contains 'product' %}
-  {% include 'product-page-js' %}
+  {% include 'js-product-page' %}
   {%- if product.images.size > 1 -%}
     <script>
     var slider = tns({
@@ -17,59 +17,6 @@
     })
     </script>
   {%- endif -%}
-{% endif %}
-
-{% if template contains 'contact' and settings.location_map_enable %}
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQEu8xtzKHPBnFmcFG-6Ps_mG5uLgP2q8&callback=initMap" async defer></script>
-<script>
-function initMap() {
-  var dot = {lat: {{ settings.location_map_lat }}, lng: {{ settings.location_map_lng }};
-  var map = new google.maps.Map(document.getElementById('location-map'), {
-    zoom: {{ settings.location_map_zoom }},
-    center: dot
-  });
-  var marker = new google.maps.Marker({
-    position: dot,
-    map: map
-  });
-}
-</script>
-{% endif %}
-
-{% if template contains 'stockists' %}
-<script>
-(function () {
-  var headings = document.querySelectorAll('.stockists-list h2')
-  Array.prototype.forEach.call(headings, function (heading) {
-    heading.innerHTML = '\n <button aria-expanded="false" class="toggle">\n' + heading.textContent + '\n <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24">\n <rect class="vert" height="16" width="2" y="0" x="7"/>\n <rect height="2" width="16" y="7" x="0"/>\n </svg>\n </button>\n'
-    var getContent = function getContent (elem) {
-      var elems = []
-      while (elem.nextElementSibling && elem.nextElementSibling.tagName !== 'H2') {
-        elems.push(elem.nextElementSibling)
-        elem = elem.nextElementSibling
-      }
-      elems.forEach(function (node) {
-        node.parentNode.removeChild(node)
-      })
-      return elems
-    }
-    var contents = getContent(heading)
-    var wrapper = document.createElement('div')
-    wrapper.className = 'section-group'
-    wrapper.hidden = true
-    contents.forEach(function (node) {
-      wrapper.appendChild(node)
-    })
-    heading.parentNode.insertBefore(wrapper, heading.nextElementSibling)
-    var btn = heading.querySelector('button')
-    btn.onclick = function () {
-      var expanded = btn.getAttribute('aria-expanded') === 'true' || false
-      btn.setAttribute('aria-expanded', !expanded)
-      wrapper.hidden = expanded
-    }
-  })
-})()
-</script>
 {% endif %}
 
 <script>

@@ -1,10 +1,10 @@
 <script>
 Shopify.AjaxifyCart = (function($) {
   var _config = {
-    addToCartBtnLabel: 'Add to cart',
+    addToCartBtnLabel: '{{ 'products.product.add_to_cart' | t }}',
     addedToCartBtnLabel: 'Thank you',
     addingToCartBtnLabel: 'Adding...',
-    soldOutBtnLabel: 'Sold Out',
+    soldOutBtnLabel: '{{ 'products.product.sold_out' | t }}',
     howLongTillBtnReturnsToNormal: 1000,
     cartCountSelector: '',
     cartTotalSelector: '#basket-total',
@@ -75,7 +75,7 @@ Shopify.AjaxifyCart = (function($) {
                   if ($('[name="currencies"]').length) {
                     newCurrency = $('[name="currencies"]').val();
                   }
-                  else if ($('#currencies span.selected').size()) {
+                  else if ($('#currencies span.selected').length()) {
                     newCurrency = $('#currencies span.selected').attr('data-currency');
                   }
                   if (newCurrency) {

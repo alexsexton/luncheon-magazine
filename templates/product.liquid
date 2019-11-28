@@ -41,9 +41,8 @@ Check if the product is sold out and set a variable to be used below.
 
       <div class="add-to-basket-actions">
 
-      {%- comment -%} hidden because this site doesn't use variants {%- endcomment -%}
       {% if product.available %}
-      <div id="product-variants" class="product-variants conceal">
+      <div id="product-variants" class="product-variants{% if product.has_only_default_variant %} conceal{% endif %}">
         <select id="product-select" name="id">
           {% for variant in product.variants %}
           <option value="{{ variant.id }}" data-variant="{{ variant.option1 }}">{{ variant.title }} - {{ variant.price | money }}</option>
@@ -61,9 +60,9 @@ Check if the product is sold out and set a variable to be used below.
 
       <div id="product-add" class="add-to-basket{% if product.available %} in-stock{% else %} out-of-stock{% endif %}">
         {% if product.available %}
-        <input type="submit" name="add" id="add" class="add" value="Add to Basket">
+        <input type="submit" name="add" id="add" class="add" value="{{ 'products.product.add_to_cart' | t }}">
         {% else %}
-        <input type="submit" name="add" id="add" class="add" value="Sold Out" disabled>
+        <p>{{ 'products.product.sold_out' | t }}</p>
         {% endif %}
       </div>
 
@@ -82,9 +81,9 @@ Check if the product is sold out and set a variable to be used below.
   {% if product.images.size > 1 %}
   <div class="controls" id="product-images-controls">
     <button aria-controls="product-images" data-controls="prev" tabindex="-1">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"> <title>Previous</title><path d="M15 5l-8 7 8 7" fill="none" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg> </button>
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"> <title>{{ 'products.general.slide_previous' | t }}</title><path d="M15 5l-8 7 8 7" fill="none" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg> </button>
     <button aria-controls="product-images" data-controls="next" tabindex="-1">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"> <title>Next</title> <path d="M9 19l8-7-8-7" fill="none" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg> </button>
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"> <title>{{ 'products.general.slide_next' | t }}</title> <path d="M9 19l8-7-8-7" fill="none" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg> </button>
   </div>
   {% endif %}
 
