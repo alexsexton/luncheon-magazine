@@ -9,6 +9,9 @@
   grid-gap: $spacer4;
   grid-template-rows: auto;
   grid-template-columns: repeat(3,1fr);
+  @media screen and (min-width: $huge-screen) {
+    grid-template-columns: repeat(5,1fr);
+  }
   @media screen and (max-width: $small-screen) {
     grid-gap: $spacer2;
     grid-template-columns: repeat(2, calc(50% - 1rem));
@@ -63,4 +66,8 @@
 .product-compare-price {
   color: $medium-grey;
   text-decoration: line-through;
+}
+
+.no-matches {
+  text-align: center;
 }
