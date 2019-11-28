@@ -1,0 +1,53 @@
+<section class="banner-image">
+{% for block in section.blocks limit: section.blocks.size %}
+
+    {% if block.settings.image != blank %}
+
+    <figure class="banner">
+      {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+        <img src="{{ block.settings.image | img_url: '2044x' }}" alt="{{ block.settings.image.alt | escape }}">
+      {% if block.settings.link != blank %}</a>{% endif %}
+    </figure>
+
+    {%- endif -%}
+
+{% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Banner Image",
+  "max_blocks" : 3,
+  "class" : "section-banner-image",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "The image should be a minimum of 2044px wide so it looks crisp for all devices."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Image",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

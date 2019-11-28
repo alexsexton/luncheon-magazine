@@ -12,3 +12,9 @@
     }
   }
 }
+
+.banner-image .banner {
+  img {
+    @include image;
+  }
+}
