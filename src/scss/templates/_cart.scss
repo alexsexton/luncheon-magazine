@@ -61,7 +61,7 @@
 }
 
 .cart-item-title {
-	flex: 0 0 60%;
+	flex: 1;
 	padding-left: $spacer;
 	@media screen and (max-width: $small-screen) {
 		flex: 0 0 100%;
@@ -75,27 +75,14 @@
 
 .cart-item-line-total {
 	font-size: $base-font-size * 1.5;
-	padding-top: $spacer2;
-
-	@media screen and (max-width: $small-screen) {
-		padding-top: 0;
-	}
+	padding: 0;
 }
 
 .cart-item-remove {
-	flex: 0 0 10%;
-	display: flex;
-	flex-flow: column;
-	@media screen and (max-width: $small-screen) {
-		flex: 0 0 100%;
-		padding-bottom: $spacer;
-	}
-
 	a {
 		display: flex;
 		align-items: center;
 	}
-
 }
 
 .cart-item-quantity {
