@@ -1,0 +1,36 @@
+{%- assign page_sidebar_linklist = section.settings.page_sidebar_linklist -%}
+
+<aside class="sidebar group" role="complementary">
+  {% if section.settings.page_sidebar_heading %}
+  <h5>{{ section.settings.page_sidebar_heading }}</h5>
+  {% endif %}
+
+  {% if linklists[page_sidebar_linklist].links.size > 0 %}
+  <ul class="page-nav">
+    {% for link in linklists[page_sidebar_linklist].links %}
+    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</aside>
+
+
+{% schema %}
+{
+  "name": "Page Sidebar",
+  "class" : "section-page-sidebar",
+  "settings": [
+  {
+    "id": "page_sidebar_heading",
+    "type": "text",
+    "label": "Page sidebar heading",
+    "default": "Help and Information"
+  },
+  {
+    "id": "page_sidebar_linklist",
+    "type": "link_list",
+    "label": "Page sidebar menu"
+  }
+  ]
+}
+{% endschema %}

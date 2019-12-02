@@ -4,16 +4,6 @@
   font-size: $base-font-size * 2;
 }
 
-.mailchimp-signup-page {
-  .form-group {
-    max-width: $measure;
-
-    @media screen and (max-width: $small-screen) {
-      width: 100%
-    }
-  }
-}
-
 .page {
   display: flex;
   flex-direction: row;
@@ -68,9 +58,8 @@
     }
   }
 
-  aside {
+  .section-page-sidebar {
     flex: 1 0 38.2%;
-    padding-left: $spacer6;
     @media screen and (max-width: $small-screen) {
       flex: 1 0 100%;
       width: 100%;
@@ -92,6 +81,10 @@
 
     .small {
       flex: 1 0 33%;
+
+      > li {
+        margin-bottom: $spacer;
+      }
     }
 
     li {
@@ -104,37 +97,8 @@
 
     em {
       font-weight: $bold;
+      font-style: normal;
     }
   }
 
-}
-
-// Contact page
-.contact-page {
-  flex-direction: column;
-
-  .map {
-    clear: both;
-    margin: $margin 0 0;
-  }
-
-  .location-map {
-    width: 100%;
-    height: 600px;
-  }
-}
-
-// Product Registration
-.product-registration {
-
-  .rich-text {
-    max-width: $measure;
-    display: flex;
-    flex-direction: row;
-  }
-
-   .contact-form {
-    max-width: $measure;
-    margin: $margin auto;
-  }
 }
