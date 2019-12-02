@@ -60,7 +60,8 @@
 }
 
 .product-list h2, .search-results h2 {
-  font-size: $base-font-size * 1.25
+  font-size: $base-font-size * 1.25;
+  text-transform: uppercase;
 }
 
 .product-compare-price {

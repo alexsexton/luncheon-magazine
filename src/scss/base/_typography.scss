@@ -66,6 +66,10 @@ a:hover {
   max-width: $measure;
   font-size: $base-font-size * 1.2;
 
+  strong {
+    font-weight: $bold;
+  }
+
   ul {
     margin: 0 0 $spacer $spacer;
     li {
