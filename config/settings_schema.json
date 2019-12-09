@@ -1,29 +1,33 @@
-[{
+[
+  {
     "name": "theme_info",
     "theme_name": "Luncheon",
     "theme_author": "Linea Digital",
-    "theme_version": "0.0.5",
+    "theme_version": "1.0.0",
     "theme_documentation_url": "https:\/\/docs.shopify.com\/",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "Theme Typography",
-    "settings": [{
-      "type": "font_picker",
-      "label": "Sans Serif Font Family",
-      "id": "sans_font_family",
-      "default": "avenir_next_n5"
-    },
-    {
-      "type": "font_picker",
-      "label": "Serif Font Family",
-      "id": "serif_font_family",
-      "default": "bembo_book_n4"
-    }]
+    "settings": [
+      {
+        "type": "font_picker",
+        "label": "Sans Serif Font Family",
+        "id": "sans_font_family",
+        "default": "avenir_next_n5"
+      },
+      {
+        "type": "font_picker",
+        "label": "Serif Font Family",
+        "id": "serif_font_family",
+        "default": "bembo_book_n4"
+      }
+    ]
   },
   {
     "name": "Theme Colours",
-    "settings": [{
+    "settings": [
+      {
         "type": "header",
         "content": "Body and Text"
       },
@@ -129,7 +133,8 @@
   },
   {
     "name": "Social Media Handles",
-    "settings": [{
+    "settings": [
+      {
         "type": "text",
         "id": "social_twitter_link",
         "label": "Twitter Handle",
@@ -150,11 +155,13 @@
     ]
   },
   {
-    "name": "Checkout Page",
-    "settings": [{
-      "type": "checkbox",
-      "id": "cart_notes_enable",
-      "label": "Allow notes with orders"
-    }]
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Allow notes with orders"
+      }
+    ]
   }
 ]

@@ -12,7 +12,6 @@ $footer-hover: rgba($white, 0.5);
 
   a {
     color: $footer-link;
-
     &:hover {
       color: $footer-hover;
     }
@@ -22,6 +21,10 @@ $footer-hover: rgba($white, 0.5);
     ul {
       margin-bottom: $margin;
     }
+  }
+
+  .upper {
+    text-transform: uppercase;
   }
 
   .strapline {

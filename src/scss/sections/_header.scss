@@ -19,7 +19,7 @@
 .header {
   padding: $spacer $site-gutters;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: ". logo shop-nav" "site-nav site-nav site-nav";
   grid-auto-flow: column;
@@ -46,8 +46,8 @@
       width: 300px;
       display: block;
       @media screen and (max-width: $small-screen) {
-        width: 50%;
-        padding-right: $spacer3;
+        width: 100%;
+        padding-right: $spacer4;
       }
       @media screen and (max-width: $tiny-screen) {
         width: 100%;

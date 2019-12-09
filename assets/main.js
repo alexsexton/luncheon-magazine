@@ -3831,13 +3831,11 @@ var tns = function () {
 
   return tns;
 }();
-/* globals jQuery, Modernizr */
+/* globals jQuery */
 'use strict';
 
 jQuery(function ($) {
-  var mqSmall = Modernizr.mq('(max-width: 768px)');
-  console.log(mqSmall); // Nav Trigger
-
+  // Nav Trigger
   $('.site-nav-trigger').on('click', function (e) {
     e.preventDefault();
     $('body').toggleClass('site-nav-is-open');
@@ -3896,24 +3894,9 @@ jQuery(function ($) {
     $('.tabs li a').removeClass('selected').attr('aria-expanded', 'false');
     $(this).addClass('selected').attr('aria-expanded', 'true');
     return false;
-  }).filter(':first').click().attr('aria-expanded', 'true').removeClass('hide'); // Product pages
-
-  function movePhotos() {
-    var viewPort = $(document).outerWidth();
-
-    if (viewPort <= mqSmall) {
-      $('.product-photos').insertAfter('.product-title');
-    } else if (viewPort >= mqSmall) {
-      $('.product-photos').insertAfter('.product-description');
-    }
-  } // Currency Form
-
+  }).filter(':first').click().attr('aria-expanded', 'true').removeClass('hide'); // Currency Form
 
   $('.shopify-currency-form select').on('change', function () {
     $(this).parents('form').submit();
-  });
-  $(window).on('resize', function () {
-    movePhotos();
-  });
-  movePhotos(); // eol
+  }); // eol
 });

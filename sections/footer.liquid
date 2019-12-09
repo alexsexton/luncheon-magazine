@@ -38,13 +38,10 @@
       <h5>Contact</h5>
       {% if section.settings.footer_contact_link %}<p><a href="{{ section.settings.footer_contact_link }}">{{ section.settings.footer_contact_text }}</a></p>{% endif %}
       <ul>
-        <li>{{ shop.address.street }}<br> {{ shop.address.city }} {{shop.address.zip}}<br> {{ shop.address.country }}</li> <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
-        <li class="tel"><a href="tel:{{ shop.phone | handleize | prepend: "+" }}">
-          {{ shop.phone | prepend: "+" | slice: 0, 3 }}
-          {{ shop.phone | slice: 2, 4 }}
-          {{ shop.phone | slice: 6, 3 }}
-          {{ shop.phone | slice: 9, 4 }}
-        </a></li>
+        <li>
+          <span class="upper">{{ shop.name }}</span><br>{% if section.settings.footer_contact_address %} {{ section.settings.footer_contact_address }}{% endif %}
+        </li>
+        <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
     </ul>
   </div>
 
@@ -118,6 +115,12 @@
     "type": "text",
     "label": "Contact us text",
     "default": "Get in touch"
+  },
+  {
+    "id": "footer_contact_address",
+    "type": "textarea",
+    "label": "Contact address",
+    "default": "Rochelle, Studio I<br> Friars Mount House<br> 7 Playground Gardens<br> London E2 7FA<br> United Kingdom"
   },
   {
     "type": "text",

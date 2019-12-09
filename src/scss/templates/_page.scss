@@ -75,12 +75,31 @@
 // Stockists styles
 .stockists-page {
 
+  article {
+    padding: 0;
+  }
+
   .rich-text {
     max-width: 100%;
-    display: flex;
+
+    .row {
+      clear: both;
+      width: 100%;
+    }
+
+    .cols {
+      display: flex;
+      @media screen and (max-width: $small-screen) {
+        flex-flow: column nowrap;
+      }
+    }
 
     .small {
-      flex: 1 0 33%;
+      flex: 1 33%;
+      @media screen and (max-width: $small-screen) {
+        flex: 1 100%;
+        width: 100%;
+      }
 
       > li {
         margin-bottom: $spacer;

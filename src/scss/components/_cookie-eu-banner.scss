@@ -1,7 +1,10 @@
 #cookies-eu-banner {
   background: $black;
   color: $white;
-  padding: $spacer;
+  padding: $spacer $site-gutters;
+  @media screen and (max-width: $small-screen) {
+    padding: $spacer $small-site-gutters;
+  }
   font-size: $base-font-size;
   z-index: 4;
   position: fixed;
@@ -15,7 +18,7 @@
 #cookies-eu-reject {
   text-decoration: none;
   background: $medium-grey;
-  color: $white;
+  color: $black;
   cursor: pointer;
   padding: $spacer;
   transition: background 0.2s, color 0.2s;
@@ -27,7 +30,7 @@
 #cookies-eu-more:focus,
 #cookies-eu-accept:hover,
 #cookies-eu-accept:focus {
-  background: lighten($medium-grey, 25%);
+  background: $light-grey;
   color: $black;
 }
 

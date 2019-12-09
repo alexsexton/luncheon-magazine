@@ -1,9 +1,5 @@
 {
   "current": {
-    "location_map_enable": false,
-    "location_map_lat": "51.5073095",
-    "location_map_lng": "-0.1287813",
-    "location_map_zoom": "12",
     "sans_font_family": "avenir_next_n5",
     "serif_font_family": "bembo_book_n4",
     "body_background_colour": "#f4f4f4",
@@ -14,34 +10,41 @@
     "footer_background_colour": "#1d1d1d",
     "cookies_background_colour": "#1d1d1d",
     "cookies_text_colour": "#f4f4f4",
-    "newsletter_background_colour": "#cdcdcd",
+    "newsletter_background_colour": "#cccdcd",
     "button_colour": "#1d1d1d",
     "button_text_colour": "#f4f4f4",
     "button_hover_colour": "#676767",
     "button_hover_text_colour": "#f4f4f4",
-    "social_twitter_link": "https:\/\/twitter.com\/",
-    "social_facebook_link": "https:\/\/www.facebook.com\/",
-    "social_instagram_link": "https:\/\/instagram.com\/",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_instagram_link": "https:\/\/instagram.com\/luncheonmagazine\/",
     "cart_notes_enable": true,
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
     "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
+    "checkout_logo_size": "small",
     "checkout_body_background_image": "",
     "checkout_body_background_color": "#f4f4f4",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#ffffff",
-    "checkout_heading_font": "Helvetica Neue",
-    "checkout_body_font": "Helvetica Neue",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_accent_color": "#1d1d1d",
     "checkout_button_color": "#1d1d1d",
     "checkout_error_color": "#ff6d6d",
+    "location_map_enable": false,
+    "location_map_lat": "51.5073095",
+    "location_map_lng": "-0.1287813",
+    "location_map_zoom": "12",
     "type_font_family": "avenir_next_n4",
     "enable_product_image_zoom": true,
     "enable_tabs": true,
     "tab_content_01": "about-us",
     "tab_content_02": "",
+    "twittercard_handle": "@mimiberryshop",
+    "facebookcard_handle": "@mimiberryshop",
+    "instagramcard_handle": "@mimiberrylondon",
     "checkout_use_storefront_logo": false,
     "checkout_use_header_image": false,
     "checkout_logo": "",
@@ -49,7 +52,7 @@
     "checkout_use_sidebar_background_image": false,
     "checkout_banner_background_color": "#ffffff",
     "checkout_headline": "",
-    "checkout_call_to_action_color": "#1d1d1d",
+    "checkout_call_to_action_color": "#8fc243",
     "customer_layout": "theme",
     "sections": {
       "header": {
@@ -71,9 +74,9 @@
           "footer_contact_text": "",
           "footer_strapline": "A Cultural Serving",
           "footer_social_enable": true,
-          "social_twitter_link": "https:\/\/twitter.com\/",
-          "social_facebook_link": "https:\/\/www.facebook.com\/",
-          "social_instagram_link": "https:\/\/instagram.com\/"
+          "social_twitter_link": "",
+          "social_facebook_link": "",
+          "social_instagram_link": "https:\/\/instagram.com\/luncheonmagazine\/"
         }
       },
       "product-tabs": {
@@ -108,6 +111,13 @@
         "settings": {
           "collection": "shop",
           "show_collection_header": false
+        }
+      },
+      "page-sidebar": {
+        "type": "page-sidebar",
+        "settings": {
+          "page_sidebar_heading": "Help and Information",
+          "page_sidebar_linklist": "footer"
         }
       }
     },
