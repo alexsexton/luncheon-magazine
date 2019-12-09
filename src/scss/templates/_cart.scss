@@ -165,12 +165,10 @@
 }
 
 .cart-secure-shopping {
-	text-align: right;
 	padding: $spacer;
 	line-height: 24px;
 
 	@media screen and (max-width: $small-screen) {
-		text-align: left;
 		padding: $spacer 0;
 	}
 
