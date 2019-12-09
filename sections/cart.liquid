@@ -76,7 +76,7 @@ For info on test orders:
 
             <div class="form-group">
               <label for="updates[]">Quanity</label>
-              <input onchange="this.form.submit()" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}">
+              <input onchange="this.form.submit()" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}" pattern="\d*">
             </div>
           </td>
         </tr>
