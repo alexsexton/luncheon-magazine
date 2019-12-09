@@ -142,6 +142,7 @@
   font-family: inherit;
   font-size: $base-font-size;
   font-weight: normal;
+  margin: 0;
   padding: $spacer $spacer * 2;
   transition: all 0.2s ease-in-out;
   text-align: center;
@@ -163,6 +164,7 @@
   font-family: inherit;
   font-size: $small-font-size;
   font-weight: normal;
+  margin: 0;
   padding: $spacer / 2 $spacer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
@@ -184,6 +186,7 @@
   font-family: inherit;
   font-size: $base-font-size;
   font-weight: $bold;
+  margin: 0;
   padding: $spacer;
   text-decoration: none;
   line-height: 0;
@@ -210,6 +213,7 @@
   font-family: inherit;
   font-size: $small-font-size;
   font-weight: normal;
+  margin: 0;
   padding: #{ ($spacer / 2) + 0.4 } $spacer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
@@ -232,6 +236,7 @@
   font-family: inherit;
   font-size: $base-font-size;
   font-weight: normal;
+  margin: 0;
   padding: $spacer $spacer * 2;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
@@ -254,6 +259,7 @@
   font-family: inherit;
   font-size: $base-font-size;
   font-weight: normal;
+  margin: 0;
   padding: $spacer $spacer * 2;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
