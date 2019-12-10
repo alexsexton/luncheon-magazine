@@ -1,5 +1,11 @@
 /* Pages */
 
+.template-404 {
+  .page-header h1, .page p {
+    text-align: center;
+  }
+}
+
 .page-header h1 {
   font-size: $base-font-size * 2;
 }
