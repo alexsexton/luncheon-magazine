@@ -30,11 +30,13 @@
               <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#1d1d1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><path d="M16.019 8.948A4.95 4.95 0 0 0 17 6c0-2.76-2.24-5-5-5-1.107 0-2.12.372-2.948.98M1 1l22 22M8.379 15.45C5.22 16.267 3 18.113 3 20.25V23"/></g></svg>
               <span class="hide">{{ 'layout.customer.log_out' | t }}</span>
             </a></li>
+          {% comment %}
           {% else %}
             <li><a href="{{ routes.account_login_url }}">
               <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#1d1d1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="12" cy="6" r="5"/><path d="M21 23v-2.75c0-2.888-4.05-5.25-9-5.25s-9 2.362-9 5.25V23"/></g></svg>
               <span class="hide">{{ 'layout.customer.log_in' | t }}</span>
             </a></li>
+            {% endcomment %}
           {% endif %}
         {% endif %}
         <li class="cart-total"><a href="{{ routes.cart_url }}">
