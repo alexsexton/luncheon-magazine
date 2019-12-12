@@ -39,7 +39,7 @@
       {% if section.settings.footer_contact_link %}<p><a href="{{ section.settings.footer_contact_link }}">{{ section.settings.footer_contact_text }}</a></p>{% endif %}
       <ul>
         <li>
-          <span class="upper">{{ shop.name }}</span><br>{% if section.settings.footer_contact_address %} {{ section.settings.footer_contact_address }}{% endif %}
+          <span class="upper">{{ shop.name }}</span><br/>{% if section.settings.footer_contact_address %} {{ section.settings.footer_contact_address }}{% endif %}
         </li>
         <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
     </ul>
