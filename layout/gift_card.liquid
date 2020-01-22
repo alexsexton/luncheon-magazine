@@ -8,18 +8,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="google-site-verification" content="">
 
   {% if page_description %}
   <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
   <link rel="dns-prefetch" href="//cdn.shopify.com">
+  <link rel="dns-prefetch" href="//use.typekit.net">
 
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
   <link rel="apple-touch-icon-precomposed" href="{{ 'touch-icon.png' | asset_url }}">
 
+  <link rel="stylesheet" href="https://use.typekit.net/fbb1znj.css">
   {{ 'styles.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 
