@@ -30,7 +30,7 @@ $footer-hover: rgba($white, 0.5);
   .strapline {
     padding: $spacer3 0 0;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: $bold;
     letter-spacing: 0.75px;
     text-align: center;
     @media screen and (max-width: $small-screen) {
