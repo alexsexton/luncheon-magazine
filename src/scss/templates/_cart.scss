@@ -165,7 +165,7 @@
 }
 
 .cart-secure-shopping {
-	padding: $spacer;
+	padding: $spacer2 $spacer;
 	line-height: 24px;
 
 	@media screen and (max-width: $small-screen) {
@@ -191,7 +191,7 @@
 }
 
 .dynamic-checkout__content {
-	margin: $spacer;
+	margin-right: $spacer;
 }
 
 .additional-checkout-button,
