@@ -23,7 +23,6 @@ var sass = require('gulp-sass')
 var postcss = require('gulp-postcss')
 var assets = require('postcss-assets')
 var autoprefixer = require('autoprefixer')
-var mqpacker = require('css-mqpacker')
 var cssnano = require('cssnano')
 
 var folder = {
@@ -57,8 +56,7 @@ gulp.task('svgmin', function () {
 gulp.task('css', gulp.series('images', function () {
   var postCssOpts = [
     assets({ loadPaths: ['src/'] }),
-    autoprefixer,
-    mqpacker
+    autoprefixer
   ]
   postCssOpts.push(cssnano)
 
