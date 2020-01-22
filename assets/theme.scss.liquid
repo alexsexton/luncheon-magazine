@@ -3,6 +3,8 @@
 // Sans Family Vars
 {% assign sans_family = settings.sans_font_family %}
 
+{% assign typekit_sans_family = 'caslons-egyptian' %}
+
 {{ sans_family | font_face }}
 
 {%- assign sans_family_bold = sans_family | font_modify: 'weight', 'bolder' -%}
@@ -14,10 +16,10 @@
 {{ sans_family_bold_italic | font_face }}
 
 // Sans Stack
-$font-stack-sans: {{ sans_family.family }}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-stack-sans: {{ typekit_sans_family }}, {{ sans_family.family }}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-style-sans: {{ sans_family.style }};
-$font-weight-sans: {{ sans_family.weight | default: 400 }};
-$font-weight-sans-bold: {{ sans_family_bold.weight | default: 700 }};
+$font-weight-sans: {{ sans_family.weight | default: 200 }};
+$font-weight-sans-bold: {{ sans_family_bold.weight | default: 500 }};
 
 // Serif Family Vars
 {% assign serif_family = settings.serif_font_family %}
