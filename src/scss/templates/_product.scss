@@ -96,7 +96,7 @@
     clear: both;
     margin-bottom: $spacer2;
     a {
-      font-weight: $bold;
+      border-bottom: 2px solid $medium-grey;
     }
   }
 
@@ -108,6 +108,7 @@
     @media screen and (max-width: $small-screen) {
       flex-flow: column nowrap;
       width: 100%;
+      margin: 0 0 $spacer2 0;
     }
   }
 
