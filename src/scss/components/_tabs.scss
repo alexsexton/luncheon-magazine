@@ -1,26 +1,30 @@
 // Tabs
 .tabs {
   margin: $spacer 0;
-}
-.tabs ul {
-  margin: 0 0 $spacer 0;
-  @include transition(all);
 
-  li {
-    display: inline-block;
+  ul {
+    margin: 0 0 $spacer 0;
+    @include transition(all);
 
-    a {
-      margin: 0 0 0 $spacer;
-    }
+    li {
+      display: inline-block;
 
-    a.selected {
-      color: $black;
-      padding-bottom: 5px;
-      border-bottom: 2px solid $medium-grey;
-    }
+      a {
+        margin: 0 0 0 $spacer;
+        @media screen and (max-width: $tiny-screen) {
+          margin: 0;
+        }
+      }
 
-    &:first-child a {
-      margin: 0 $spacer 0 0;
+      a.selected {
+        color: $black;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $medium-grey;
+      }
+
+      &:first-child a {
+        margin: 0 $spacer 0 0;
+      }
     }
   }
 }
