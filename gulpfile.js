@@ -53,7 +53,7 @@ gulp.task('svgmin', function () {
 })
 
 // CSS processing
-gulp.task('css', gulp.series('images', function () {
+gulp.task('css', gulp.series('clean', 'images', function () {
   var postCssOpts = [
     assets({ loadPaths: ['src/'] }),
     autoprefixer
@@ -111,7 +111,7 @@ gulp.task('watch', gulp.series('run', function () {
   // javascript changes
   gulp.watch(folder.src + 'js/**/*', gulp.series('babel', 'js'))
   // css changes
-  gulp.watch(folder.src + 'scss/**/*', gulp.series('css'))
+  gulp.watch(folder.src + 'scss/**/*', gulp.series('clean', 'css'))
 }))
 
 // default task
