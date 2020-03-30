@@ -85,65 +85,98 @@
   }
 }
 
-// Stockists styles
+// Stockists page
+.stockists-page-header {
+  text-align: center;
+  @media screen and (max-width: $small-screen) {
+    text-align: left;
+  }
+}
+
 .stockists-page {
 
-  article {
-    padding: 0;
+  .tabs {
+    width: 100%;
+
+    a {
+      display: block;
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    a.selected {
+      color: $black;
+      border-bottom: 2px solid $black;
+    }
   }
 
-  .rich-text {
-    max-width: 100%;
-
-    h2 {
-      @media screen and (max-width: $small-screen) {
-        font-size: $base-font-size * 1.5;
-      }
-      @media screen and (max-width: $small-screen) {
-        font-size: $base-font-size * 1.25;
-      }
+  .tab-controls {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $small-screen) {
+      justify-content: space-between;
     }
 
-    ul {
-      margin-left: 0;
-    }
-
-    .row {
-      clear: both;
-      width: 100%;
-    }
-
-    .cols {
-      display: flex;
+    .tab-icon {
+      width: 90px;
       @media screen and (max-width: $small-screen) {
-        flex-flow: column nowrap;
-      }
-    }
-
-    .small {
-      flex: 1 33%;
-      @media screen and (max-width: $small-screen) {
-        flex: 1 100%;
-        width: 100%;
-      }
-
-      > li {
-        margin-bottom: $spacer;
+        width: 45px;
       }
     }
 
     li {
-      list-style: none;
+      margin: 0 $spacer2;
+      padding: $spacer;
+      text-align: center;
+      @media screen and (max-width: $small-screen) {
+        margin: 0;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+.tab {
+  max-width: 100%;
+
+  ul li ul {
+    margin: 0;
+  }
+}
+
+.stockists-tab {
+    h2 {
+      margin-top: $spacer3;
+    }
+    .country {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @media screen and (max-width: $small-screen) {
+        display: block;
+      }
     }
 
-    .upper {
-      text-transform: uppercase;
-    }
-
-    em {
-      font-weight: $bold;
-      font-style: normal;
+    .city {
+      ul li {
+        display: block;
+      }
     }
   }
 
+.stockists-wine {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media screen and (max-width: $small-screen) {
+      display: block;
+      li {
+        display: block;
+      }
+    }
+  }
 }

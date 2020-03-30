@@ -6,21 +6,21 @@
     margin: 0 0 $spacer 0;
     @include transition(all);
 
+    a {
+      margin: 0 0 0 $spacer;
+      @media screen and (max-width: $tiny-screen) {
+        margin: 0;
+      }
+    }
+
+    a.selected {
+      color: $black;
+      padding-bottom: 5px;
+      border-bottom: 2px solid $medium-grey;
+    }
+
     li {
       display: inline-block;
-
-      a {
-        margin: 0 0 0 $spacer;
-        @media screen and (max-width: $tiny-screen) {
-          margin: 0;
-        }
-      }
-
-      a.selected {
-        color: $black;
-        padding-bottom: 5px;
-        border-bottom: 2px solid $medium-grey;
-      }
 
       &:first-child a {
         margin: 0 $spacer 0 0;

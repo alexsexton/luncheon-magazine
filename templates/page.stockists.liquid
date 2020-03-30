@@ -1,13 +1,36 @@
-<header class="page-header">
+<header class="page-header stockists-page-header">
   <h1>{{ page.title }}</h1>
 </header>
 
 <div class="page stockists-page">
 
-  <article class="page-content">
-    <div class="rich-text">
-      {{ page.content }}
+  <div class="tabs">
+
+    <ul class="tab-controls">
+      <li><a href="#tab-stockists-magazine" aria-controls="tab-stockists-magazine" aria-expanded="true">
+        <img src="{{ 'icon-magazine.svg' | asset_url }}" alt="Magazine" class="tab-icon">
+        <span>Magazine</span>
+      </a></li>
+      <li><a href="#tab-stockists-bag" aria-controls="tab-stockists-bag" aria-expanded="false">
+        <img src="{{ 'icon-bag.svg' | asset_url }}" alt="Bag" class="tab-icon">
+        <span>Bag</span>
+      </a></li>
+      <li><a href="#tab-stockists-wine" aria-controls="tab-stockists-wine" aria-expanded="false">
+        <img src="{{ 'icon-wine.svg' | asset_url }}" alt="Wine" class="tab-icon">
+        <span>Wine</span>
+      </a></li>
+    </ul>
+
+    <div class="rich-text rte tab" id="tab-stockists-magazine" aria-hidden="false">
+      {%- include 'stockists-magazine' -%}
     </div>
-  </article>
+    <div class="rich-text rte tab" id="tab-stockists-bag" aria-hidden="true">
+      {%- include 'stockists-bag' -%}
+    </div>
+    <div class="rich-text rte tab" id="tab-stockists-wine" aria-hidden="true">
+      {%- include 'stockists-wine' -%}
+    </div>
+
+  </div>
 
 </div>

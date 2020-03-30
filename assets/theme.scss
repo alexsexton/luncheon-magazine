@@ -1,0 +1,164 @@
+// Type Vars
+
+// Sans Family Vars
+
+
+
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 500;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n5.972a96b7a049f12c89d6d1cd0e1b6c9211f7ba14.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=40f5563784c8f15184ce4521d6b3bc86826b27dd07581d96e8ae3bf8431feebb") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n5.9e88d20fa9eb66ba268ac60ab013006ef69a310a.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=8ace222727528dbbb8b90da1b44cd896475cf1fb2c0d63ec8f7878ff7adfda8d") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.8cfc646eab1e39e2d81a26284624600ccae49d55.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=e4303419048a102a45611a6f0cdf5f8c5ee0c8da8fe082899f9e56c545ece065") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.25b10f8089bc87dfd8e50a7c68b433da7a04bc87.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=004e77eef1a3c5a375b8cfb9eb8a686ad65e93904f4ad9d3d6476171d80d38e4") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 500;
+  font-style: italic;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i5.2d1a6d537e5b485482d6bcca34a56cc10d441a55.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=53f0bdce7a4051e55fbdf9ad640b7ce82c09593180d1d9cf3984646ba90b7c4e") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i5.fcfa37c68ca483c41031623bfae4701d99bb4b95.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=826f398b15ebdad568612df96288bc11e0817187f99c9290130f00f51e0938aa") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-style: italic;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i7.3a67996166b5b7f1b7cc3b35490ebd6824908dc5.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=7502cc5a08a2adb83ab5cd34fd012b21159833de0cb158517ac764f576e99930") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i7.b872875ff437f0efb4c2321d0016eaa726b649ae.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=1409993cf84fed39458a24afc04a5245f8fbf514ba9008f6fdc571125383947a") format("woff");
+}
+
+
+// Sans Stack
+$font-stack-sans: caslons-egyptian, "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-style-sans: normal;
+$font-weight-sans: 500;
+$font-weight-sans-bold: 700;
+
+// Serif Family Vars
+
+
+@font-face {
+  font-family: "Bembo Book";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/bembo_book/bembobook_n4.8da691c1d96e22b482c66684b2147e382b6f8d3a.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=5dce22916a9381045be09e994feb6cddb023e4d3689ea0d07e011eadd43c04b8") format("woff2"),
+       url("https://fonts.shopifycdn.com/bembo_book/bembobook_n4.570284734f42a26c330fca9503f1e2e831cd33ea.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=bfd8ea0456d20ae9790b0d479aafb2c0f0c97978e0694415e4d70c5527c7b2a6") format("woff");
+}
+
+@font-face {
+  font-family: "Bembo Book";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/bembo_book/bembobook_n7.79daebe15a2f8d7cd25dea54f0965d8a5442e391.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=293a30d92b687dab477ad1518fccc93abc21f209eabf4cdf99646e87d87c1ef0") format("woff2"),
+       url("https://fonts.shopifycdn.com/bembo_book/bembobook_n7.eaf9e4a5f885e3908026c12882675e828a540277.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=0b44f4412dea24e8d369ecc1351dbc8a45595ea5191212333895976d47a40e5a") format("woff");
+}
+
+@font-face {
+  font-family: "Bembo Book";
+  font-weight: 400;
+  font-style: italic;
+  src: url("https://fonts.shopifycdn.com/bembo_book/bembobook_i4.24d4c7650bd439ccc896fb5cbfe4ab07805ae59f.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=208a25b18a835cc2a85ec8335c62395e243f7410e291e571e52ed09a684e9040") format("woff2"),
+       url("https://fonts.shopifycdn.com/bembo_book/bembobook_i4.c3c45c9403a9e76b986a3e830ed7ab3023702202.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=dd93ebc87981d983dc792c9f9f619eed59ea8a9c03ed2967ec574c60cd9b0094") format("woff");
+}
+
+@font-face {
+  font-family: "Bembo Book";
+  font-weight: 700;
+  font-style: italic;
+  src: url("https://fonts.shopifycdn.com/bembo_book/bembobook_i7.17b241462a3806f07058ecdb604f9fddf10a7154.woff2?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=7426695ef285b6397e46128ff7675fdc12fbaa35d16c200bb2cc9a8a1d9cb648") format("woff2"),
+       url("https://fonts.shopifycdn.com/bembo_book/bembobook_i7.295706236e50beb4a5ff676554dc4f7190a45522.woff?h1=bHVuY2hlb25tYWdhemluZS5jb20&hmac=974ca5cf6f3241539558bd1b16d008aabd38bca73a07882f2c8b52c483051e87") format("woff");
+}
+
+
+// Serif Stack
+$font-stack-serif: "Bembo Book", "Georgia", Times, Serif;
+$font-style-serif: normal;
+$font-weight-serif: 400;
+$font-weight-serif-bold: 700;
+
+$base-font-size: 1rem;
+
+// Template Overrides via customise options
+body {
+  font-family: $font-stack-sans;
+  background-color: #f4f4f4;
+  color: #1d1d1d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-stack-sans;
+}
+
+.rich-text {
+  font-family: $font-stack-serif;
+}
+
+.site-nav-is-open .header .main-nav,
+.search-form {
+  background: #f4f4f4;
+  color: #1d1d1d;
+}
+
+.header .main-nav a {
+  color: #1d1d1d;
+}
+
+.trigger-nav a:hover,
+.main-nav a:hover {
+  color: #1d1d1d;
+}
+
+.newsletter {
+  background: #cccdcd;
+}
+
+.footer {
+  background: #1d1d1d;
+
+  ul {
+    font-family: $font-stack-serif;
+    font-size: $base-font-size * 1.2;
+  }
+}
+
+input[type=submit], button, .button  {
+  background: #1d1d1d;
+  color: #f4f4f4;
+}
+
+input[type=submit]:hover,  button:hover, .button:hover  {
+  background: #676767;
+  color: #f4f4f4;
+}
+
+.features .call-to-action {
+  border-color: #676767;
+  color: #676767 ;
+}
+
+.features .call-to-action:hover {
+  border-color: #676767;
+  background: #676767;
+}
+
+#cookies-eu-banner {
+  background: #1d1d1d;
+  color: #f4f4f4;
+}
+
+// Stockists Page
+.stockists-page .rich-text .upper {
+  text-transform: uppercase;
+  font-family: $font-stack-sans;
+  font-weight: $font-weight-sans-bold;
+}

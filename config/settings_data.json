@@ -18,7 +18,7 @@
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_instagram_link": "https:\/\/instagram.com\/luncheonmagazine\/",
-    "cart_notes_enable": true,
+    "cart_notes_enable": false,
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
     "checkout_logo_position": "left",
@@ -27,7 +27,7 @@
     "checkout_body_background_color": "#f4f4f4",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_sidebar_background_color": "#f9f9f9",
     "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_accent_color": "#1d1d1d",
@@ -68,10 +68,11 @@
           "newsletter_sign_enable": false,
           "newsletter_sign_up_heading": "Stay in touch",
           "newsletter_sign_up_text": "Get 10% off your first order.",
-          "footer_shop_linklist": "",
+          "footer_shop_linklist": "footer-collections",
           "footer_info_linklist": "footer",
           "footer_contact_link": "",
           "footer_contact_text": "",
+          "footer_contact_address": "Rochelle, Studio I<br> Friars Mount House<br> 7 Playground Gardens<br> London E2 7FA<br> United Kingdom",
           "footer_strapline": "A Cultural Serving",
           "footer_social_enable": true,
           "social_twitter_link": "",
@@ -82,19 +83,16 @@
       "product-tabs": {
         "type": "product-tabs",
         "blocks": {
-          "1554999817575": {
+          "1575893486362": {
             "type": "tab",
             "settings": {
-              "tab_heading": "Delivery",
-              "tab_content": "<p>Something about delivery of items to go here.<\/p>"
+              "tab_heading": "Shipping Information",
+              "tab_content": "<p>UPS courier service with tracking<\/p>\n<p>Delivery time: Estimated 2-7 days depending on destination<\/p>\n<p><\/p>\n<p>Pre-orders of LUNCHEON no. 9 will be posted out&nbsp;week of 23rd of March 2020<\/p>\n<p><\/p>"
             }
           }
         },
-        "block_order": [
-          "1554999817575"
-        ],
-        "settings": {
-        }
+        "block_order": ["1575893486362"],
+        "settings": {}
       },
       "password-page": {
         "type": "password-page",
@@ -119,11 +117,13 @@
           "page_sidebar_heading": "Help and Information",
           "page_sidebar_linklist": "footer"
         }
+      },
+      "cart": {
+        "type": "cart",
+        "settings": {}
       }
     },
-    "content_for_index": [
-      "1574421140631"
-    ]
+    "content_for_index": ["1574421140631"]
   },
   "presets": {
     "Default": {

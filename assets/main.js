@@ -3887,14 +3887,14 @@ jQuery(function ($) {
   }); // Tabs
 
   var tabs = $('.tab');
-  tabs.addClass('hide').addClass('hide').filter(':first').attr('aria-hidden', 'true').removeClass('hide');
+  tabs.addClass('conceal').addClass('conceal').filter(':first').attr('aria-hidden', 'true').removeClass('conceal');
   $('.tabs li a').click(function () {
-    tabs.addClass('hide').attr('aria-hidden', 'true');
-    tabs.filter(this.hash).attr('aria-hidden', 'false').removeClass('hide');
+    tabs.addClass('conceal').attr('aria-hidden', 'true');
+    tabs.filter(this.hash).attr('aria-hidden', 'false').removeClass('conceal');
     $('.tabs li a').removeClass('selected').attr('aria-expanded', 'false');
     $(this).addClass('selected').attr('aria-expanded', 'true');
     return false;
-  }).filter(':first').click().attr('aria-expanded', 'true').removeClass('hide'); // Currency Form
+  }).filter(':first').click().attr('aria-expanded', 'true').removeClass('conceal'); // Currency Form
 
   $('.shopify-currency-form select').on('change', function () {
     $(this).parents('form').submit();

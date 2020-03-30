@@ -1,167 +1,132 @@
-[
-  {
-    "name": "theme_info",
-    "theme_name": "Luncheon",
-    "theme_author": "Linea Digital",
-    "theme_version": "1.0.0",
-    "theme_documentation_url": "https:\/\/docs.shopify.com\/",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
-  },
-  {
-    "name": "Theme Typography",
-    "settings": [
-      {
-        "type": "font_picker",
-        "label": "Sans Serif Font Family",
-        "id": "sans_font_family",
-        "default": "avenir_next_n5"
-      },
-      {
-        "type": "font_picker",
-        "label": "Serif Font Family",
-        "id": "serif_font_family",
-        "default": "bembo_book_n4"
-      }
-    ]
-  },
-  {
-    "name": "Theme Colours",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Body and Text"
-      },
-      {
-        "type": "color",
-        "id": "body_background_colour",
-        "label": "Body background colour",
-        "default": "#f4f4f4"
-      },
-      {
-        "type": "color",
-        "id": "body_text_colour",
-        "label": "Body text colour",
-        "default": "#1d1d1d"
-      },
-      {
-        "type": "header",
-        "content": "Header and Navigation"
-      },
-      {
-        "type": "color",
-        "id": "nav_background_colour",
-        "label": "Navigation background colour",
-        "default": "#f9f9f9"
-      },
-      {
-        "type": "color",
-        "id": "nav_text_colour",
-        "label": "Navigation text colour",
-        "default": "#1d1d1d"
-      },
-      {
-        "type": "color",
-        "id": "nav_text_hover_colour",
-        "label": "Navigation text hover colour",
-        "default": "#1d1d1d"
-      },
-      {
-        "type": "header",
-        "content": "Footer"
-      },
-      {
-        "type": "color",
-        "id": "footer_background_colour",
-        "label": "Footer background colour",
-        "default": "#1d1d1d"
-      },
-      {
-        "type": "header",
-        "content": "Cookie Message"
-      },
-      {
-        "type": "color",
-        "id": "cookies_background_colour",
-        "label": "Cookie message background colour",
-        "default": "#1d1d1d"
-      },
-      {
-        "type": "color",
-        "id": "cookies_text_colour",
-        "label": "Cookie message text colour",
-        "default": "#f4f4f4"
-      },
-      {
-        "type": "header",
-        "content": "Newsletter"
-      },
-      {
-        "type": "color",
-        "id": "newsletter_background_colour",
-        "label": "Newsletter background colour",
-        "default": "#cdcdcd"
-      },
-      {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "color",
-        "id": "button_colour",
-        "label": "Button colour",
-        "default": "#1d1d1d"
-      },
-      {
-        "type": "color",
-        "id": "button_text_colour",
-        "label": "Button text colour",
-        "default": "#f4f4f4"
-      },
-      {
-        "type": "color",
-        "id": "button_hover_colour",
-        "label": "Button hover colour",
-        "default": "#676767"
-      },
-      {
-        "type": "color",
-        "id": "button_hover_text_colour",
-        "label": "Button hover text colour",
-        "default": "#f4f4f4"
-      }
-    ]
-  },
-  {
-    "name": "Social Media Handles",
-    "settings": [
-      {
-        "type": "text",
-        "id": "social_twitter_link",
-        "label": "Twitter Handle",
-        "default": "https:\/\/twitter.com\/"
-      },
-      {
-        "type": "text",
-        "id": "social_facebook_link",
-        "label": "Facebook Handle",
-        "default": "https:\/\/www.facebook.com\/"
-      },
-      {
-        "type": "text",
-        "id": "social_instagram_link",
-        "label": "Instagram Handle",
-        "default": "https:\/\/instagram.com\/"
-      }
-    ]
-  },
-  {
-    "name": "Cart",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "cart_notes_enable",
-        "label": "Allow notes with orders"
-      }
-    ]
-  }
-]
+[{
+  "name": "theme_info",
+  "theme_name": "Luncheon",
+  "theme_author": "Linea Digital",
+  "theme_version": "1.0.1",
+  "theme_documentation_url": "https:\/\/docs.shopify.com\/",
+  "theme_support_url": "https:\/\/support.shopify.com\/"
+}, {
+  "name": "Theme Typography",
+  "settings": [{
+    "type": "font_picker",
+    "label": "Sans Serif Font Family",
+    "id": "sans_font_family",
+    "default": "avenir_next_n5"
+  }, {
+    "type": "font_picker",
+    "label": "Serif Font Family",
+    "id": "serif_font_family",
+    "default": "bembo_book_n4"
+  }]
+}, {
+  "name": "Theme Colours",
+  "settings": [{
+    "type": "header",
+    "content": "Body and Text"
+  }, {
+    "type": "color",
+    "id": "body_background_colour",
+    "label": "Body background colour",
+    "default": "#f4f4f4"
+  }, {
+    "type": "color",
+    "id": "body_text_colour",
+    "label": "Body text colour",
+    "default": "#1d1d1d"
+  }, {
+    "type": "header",
+    "content": "Header and Navigation"
+  }, {
+    "type": "color",
+    "id": "nav_background_colour",
+    "label": "Navigation background colour",
+    "default": "#f9f9f9"
+  }, {
+    "type": "color",
+    "id": "nav_text_colour",
+    "label": "Navigation text colour",
+    "default": "#1d1d1d"
+  }, {
+    "type": "color",
+    "id": "nav_text_hover_colour",
+    "label": "Navigation text hover colour",
+    "default": "#1d1d1d"
+  }, {
+    "type": "header",
+    "content": "Footer"
+  }, {
+    "type": "color",
+    "id": "footer_background_colour",
+    "label": "Footer background colour",
+    "default": "#1d1d1d"
+  }, {
+    "type": "header",
+    "content": "Cookie Message"
+  }, {
+    "type": "color",
+    "id": "cookies_background_colour",
+    "label": "Cookie message background colour",
+    "default": "#1d1d1d"
+  }, {
+    "type": "color",
+    "id": "cookies_text_colour",
+    "label": "Cookie message text colour",
+    "default": "#f4f4f4"
+  }, {
+    "type": "header",
+    "content": "Newsletter"
+  }, {
+    "type": "color",
+    "id": "newsletter_background_colour",
+    "label": "Newsletter background colour",
+    "default": "#cdcdcd"
+  }, {
+    "type": "header",
+    "content": "Buttons"
+  }, {
+    "type": "color",
+    "id": "button_colour",
+    "label": "Button colour",
+    "default": "#1d1d1d"
+  }, {
+    "type": "color",
+    "id": "button_text_colour",
+    "label": "Button text colour",
+    "default": "#f4f4f4"
+  }, {
+    "type": "color",
+    "id": "button_hover_colour",
+    "label": "Button hover colour",
+    "default": "#676767"
+  }, {
+    "type": "color",
+    "id": "button_hover_text_colour",
+    "label": "Button hover text colour",
+    "default": "#f4f4f4"
+  }]
+}, {
+  "name": "Social Media Handles",
+  "settings": [{
+    "type": "text",
+    "id": "social_twitter_link",
+    "label": "Twitter Handle",
+    "default": "https:\/\/twitter.com\/"
+  }, {
+    "type": "text",
+    "id": "social_facebook_link",
+    "label": "Facebook Handle",
+    "default": "https:\/\/www.facebook.com\/"
+  }, {
+    "type": "text",
+    "id": "social_instagram_link",
+    "label": "Instagram Handle",
+    "default": "https:\/\/instagram.com\/"
+  }]
+}, {
+  "name": "Cart",
+  "settings": [{
+    "type": "checkbox",
+    "id": "cart_notes_enable",
+    "label": "Allow notes with orders"
+  }]
+}]
