@@ -1,0 +1,27 @@
+<script>
+    if(typeof(Spurit) === 'undefined'){
+        var Spurit = {};
+    }
+    if(!Spurit.recurringInvoices){
+        Spurit.recurringInvoices = {};
+    }
+    if(!Spurit.recurringInvoices.snippet){
+        Spurit.recurringInvoices.snippet = {};
+    }
+    Spurit.recurringInvoices.snippet.appId = '46';
+    Spurit.recurringInvoices.snippet.shopHash = '529297097195274a03e65fa677c391b8';
+    Spurit.recurringInvoices.snippet.shopDomain = 'luncheon-magazine.myshopify.com';
+    Spurit.recurringInvoices.snippet.folderStore = 'https://s3.amazonaws.com/shopify-apps/recurring-invoices/store/';
+    Spurit.recurringInvoices.snippet.folderCss = 'https://s3.amazonaws.com/shopify-apps/recurring-invoices/css/';
+    Spurit.recurringInvoices.snippet.moneyFormat = '{{ shop.money_format }}';
+
+    if(typeof(Spurit.globalSnippet) === 'undefined'){
+        Spurit.globalSnippet = {
+            shop_currency: '{{ shop.currency }}',
+            money_format: '{{ shop.money_format }}',
+            cart: {{ cart | json }},
+            customer_id: '{{ customer.id }}'
+        };
+    }
+</script>
+<script src="https://s3.amazonaws.com/shopify-apps/recurring-invoices/js/common.js"></script>
