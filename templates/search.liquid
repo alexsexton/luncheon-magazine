@@ -58,7 +58,7 @@ Return only products or pages in results:
     <article class="product{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}" itemscope itemtype="http://schema.org/Product">
       <div class="product-photo">
       <a href="{{ item.url }}">
-        <img src="{{ item.featured_image.src | product_img_url: '640x907', crop: 'top' }}" alt="{{ product.featured_image.alt | escape }}"  itemprop="image">
+        <img src="{{ item.featured_image.src | img_url: '640x907', crop: 'top' }}" alt="{{ product.featured_image.alt | escape }}"  itemprop="image">
       </a>
     </div>
       <h2 itemprop="name"><a href="{{ item.url }}">{{ item.title }}</a></h2>
