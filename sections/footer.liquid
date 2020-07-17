@@ -16,7 +16,7 @@
       <h5>Shop</h5>
       <ul>
         {% for link in linklists[footer_shop_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
         {% endfor %}
       </ul>
     </div>
@@ -28,7 +28,7 @@
       <h5>Information</h5>
       <ul>
         {% for link in linklists[footer_info_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
         {% endfor %}
       </ul>
     </div>
@@ -36,7 +36,7 @@
 
     <div class="footer-contacts">
       <h5>Contact</h5>
-      {% if section.settings.footer_contact_link %}<p><a href="{{ section.settings.footer_contact_link }}">{{ section.settings.footer_contact_text }}</a></p>{% endif %}
+      {% if section.settings.footer_contact_link %}<p><a href="{{ section.settings.footer_contact_link }}">{{ section.settings.footer_contact_text | escape }}</a></p>{% endif %}
       <ul>
         <li>
           <span class="upper">{{ shop.name }}</span><br/>{% if section.settings.footer_contact_address %} {{ section.settings.footer_contact_address }}{% endif %}
