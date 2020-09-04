@@ -21,14 +21,14 @@
 
   <div class="collection-items">
     {% for product in collection.products %}
-        {% render 'collection-items' %}
+        {% include 'collection-items' %}
       {% else %}
         <p class="no-matches">{{ 'collections.general.no_matches' | t }}</p>
     {% endfor %}
   </div>
 
   {% if paginate.pages > 1 %}
-    {% render 'pagination' %}
+    {% include 'pagination' %}
   {% endif %}
 
 </section>

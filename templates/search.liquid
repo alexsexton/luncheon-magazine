@@ -29,12 +29,12 @@ Return only products or pages in results:
   {% if search.results_count == 0 %}
     <header class="collection-header no-results">
       <h1>{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
-      {% render 'search-bar' %}
+      {% include 'search-bar' %}
     </header>
   {% else %}
     <header class="collection-header">
       <h1>{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
-      {% render 'search-bar' %}
+      {% include 'search-bar' %}
     </header>
 
   {% comment %}
@@ -76,7 +76,7 @@ Return only products or pages in results:
   {% endif %}
 
   {% if paginate.pages > 1 %}
-    {% render 'pagination' %}
+    {% include 'pagination' %}
   {% endif %}
 
   {% endpaginate %}
@@ -91,7 +91,7 @@ Return only products or pages in results:
 
   <header class="collection-header no-results">
     <h1>{{ 'general.search.title' | t }}</h1>
-    {% render 'search-bar' %}
+    {% include 'search-bar' %}
   </header>
 
 {% endif %}

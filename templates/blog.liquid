@@ -6,7 +6,7 @@
 {% paginate blog.articles by 2 %}
 
 {% comment %}
-  {% render 'breadcrumb' %}
+  {% include 'breadcrumb' %}
 {% endcomment %}
 
 {% comment %}
@@ -57,7 +57,7 @@
         Show off meta information like number of comments and tags.
       {% endcomment %}
       <ul class="comments-tags">
-        {% render 'tags-article' %}
+        {% include 'tags-article' %}
         <li><a href="{{ article.url }}" class="more">
           <span>{{ 'blogs.article.read_more' | t }}</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M9 19l8-7-8-7" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/></svg>
@@ -79,12 +79,12 @@
 
   </section>
 
-  {% render 'blog-sidebar' %}
+  {% include 'blog-sidebar' %}
 
 </div>
 
 {% if paginate.pages > 1 %}
-    {% render 'pagination' %}
+    {% include 'pagination' %}
 {% endif %}
 
 {% endpaginate %}
