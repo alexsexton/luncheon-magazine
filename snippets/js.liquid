@@ -1,7 +1,7 @@
 {{ 'main.min.js' | asset_url | script_tag }}
 
 {% if template contains 'product' %}
-  {% include 'js-product-page' %}
+  {% render 'js-product-page' %}
   {%- if product.images.size > 1 -%}
     <script>
     var slider = tns({

@@ -22,10 +22,10 @@
   {% assign number_of_comments = article.comments_count | plus: 1 %}
 {% endif %}
 {% comment %}
-  {% include 'breadcrumb' %}
+  {% render 'breadcrumb' %}
 {% endcomment %}
 
-  {% include 'blog-sidebar' %}
+  {% render 'blog-sidebar' %}
 
   <article class="blog-article" role="complementary" itemscope itemtype="http://schema.org/Article">
 
@@ -45,7 +45,7 @@
       Show off meta information like comments and tags.
     {% endcomment %}
     <ul>
-      {% include 'tags-article' %}
+      {% render 'tags-article' %}
     </ul>
 
     {% comment %}
@@ -98,7 +98,7 @@
               {% endcomment %}
               {% if comment and comment.created_at %}
                 <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
-                  {% include 'comment' %}
+                  {% render 'comment' %}
                 </li>
               {% endif %}
 
@@ -107,14 +107,14 @@
               {% endcomment %}
               {% for comment in article.comments %}
                 <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
-                  {% include 'comment' %}
+                  {% render 'comment' %}
                 </li>
               {% endfor %}
             </ul>
 
             {% if paginate.pages > 1 %}
               <div class="pagination">
-                {% include 'pagination' %}
+                {% render 'pagination' %}
               </div>
             {% endif %}
 
