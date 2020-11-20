@@ -12,6 +12,10 @@
   }
 }
 
+.product-details-clothing {
+  grid-template-columns: 56.8% 38.2%;
+}
+
 .product-photos {
   grid-area: product-photos;
   position: relative;
