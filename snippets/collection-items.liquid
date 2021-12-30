@@ -58,16 +58,25 @@ Set a class for sold-out and on-sale items
   if your variants have different prices.
   {% endcomment %}
 
-  <p class="product-price">
-    {% if sold_out %}
-      <span class="sold-out">Sold Out</span>
+  <div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+    {% if product.available %}
+    <link itemprop="availability" href="http://schema.org/InStock" />
     {% else %}
+    <link itemprop="availability" href="http://schema.org/OutOfStock" />
+    {% endif %}
+    <p class="price-details">
+      {% if sold_out %}
+      <span class="sold-out">Sold Out</span>
+      {% else %}
       {% if product.compare_at_price > product.price %}
-      <span class="product-price on-sale" itemprop="price">{{ product.price | money }}</span>&nbsp;<span class="product-compare-price">{{ product.compare_at_price_max | money }}</span>
+      <span class="product-price on-sale" itemprop="price">{{ product.price | money }}</span>&nbsp;<span
+        class="product-compare-price">{{ product.compare_at_price_max | money }}</span>
       {% else %}
       <span class="product-price" itemprop="price">{{ product.price | money }}</span>
       {% endif %}
-    {% endif %}
-  </p>
+      {% endif %}
+    </p>
+  </div>
 
 </article>
