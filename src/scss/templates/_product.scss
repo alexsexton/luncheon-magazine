@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 38.2% 56.8%;
   grid-column-gap: $spacer4;
-  grid-template-areas: "product-photos product-description";
+  grid-template-areas: 'product-photos product-description';
   @media screen and (max-width: $small-screen) {
     display: flex;
     flex-flow: column-reverse nowrap;
@@ -22,7 +22,7 @@
   @media screen and (max-width: $small-screen) {
     flex: 1 100%;
     width: 100%;
-    padding: 0 0 $spacer * 1.5 0;
+    padding: 0 0 calc($spacer * 1.5) 0;
   }
 
   img {
@@ -65,9 +65,9 @@
 
   h1 {
     margin: 0 0 $margin 0;
-    font-size: $base-font-size * 2;
+    font-size: calc($base-font-size * 2);
     @media screen and (max-width: $small-screen) {
-      font-size: $base-font-size * 1.5;
+      font-size: calc($base-font-size * 1.5);
     }
   }
 
@@ -81,11 +81,11 @@
     flex: 1;
 
     .price-details {
-      font-size: $base-font-size * 1.5;
+      font-size: calc($base-font-size * 1.5);
       margin: 0;
       @media screen and (max-width: $small-screen) {
         margin-bottom: $spacer;
-        font-size: $base-font-size * 1.25;
+        font-size: calc($base-font-size * 1.25);
       }
     }
 
@@ -151,7 +151,11 @@
   .add-to-basket {
     flex: 2;
     .add {
-      @include reverse-ghost-button($form-button, $form-button, $form-button-text);
+      @include reverse-ghost-button(
+        $form-button,
+        $form-button,
+        $form-button-text
+      );
       padding: $spacer $spacer4;
       @media screen and (max-width: $small-screen) {
         width: 100%;
@@ -166,7 +170,6 @@
   .rich-text {
     padding: $padding 0 0;
   }
-
 }
 
 // Collections Nav
@@ -205,7 +208,8 @@
 }
 
 /* Cross Selling */
-.also-available, .related-collection {
+.also-available,
+.related-collection {
   margin: $margin 0;
   padding: $padding 0;
   border-top: 1px solid $light-border-colour;
@@ -213,17 +217,17 @@
 
   h3 {
     font-size: $base-font-size;
-    margin: 0 0 $margin/2 0;
+    margin: 0 0 calc($margin / 2) 0;
   }
 
   @supports (display: grid) {
     ul {
-      padding: $padding/2 0 0;
+      padding: calc($padding / 2) 0 0;
       display: grid;
-      grid-template-columns: repeat(5,1fr);
-      grid-gap: $spacer * 2;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: calc($spacer * 2);
       @media screen and (max-width: $small-screen) {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       img {
@@ -233,12 +237,13 @@
   }
 
   .image {
-    margin: 0 0 $margin/2;
+    margin: 0 0 calc($margin / 2);
   }
 }
 
 .no-supports {
-  .also-available, .related-collection {
+  .also-available,
+  .related-collection {
     ul {
       display: block;
 

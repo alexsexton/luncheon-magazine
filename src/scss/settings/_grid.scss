@@ -25,8 +25,8 @@ $grid-gutter-px: 65px;
 
 // Turn to percentage
 $grid-wrapper: $site-max-width;
-$grid-gutter: percentage($grid-gutter-px / $site-max-width);
-$grid-measure: percentage($grid-measure-px / $site-max-width);
+$grid-gutter: calc(($grid-gutter-px / $site-max-width) * 100);
+$grid-measure: calc(($grid-measure-px / $site-max-width * 100));
 
 $grid-gap: $grid-gutter;
 

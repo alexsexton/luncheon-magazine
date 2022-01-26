@@ -2,7 +2,7 @@
 
 .pagination {
   clear: both;
-  margin: 0 auto $spacer * 2;
+  margin: 0 auto calc($spacer * 2);
   text-align: center;
 
   .page-link {
@@ -16,6 +16,6 @@
 
   li {
     display: inline-flex;
-    padding: $spacer / 4;
+    padding: calc($spacer / 4);
   }
 }

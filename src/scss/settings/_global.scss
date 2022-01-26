@@ -1,9 +1,9 @@
 // Paths
-$imagePath: "/assets";
+$imagePath: '/assets';
 
 // Spacers
 $spacer: 1rem;
-$halfspacer: $spacer / 2;
+$halfspacer: calc($spacer / 2);
 $spacer2: $spacer * 2;
 $spacer3: $spacer * 3;
 $spacer4: $spacer * 4;
@@ -61,8 +61,8 @@ $black: #1d1d1d;
 $pureblack: #000000;
 
 // Errors
-$highlight: #F8C830;
-$error: #F1594A;
+$highlight: #f8c830;
+$error: #f1594a;
 
 // Brand defaults
 $brand-primary: $black;

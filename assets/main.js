@@ -451,7 +451,7 @@ var tns = function () {
     }
   }
 
-  var classListSupport = 'classList' in document.createElement('_');
+  var classListSupport = ('classList' in document.createElement('_'));
   var hasClass = classListSupport ? function (el, str) {
     return el.classList.contains(str);
   } : function (el, str) {

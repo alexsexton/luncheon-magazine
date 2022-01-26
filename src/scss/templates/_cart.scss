@@ -1,255 +1,254 @@
 .cart-empty {
-	padding-bottom: $spacer8;
+  padding-bottom: $spacer8;
 }
 
 .cart-headings {
-	border-bottom: 1px solid $table-borders;
-	@media screen and (max-width: $small-screen) {
-		border: none;
-		@include hide;
-	}
+  border-bottom: 1px solid $table-borders;
+  @media screen and (max-width: $small-screen) {
+    border: none;
+    @include hide;
+  }
 }
 
 @media screen and (max-width: $small-screen) {
+  .cart-item-row {
+    position: relative;
+  }
 
-	.cart-item-row {
-		position: relative;
-	}
-
-	.cart-item-row:after {
-		content: '';
-		position: absolute;
-		bottom: $spacer2;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		background: $medium-grey;
-	}
-
+  .cart-item-row:after {
+    content: '';
+    position: absolute;
+    bottom: $spacer2;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $medium-grey;
+  }
 }
 
-.cart-item-product, .cart-headings-product {
-	width: 61.8%;
-	vertical-align: top;
-	padding: $spacer;
-	@media screen and (max-width: $small-screen) {
-		width: 100%;
-		border: none;
-		padding: 0;
-	}
+.cart-item-product,
+.cart-headings-product {
+  width: 61.8%;
+  vertical-align: top;
+  padding: $spacer;
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
 }
 
 .cart-item-quantity,
 .cart-headings-quantity {
-	width: 38.2%;
-	vertical-align: top;
-	padding: $spacer;
-	border-left: 1px solid $table-borders;
-	@media screen and (max-width: $small-screen) {
-		width: 100%;
-		border: none;
-		padding: 0;
-	}
+  width: 38.2%;
+  vertical-align: top;
+  padding: $spacer;
+  border-left: 1px solid $table-borders;
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
 
-	@media screen and (max-width: $small-screen) {
-		.form-group {
-			padding: $spacer2 0 $spacer4;
-		}
-	}
+  @media screen and (max-width: $small-screen) {
+    .form-group {
+      padding: $spacer2 0 $spacer4;
+    }
+  }
 }
 
 .cart-item-product {
-	border-bottom: 1px solid $table-borders;
-	@media screen and (max-width: $small-screen) {
-		border-bottom: none;
-		margin-bottom: $spacer;
-	}
+  border-bottom: 1px solid $table-borders;
+  @media screen and (max-width: $small-screen) {
+    border-bottom: none;
+    margin-bottom: $spacer;
+  }
 }
 
 .cart-item {
-	display: flex;
-	flex-direction: row;
-	@media screen and (max-width: $small-screen) {
-		flex-direction: column;
-	}
-	justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
+  justify-content: space-between;
 }
 
 .cart-item-image {
-	flex: 0 0 30%;
-	@media screen and (max-width: $small-screen) {
-		flex: 0 0 100%;
-	}
+  flex: 0 0 30%;
+  @media screen and (max-width: $small-screen) {
+    flex: 0 0 100%;
+  }
 
-	img {
-		@include image;
-	}
+  img {
+    @include image;
+  }
 }
 
 .cart-item-title {
-	flex: 1;
-	padding-left: $spacer;
-	@media screen and (max-width: $small-screen) {
-		flex: 0 0 100%;
-		padding: $spacer 0 0 0;
-	}
-	h2 {
-		font-weight: $bold;
-		margin: 0;
-	}
+  flex: 1;
+  padding-left: $spacer;
+  @media screen and (max-width: $small-screen) {
+    flex: 0 0 100%;
+    padding: $spacer 0 0 0;
+  }
+  h2 {
+    font-weight: $bold;
+    margin: 0;
+  }
 }
 
 .cart-item-line-total {
-	font-size: $base-font-size * 1.5;
-	padding: 0;
+  font-size: calc($base-font-size * 1.5);
+  padding: 0;
 }
 
 .cart-item-remove {
-	a {
-		display: flex;
-		align-items: center;
-	}
+  a {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .cart-item-quantity {
-	border-bottom: 1px solid $table-borders;
-	@media screen and (max-width: $small-screen) {
-		border: none;
-	}
+  border-bottom: 1px solid $table-borders;
+  @media screen and (max-width: $small-screen) {
+    border: none;
+  }
 
-		label {
-			@include hide;
-			@media screen and (max-width: $small-screen) {
-				@include show;
-			}
-		}
+  label {
+    @include hide;
+    @media screen and (max-width: $small-screen) {
+      @include show;
+    }
+  }
 
-	.form-group {
-		padding-top: 0;
-	}
+  .form-group {
+    padding-top: 0;
+  }
 
-	input[type=number] {
-		width: 100%;
-	}
+  input[type='number'] {
+    width: 100%;
+  }
 }
 
 .cart-totals {
-	padding-left: $spacer;
-	border-bottom: 1px solid $table-borders;
-	vertical-align: middle;
+  padding-left: $spacer;
+  border-bottom: 1px solid $table-borders;
+  vertical-align: middle;
 
-	@media screen and (max-width: $small-screen) {
-		border: none;
-		padding: $spacer3 0;
-	}
+  @media screen and (max-width: $small-screen) {
+    border: none;
+    padding: $spacer3 0;
+  }
 
-	p {
-		margin-bottom: 0;
-		@media screen and (max-width: $small-screen) {
-			display: flex;
-		}
-	}
+  p {
+    margin-bottom: 0;
+    @media screen and (max-width: $small-screen) {
+      display: flex;
+    }
+  }
 
-	.cart-subtotal-heading {
-		font-size: $base-font-size * 1.5;
-		em {
-			font-size: $small-font-size;
-			color: $dark-grey;
-			@media screen and (max-width: $small-screen) {
-				display: block;
-			}
-		}
-	}
+  .cart-subtotal-heading {
+    font-size: calc($base-font-size * 1.5);
+    em {
+      font-size: $small-font-size;
+      color: $dark-grey;
+      @media screen and (max-width: $small-screen) {
+        display: block;
+      }
+    }
+  }
 
-	.cart-subtotal-money {
-		float: right;
-		font-size: $base-font-size * 1.5;
-		padding: 0 $spacer 0 0;
-		@media screen and (max-width: $small-screen) {
-			border: none;
-			padding: 0;
-		}
-	}
+  .cart-subtotal-money {
+    float: right;
+    font-size: calc($base-font-size * 1.5);
+    padding: 0 $spacer 0 0;
+    @media screen and (max-width: $small-screen) {
+      border: none;
+      padding: 0;
+    }
+  }
 }
 
 .cart-checkout-button {
-	border-left: 1px solid $table-borders;
-	border-bottom: 1px solid $table-borders;
-	@media screen and (max-width: $small-screen) {
-		border: none;
-	}
+  border-left: 1px solid $table-borders;
+  border-bottom: 1px solid $table-borders;
+  @media screen and (max-width: $small-screen) {
+    border: none;
+  }
 
-	.form-buttons {
-		padding: 0;
-	}
+  .form-buttons {
+    padding: 0;
+  }
 
-	.button--checkout {
-		width: 100%;
-		padding: $spacer * 2 0;
-		display: block;
-	}
+  .button--checkout {
+    width: 100%;
+    padding: calc($spacer * 2) 0;
+    display: block;
+  }
 }
 
 .cart-secure-shopping {
-	padding: $spacer2 $spacer;
-	line-height: 24px;
-	@media screen and (max-width: $small-screen) {
-		@include conceal;
-	}
+  padding: $spacer2 $spacer;
+  line-height: 24px;
+  @media screen and (max-width: $small-screen) {
+    @include conceal;
+  }
 
-	svg {
-		margin-right: $spacer / 2;
-	}
+  svg {
+    margin-right: calc($spacer / 2);
+  }
 
-	span {
-		position: relative;
-		top: -4px;
-		color: $black;
-	}
+  span {
+    position: relative;
+    top: -4px;
+    color: $black;
+  }
 }
 
 .cart-order-notes {
-	padding: $spacer;
-	@media screen and (max-width: $small-screen) {
-		padding: 0;
-	}
+  padding: $spacer;
+  @media screen and (max-width: $small-screen) {
+    padding: 0;
+  }
 }
 
 .dynamic-checkout__content {
-	margin-right: $spacer;
-	@media screen and (max-width: $small-screen) {
-		margin: $spacer2 0 0 0;
-	}
+  margin-right: $spacer;
+  @media screen and (max-width: $small-screen) {
+    margin: $spacer2 0 0 0;
+  }
 }
 
 .additional-checkout-button,
 .additional-checkout-button--apple-pay {
-	border-radius: 0px !important;
-	display: block;
-	width: 100%;
-	margin-top: $spacer3 !important;
-	position: relative;
+  border-radius: 0px !important;
+  display: block;
+  width: 100%;
+  margin-top: $spacer3 !important;
+  position: relative;
 
-	&::before {
-		content: 'or';
-		position: absolute;
-		top: -$spacer3;
-		left: 0;
-		text-align: center;
-		width: 100%;
-		color: $dark-grey;
-	}
+  &::before {
+    content: 'or';
+    position: absolute;
+    top: -$spacer3;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: $dark-grey;
+  }
 }
 
 .cart-notes {
-	margin-top: $spacer2;
-	padding: $spacer;
+  margin-top: $spacer2;
+  padding: $spacer;
 
-	.cart-note {
-		margin-bottom: $spacer2;
-	}
+  .cart-note {
+    margin-bottom: $spacer2;
+  }
 
-	.richtext {
-		max-width: $measure;
-	}
+  .richtext {
+    max-width: $measure;
+  }
 }
